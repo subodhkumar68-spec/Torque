@@ -1633,6 +1633,173 @@ body.dark-theme .quiz-option-item.selected {
 }
 
 /* ==========================================
+   TORQUE RESOURCE HUB STYLES
+   ========================================== */
+.resource-hub-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.resource-hub-notice {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--accent-primary);
+    background: rgba(185, 28, 28, 0.06);
+    border: 1px solid rgba(185, 28, 28, 0.18);
+    padding: 0.35rem 1rem;
+    border-radius: 20px;
+    margin-bottom: 1.25rem;
+}
+.resource-filter-btn {
+    background: var(--bg-secondary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 0.6rem 1.4rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+}
+.resource-filter-btn:hover {
+    color: var(--accent-primary);
+    border-color: var(--accent-primary);
+    background: rgba(185, 28, 28, 0.04);
+    transform: translateY(-2px);
+}
+.resource-filter-btn.active {
+    background: var(--accent-primary);
+    color: var(--text-btn);
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-neon-glow);
+}
+.resource-section-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--text-header);
+    margin-bottom: 0.35rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+.resource-section-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+}
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3.5rem;
+}
+@media (max-width: 768px) {
+    .resource-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.resource-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: var(--transition-smooth);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+.resource-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: var(--transition-smooth);
+}
+.resource-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-primary);
+    box-shadow: 0 12px 30px rgba(185, 28, 28, 0.12);
+}
+.resource-card:hover::before {
+    opacity: 1;
+}
+.resource-official-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    background: rgba(185, 28, 28, 0.08);
+    border: 1px solid rgba(185, 28, 28, 0.2);
+    padding: 0.25rem 0.65rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    width: fit-content;
+}
+.resource-card-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: rgba(185, 28, 28, 0.06);
+    border: 1px solid rgba(185, 28, 28, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-primary);
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+.resource-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-header);
+    margin-bottom: 0.5rem;
+    line-height: 1.35;
+}
+.resource-card-desc {
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    line-height: 1.55;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+.resource-card-action {
+    margin-top: auto;
+}
+.resource-cta-banner {
+    background: linear-gradient(135deg, rgba(185, 28, 28, 0.06) 0%, rgba(15, 23, 42, 0.03) 100%);
+    border: 2px solid var(--accent-primary);
+    border-radius: var(--border-radius-md);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+.resource-disclaimer-box {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-primary);
+    border-radius: var(--border-radius-sm);
+    padding: 1.25rem 1.5rem;
+    margin-top: 3rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* ==========================================
    PRINT STYLES (Print Optimization)
    ========================================== */
 @media print {

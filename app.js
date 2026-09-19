@@ -395,6 +395,11 @@ const state = {
         calculated: false,
         dimensionScores: null,
         suggestedCareers: []
+    },
+    // Resource Hub State
+    resources: {
+        searchQuery: "",
+        activeCategory: "ALL"
     }
 };
 
@@ -1075,9 +1080,658 @@ function renderHomeContactEmbed() {
     `;
 }
 
+// Data for TORQUE Resource Hub
+const resourcesData = {
+    cbse: [
+        {
+            title: "Previous Years' Question Papers",
+            desc: "Official CBSE archive of past examination question papers for Class 10 & 12 subjects.",
+            url: "https://www.cbse.gov.in/cbsenew/question-paper.html",
+            icon: "fa-file-signature",
+            category: "CBSE",
+            officialBadge: "Official CBSE Resource"
+        },
+        {
+            title: "Sample Question Papers",
+            desc: "Official model sample papers with marking patterns issued by CBSE Academic.",
+            url: "https://www.cbse.gov.in/cbsenew/samplepaper.html",
+            icon: "fa-file-lines",
+            category: "CBSE",
+            officialBadge: "Official CBSE Resource"
+        },
+        {
+            title: "Question Bank",
+            desc: "Subject-wise exemplar question banks and competency-based practice questions.",
+            url: "https://www.cbse.gov.in/cbsenew/question_bank.html",
+            icon: "fa-boxes-stacked",
+            category: "CBSE",
+            officialBadge: "Official CBSE Resource"
+        },
+        {
+            title: "Marking Schemes",
+            desc: "Official answer keys and step-by-step marking schemes for self-evaluation.",
+            url: "https://www.cbse.gov.in/cbsenew/marking-scheme.html",
+            icon: "fa-list-check",
+            category: "CBSE",
+            officialBadge: "Official CBSE Resource"
+        },
+        {
+            title: "CBSE Main Website",
+            desc: "Primary portal for announcements, board exam results, notifications and circulars.",
+            url: "https://www.cbse.gov.in/",
+            icon: "fa-building-columns",
+            category: "CBSE",
+            officialBadge: "Official CBSE Resource"
+        },
+        {
+            title: "CBSE Academic Website",
+            desc: "Official academic repository, curriculum updates, teacher manuals and e-content.",
+            url: "https://cbseacademic.nic.in/",
+            icon: "fa-graduation-cap",
+            category: "CBSE",
+            officialBadge: "Official CBSE Resource"
+        },
+        {
+            title: "Curriculum & Syllabus",
+            desc: "Official subject curriculum breakdowns for Secondary & Senior Secondary classes.",
+            url: "https://cbseacademic.nic.in/curriculum_2027.html",
+            icon: "fa-book-open",
+            category: "CBSE",
+            officialBadge: "Official CBSE Resource"
+        },
+        {
+            title: "CBSE E-Resources / E-Books",
+            desc: "Official digital textbooks, e-content learning materials and interactive student guides.",
+            url: "https://cbseacademic.nic.in/e-content.html",
+            icon: "fa-laptop-code",
+            category: "CBSE",
+            officialBadge: "Official CBSE Resource"
+        },
+        {
+            title: "CBSE Circulars",
+            desc: "Official administrative and academic circulars issued by CBSE Academic.",
+            url: "https://cbseacademic.nic.in/circulars.html",
+            icon: "fa-bullhorn",
+            category: "CBSE",
+            officialBadge: "Official CBSE Resource"
+        },
+        {
+            title: "CBSE Affiliation",
+            desc: "Official guidelines, bylaws, and portal for school affiliation information (SARAS).",
+            url: "https://www.cbse.gov.in/cbsenew/aboutaff.html",
+            icon: "fa-certificate",
+            category: "CBSE",
+            officialBadge: "Official CBSE Resource"
+        }
+    ],
+    entranceExams: [
+        {
+            title: "IPMAT Indore",
+            stream: "MANAGEMENT",
+            desc: "Five-year Integrated Programme in Management entrance test conducted by IIM Indore.",
+            url: "https://www.iimidr.ac.in/",
+            icon: "fa-briefcase",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: true,
+            torqueRoute: "#exams"
+        },
+        {
+            title: "IPMAT Rohtak",
+            stream: "MANAGEMENT",
+            desc: "Integrated Programme in Management admission test conducted by IIM Rohtak.",
+            url: "https://www.iimrohtak.ac.in/",
+            icon: "fa-briefcase",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: true,
+            torqueRoute: "#exams"
+        },
+        {
+            title: "JIPMAT",
+            stream: "MANAGEMENT",
+            desc: "Joint Integrated Programme in Management Admission Test for IIM Jammu & Bodh Gaya.",
+            url: "https://jipmat.nta.ac.in/",
+            icon: "fa-briefcase",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: true,
+            torqueRoute: "#exams"
+        },
+        {
+            title: "NPAT",
+            stream: "MANAGEMENT",
+            desc: "NMIMS Programs After Higher Secondary for BBA, B.Sc Finance & Commerce degrees.",
+            url: "https://www.npat.in/",
+            icon: "fa-briefcase",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: false
+        },
+        {
+            title: "SET",
+            stream: "MANAGEMENT",
+            desc: "Symbiosis Entrance Test for undergraduate management, economics & computer studies.",
+            url: "https://www.set-test.org/",
+            icon: "fa-briefcase",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: true,
+            torqueRoute: "#exams"
+        },
+        {
+            title: "CUET",
+            stream: "MANAGEMENT",
+            desc: "Common University Entrance Test for central and partner university undergraduate admissions.",
+            url: "https://exams.nta.ac.in/CUET-UG/",
+            icon: "fa-graduation-cap",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: true,
+            torqueRoute: "#exams"
+        },
+        {
+            title: "CLAT",
+            stream: "LAW",
+            desc: "Common Law Admission Test for 24+ National Law Universities (NLUs) across India.",
+            url: "https://consortiumofnlus.ac.in/",
+            icon: "fa-scale-balanced",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: true,
+            torqueRoute: "#exams"
+        },
+        {
+            title: "AILET",
+            stream: "LAW",
+            desc: "All India Law Entrance Test conducted by National Law University Delhi.",
+            url: "https://nationallawuniversitydelhi.in/",
+            icon: "fa-scale-balanced",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: false
+        },
+        {
+            title: "SLAT",
+            stream: "LAW",
+            desc: "Symbiosis Law Admission Test for Symbiosis Law Schools (BA LLB & BBA LLB).",
+            url: "https://www.set-test.org/",
+            icon: "fa-scale-balanced",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: false
+        },
+        {
+            title: "NID DAT",
+            stream: "DESIGN",
+            desc: "National Institute of Design Design Aptitude Test for B.Des & M.Des programs.",
+            url: "https://admissions.nid.edu/",
+            icon: "fa-palette",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: true,
+            torqueRoute: "#exams"
+        },
+        {
+            title: "UCEED",
+            stream: "DESIGN",
+            desc: "Undergraduate Common Entrance Examination for Design by IIT Bombay.",
+            url: "https://www.uceed.iitb.ac.in/",
+            icon: "fa-pen-nib",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: true,
+            torqueRoute: "#exams"
+        },
+        {
+            title: "NIFT",
+            stream: "DESIGN",
+            desc: "National Institute of Fashion Technology entrance test for design & technology courses.",
+            url: "https://nift.ac.in/",
+            icon: "fa-shirt",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: false
+        },
+        {
+            title: "JEE Main",
+            stream: "ENGINEERING",
+            desc: "Joint Entrance Examination for NITs, IIITs & CFTIs conducted by National Testing Agency.",
+            url: "https://jeemain.nta.ac.in/",
+            icon: "fa-atom",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: false
+        },
+        {
+            title: "BITSAT",
+            stream: "ENGINEERING",
+            desc: "Birla Institute of Technology & Science Admission Test for B.E. programs at BITS campuses.",
+            url: "https://www.bitsadmission.com/",
+            icon: "fa-gear",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: false
+        },
+        {
+            title: "NDA & NA",
+            stream: "DEFENCE",
+            desc: "National Defence Academy & Naval Academy entrance examination conducted by UPSC.",
+            url: "https://upsc.gov.in/",
+            icon: "fa-shield-halved",
+            category: "ENTRANCE EXAMS",
+            hasTorqueGuide: false
+        }
+    ],
+    careers: [
+        {
+            title: "Management & BBA",
+            desc: "Corporate leadership, brand strategy, digital consulting, and financial management.",
+            icon: "fa-chart-pie",
+            category: "CAREER",
+            torqueRoute: "#ug-bba"
+        },
+        {
+            title: "Law",
+            desc: "Corporate law, litigation, intellectual property, international arbitration, and legal tech.",
+            icon: "fa-scale-balanced",
+            category: "CAREER",
+            torqueRoute: "#exams"
+        },
+        {
+            title: "Design",
+            desc: "User experience (UX/UI), product design, communication design, and industrial innovation.",
+            icon: "fa-palette",
+            category: "CAREER",
+            torqueRoute: "#exams"
+        },
+        {
+            title: "Engineering",
+            desc: "Software architecture, AI & machine learning, cloud infrastructure, and robotics.",
+            icon: "fa-code",
+            category: "CAREER",
+            torqueRoute: "#others"
+        },
+        {
+            title: "Defence",
+            desc: "Strategic leadership, military operations, aerospace engineering, and national security.",
+            icon: "fa-shield-halved",
+            category: "CAREER",
+            torqueRoute: "#exams"
+        },
+        {
+            title: "Liberal Arts",
+            desc: "Interdisciplinary research, economics, public policy, psychology, and media studies.",
+            icon: "fa-landmark",
+            category: "CAREER",
+            torqueRoute: "#career-guidance"
+        },
+        {
+            title: "Commerce & Finance",
+            desc: "Investment banking, chartered accountancy, wealth management, and FinTech operations.",
+            icon: "fa-coins",
+            category: "CAREER",
+            torqueRoute: "#mba"
+        },
+        {
+            title: "Computer Science & Technology",
+            desc: "Full-stack software development, data analytics, cybersecurity, and cloud systems.",
+            icon: "fa-laptop-code",
+            category: "CAREER",
+            torqueRoute: "#others"
+        },
+        {
+            title: "Study Abroad",
+            desc: "Global university admissions, IELTS/GRE/GMAT prep, scholarship maps, and visa guidance.",
+            icon: "fa-plane-departure",
+            category: "CAREER",
+            torqueRoute: "#soft-skills"
+        },
+        {
+            title: "Future Skills",
+            desc: "Prompt engineering, executive communications, agile management, and AI fluency.",
+            icon: "fa-wand-magic-sparkles",
+            category: "CAREER",
+            torqueRoute: "#soft-skills"
+        }
+    ],
+    tools: [
+        {
+            title: "Career Discovery",
+            desc: "Scientific 5-dimensional career assessment mapping orientation, interest, and aptitude.",
+            icon: "fa-compass",
+            category: "TORQUE TOOLS",
+            status: "Live Tool",
+            torqueRoute: "#career-guidance"
+        },
+        {
+            title: "Entrance Exam Planner",
+            desc: "Custom timeline tracker and countdown planner for upcoming entrance tests.",
+            icon: "fa-calendar-check",
+            category: "TORQUE TOOLS",
+            status: "Coming Soon",
+            torqueRoute: null
+        },
+        {
+            title: "College Selection Guide",
+            desc: "Data-driven college comparison matrix based on cutoffs, fees, and placement ROI.",
+            icon: "fa-school",
+            category: "TORQUE TOOLS",
+            status: "Coming Soon",
+            torqueRoute: null
+        },
+        {
+            title: "Interview Preparation",
+            desc: "Interactive dialogue simulator with custom tracks (MBA, Consulting, Tech PM).",
+            icon: "fa-user-tie",
+            category: "TORQUE TOOLS",
+            status: "Live Tool",
+            torqueRoute: "#gd-interview"
+        },
+        {
+            title: "GD Preparation",
+            desc: "Group discussion consensus builder, opener strategy, and real-time scenario drills.",
+            icon: "fa-comments",
+            category: "TORQUE TOOLS",
+            status: "Live Tool",
+            torqueRoute: "#gd-interview"
+        },
+        {
+            title: "Application & Personal Statement Guidance",
+            desc: "SOP architectural guidelines, essay structuring blueprints, and reviewer checklists.",
+            icon: "fa-file-signature",
+            category: "TORQUE TOOLS",
+            status: "Coming Soon",
+            torqueRoute: null
+        },
+        {
+            title: "AI Tools for Students",
+            desc: "Interactive prompt playground for cover letters, executive summaries, and case studies.",
+            icon: "fa-robot",
+            category: "TORQUE TOOLS",
+            status: "Live Tool",
+            torqueRoute: "#others"
+        },
+        {
+            title: "Resume & LinkedIn Guidance",
+            desc: "Dynamic recruiter-ready resume builder with PDF export and live LinkedIn profile auditor.",
+            icon: "fa-file-invoice",
+            category: "TORQUE TOOLS",
+            status: "Live Tool",
+            torqueRoute: "#resume-builder"
+        },
+        {
+            title: "Future Skills",
+            desc: "Daily vocabulary flashcards, GRE/GMAT drills, soft skills, and IELTS band estimator.",
+            icon: "fa-brain",
+            category: "TORQUE TOOLS",
+            status: "Live Tool",
+            torqueRoute: "#vocab-builder"
+        }
+    ]
+};
+
+function renderResourcesPage() {
+    return `
+        <div class="resource-hub-container" style="max-width: 1200px; margin: 0 auto; padding: 1rem 0 3rem;">
+            
+            <!-- Header Section -->
+            <div class="resource-hub-header">
+                <div class="resource-hub-notice">
+                    <i class="fa-solid fa-arrows-rotate"></i> Updated regularly | Official sources wherever applicable
+                </div>
+                <h1 style="font-size: 2.8rem; font-weight: 800; color: var(--text-header); margin-bottom: 0.5rem; letter-spacing: -0.5px;">
+                    TORQUE RESOURCE HUB
+                </h1>
+                <h2 style="font-size: 1.25rem; font-weight: 600; color: var(--accent-primary); margin-bottom: 1rem;">
+                    "Your Gateway to Learning, Preparation & Career Information"
+                </h2>
+                <p style="max-width: 780px; margin: 0 auto 2.5rem; color: var(--text-secondary); font-size: 1rem; line-height: 1.6;">
+                    Curated resources for students, parents and educators — from CBSE preparation and entrance examinations to career exploration and future-ready skills.
+                </p>
+            </div>
+
+            <!-- Search & Filter Controls -->
+            <div class="resource-hub-search-container" style="max-width: 650px; margin: 0 auto 1.5rem; position: relative;">
+                <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-size: 1.1rem;"></i>
+                <input type="text" id="resource-search-input" class="form-control" placeholder="Search Resources (e.g. CBSE Papers, IPMAT, CLAT, Engineering, Resume)..." oninput="filterResources()" style="padding-left: 3rem; padding-right: 2.5rem; height: 52px; border-radius: 30px; font-size: 1rem; box-shadow: var(--shadow-card);">
+                <button id="resource-search-clear" onclick="clearResourceSearch()" aria-label="Clear Search" style="position: absolute; right: 1.25rem; top: 50%; transform: translateY(-50%); background: none; border: none; color: var(--text-muted); cursor: pointer; display: none;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="resource-hub-filters" style="display: flex; justify-content: center; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 3rem;">
+                <button class="resource-filter-btn active" data-category="ALL" onclick="setResourceCategory('ALL')">ALL</button>
+                <button class="resource-filter-btn" data-category="CBSE" onclick="setResourceCategory('CBSE')">CBSE</button>
+                <button class="resource-filter-btn" data-category="ENTRANCE EXAMS" onclick="setResourceCategory('ENTRANCE EXAMS')">ENTRANCE EXAMS</button>
+                <button class="resource-filter-btn" data-category="CAREER" onclick="setResourceCategory('CAREER')">CAREER</button>
+                <button class="resource-filter-btn" data-category="TORQUE TOOLS" onclick="setResourceCategory('TORQUE TOOLS')">TORQUE TOOLS</button>
+            </div>
+
+            <!-- SECTION 1: CBSE BOARD RESOURCES -->
+            <div id="resource-section-cbse" class="resource-section">
+                <div class="resource-section-title">
+                    <i class="fa-solid fa-graduation-cap" style="color: var(--accent-primary);"></i> CBSE BOARD RESOURCES
+                </div>
+                <div class="resource-section-subtitle">
+                    Essential official resources for students, parents and schools.
+                </div>
+                <div id="resource-grid-cbse" class="resource-grid">
+                    ${resourcesData.cbse.map(item => `
+                        <div class="resource-card" data-title="${item.title.toLowerCase()}" data-desc="${item.desc.toLowerCase()}" data-tag="cbse official board">
+                            <div>
+                                <span class="resource-official-badge">
+                                    <i class="fa-solid fa-shield-check"></i> ${item.officialBadge}
+                                </span>
+                                <div class="resource-card-icon">
+                                    <i class="fa-solid ${item.icon}"></i>
+                                </div>
+                                <h3 class="resource-card-title">${item.title}</h3>
+                                <p class="resource-card-desc">${item.desc}</p>
+                            </div>
+                            <div class="resource-card-action">
+                                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center; justify-content: center;" aria-label="Access official ${item.title}">
+                                    Access Official Resource <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 0.4rem; font-size: 0.8rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+
+            <!-- SECTION 2: ENTRANCE EXAM RESOURCES -->
+            <div id="resource-section-entrance-exams" class="resource-section">
+                <div class="resource-section-title">
+                    <i class="fa-solid fa-award" style="color: var(--accent-primary);"></i> ENTRANCE EXAM RESOURCES
+                </div>
+                <div class="resource-section-subtitle">
+                    Verified official portals for national entrance examinations across competitive pathways.
+                </div>
+                <div id="resource-grid-entrance-exams" class="resource-grid">
+                    ${resourcesData.entranceExams.map(item => `
+                        <div class="resource-card" data-title="${item.title.toLowerCase()}" data-desc="${item.desc.toLowerCase()}" data-tag="entrance exam ${item.stream.toLowerCase()}">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                                    <span class="badge badge-primary" style="font-size: 0.75rem;">${item.stream}</span>
+                                    ${item.hasTorqueGuide ? '<span class="badge badge-secondary" style="font-size: 0.7rem;"><i class="fa-solid fa-bolt"></i> TORQUE Prep</span>' : '<span style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Coming Soon</span>'}
+                                </div>
+                                <div class="resource-card-icon">
+                                    <i class="fa-solid ${item.icon}"></i>
+                                </div>
+                                <h3 class="resource-card-title">${item.title}</h3>
+                                <p class="resource-card-desc">${item.desc}</p>
+                            </div>
+                            <div class="resource-card-action" style="display: flex; gap: 0.5rem; flex-direction: column;">
+                                <a href="${item.url}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center; justify-content: center;" aria-label="Visit official website for ${item.title}">
+                                    Official Website <i class="fa-solid fa-arrow-up-right-from-square" style="margin-left: 0.4rem; font-size: 0.8rem;"></i>
+                                </a>
+                                ${item.hasTorqueGuide ? `<a href="${item.torqueRoute}" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center;"><i class="fa-solid fa-pen-to-square"></i> Explore TORQUE Prep</a>` : ''}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+
+            <!-- SECTION 3: CAREER PATHWAYS -->
+            <div id="resource-section-career" class="resource-section">
+                <div class="resource-section-title">
+                    <i class="fa-solid fa-compass" style="color: var(--accent-primary);"></i> CAREER PATHWAYS
+                </div>
+                <div class="resource-section-subtitle">
+                    Structured intelligence on high-growth sectors, entrance maps and skill demands.
+                </div>
+                <div id="resource-grid-career" class="resource-grid">
+                    ${resourcesData.careers.map(item => `
+                        <div class="resource-card" data-title="${item.title.toLowerCase()}" data-desc="${item.desc.toLowerCase()}" data-tag="career pathway ${item.title.toLowerCase()}">
+                            <div>
+                                <div class="resource-card-icon">
+                                    <i class="fa-solid ${item.icon}"></i>
+                                </div>
+                                <h3 class="resource-card-title">${item.title}</h3>
+                                <p class="resource-card-desc">${item.desc}</p>
+                            </div>
+                            <div class="resource-card-action">
+                                <a href="${item.torqueRoute}" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center;" aria-label="Explore ${item.title} career pathway">
+                                    Explore Career <i class="fa-solid fa-arrow-right" style="margin-left: 0.4rem; font-size: 0.8rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+
+            <!-- SECTION 4: TORQUE STUDENT TOOLS -->
+            <div id="resource-section-torque-tools" class="resource-section">
+                <div class="resource-section-title">
+                    <i class="fa-solid fa-toolbox" style="color: var(--accent-primary);"></i> TORQUE STUDENT TOOLS
+                </div>
+                <div class="resource-section-subtitle">
+                    Interactive digital tools to assess, practice, and optimize your career trajectory.
+                </div>
+                <div id="resource-grid-torque-tools" class="resource-grid">
+                    ${resourcesData.tools.map(item => `
+                        <div class="resource-card" data-title="${item.title.toLowerCase()}" data-desc="${item.desc.toLowerCase()}" data-tag="torque tools ${item.status.toLowerCase()}">
+                            <div>
+                                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                                    <span class="badge ${item.status === 'Live Tool' ? 'badge-primary' : 'badge-secondary'}" style="font-size: 0.75rem;">
+                                        ${item.status === 'Live Tool' ? '<i class="fa-solid fa-circle-play"></i> Live Tool' : '<i class="fa-solid fa-hourglass-half"></i> Coming Soon'}
+                                    </span>
+                                </div>
+                                <div class="resource-card-icon">
+                                    <i class="fa-solid ${item.icon}"></i>
+                                </div>
+                                <h3 class="resource-card-title">${item.title}</h3>
+                                <p class="resource-card-desc">${item.desc}</p>
+                            </div>
+                            <div class="resource-card-action">
+                                ${item.status === 'Live Tool' && item.torqueRoute ? `
+                                    <a href="${item.torqueRoute}" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center;" aria-label="Launch ${item.title} tool">
+                                        Launch Tool <i class="fa-solid fa-rocket" style="margin-left: 0.4rem; font-size: 0.8rem;"></i>
+                                    </a>
+                                ` : `
+                                    <button class="btn btn-secondary btn-sm" disabled style="width: 100%; text-align: center; justify-content: center; opacity: 0.7; cursor: not-allowed;">
+                                        Coming Soon
+                                    </button>
+                                `}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+
+            <!-- SECTION 5: STRONG CTA BANNER -->
+            <div class="resource-cta-banner glass-card">
+                <span class="badge badge-primary" style="margin-bottom: 1rem;"><i class="fa-solid fa-user-gear"></i> Personalised Career Advisory</span>
+                <h2 style="font-size: 2rem; font-weight: 800; color: var(--text-header); margin-bottom: 0.75rem;">
+                    Not Sure Which Path Is Right for You?
+                </h2>
+                <p style="font-size: 1.05rem; color: var(--text-secondary); max-width: 650px; margin: 0 auto 2rem; line-height: 1.6;">
+                    Get personalised guidance on courses, entrance exams, colleges and career pathways.
+                </p>
+                <button onclick="openLeadModal('Free Career Counselling')" class="btn btn-primary btn-lg" style="padding: 0.85rem 2rem; font-size: 1rem;" aria-label="Book a free career counselling session">
+                    <i class="fa-solid fa-calendar-check" style="margin-right: 0.5rem;"></i> BOOK A FREE CAREER COUNSELLING SESSION
+                </button>
+            </div>
+
+            <!-- SECTION 6: DISCLAIMER -->
+            <div class="resource-disclaimer-box">
+                <strong style="color: var(--text-header); display: block; margin-bottom: 0.35rem;"><i class="fa-solid fa-triangle-exclamation" style="color: var(--accent-primary); margin-right: 0.4rem;"></i> Disclaimer & Verification Notice:</strong>
+                TORQUE curates these resources for educational convenience. External websites and examination portals are independently operated by their respective organisations. Students should verify dates, eligibility, fees and official notifications directly with the relevant authority.
+            </div>
+
+        </div>
+    `;
+}
+
+window.setResourceCategory = function(cat) {
+    state.resources.activeCategory = cat;
+    const btns = document.querySelectorAll('.resource-filter-btn');
+    btns.forEach(btn => {
+        if (btn.getAttribute('data-category') === cat) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    filterResources();
+};
+
+window.filterResources = function() {
+    const searchInput = document.getElementById('resource-search-input');
+    const clearBtn = document.getElementById('resource-search-clear');
+    const query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+    state.resources.searchQuery = query;
+
+    if (clearBtn) {
+        clearBtn.style.display = query ? 'block' : 'none';
+    }
+
+    const activeCat = state.resources.activeCategory;
+    const sections = ['cbse', 'entrance-exams', 'career', 'torque-tools'];
+
+    sections.forEach(secKey => {
+        const sectionElem = document.getElementById(`resource-section-${secKey}`);
+        const cardsGrid = document.getElementById(`resource-grid-${secKey}`);
+        if (!cardsGrid || !sectionElem) return;
+
+        let categoryMatch = false;
+        if (activeCat === 'ALL') {
+            categoryMatch = true;
+        } else if (activeCat === 'CBSE' && secKey === 'cbse') {
+            categoryMatch = true;
+        } else if (activeCat === 'ENTRANCE EXAMS' && secKey === 'entrance-exams') {
+            categoryMatch = true;
+        } else if (activeCat === 'CAREER' && secKey === 'career') {
+            categoryMatch = true;
+        } else if (activeCat === 'TORQUE TOOLS' && secKey === 'torque-tools') {
+            categoryMatch = true;
+        }
+
+        if (!categoryMatch) {
+            sectionElem.style.display = 'none';
+            return;
+        }
+
+        const cards = cardsGrid.querySelectorAll('.resource-card');
+        let visibleInGrid = 0;
+
+        cards.forEach(card => {
+            const title = card.getAttribute('data-title') || '';
+            const desc = card.getAttribute('data-desc') || '';
+            const tag = card.getAttribute('data-tag') || '';
+            
+            if (!query || title.includes(query) || desc.includes(query) || tag.includes(query)) {
+                card.style.display = 'flex';
+                visibleInGrid++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        if (visibleInGrid > 0) {
+            sectionElem.style.display = 'block';
+        } else {
+            sectionElem.style.display = 'none';
+        }
+    });
+};
+
+window.clearResourceSearch = function() {
+    const searchInput = document.getElementById('resource-search-input');
+    if (searchInput) {
+        searchInput.value = '';
+        filterResources();
+    }
+};
+
 // Router Configuration
 const routes = {
     'career-guidance': () => renderCareerGuidancePage(),
+    'resources': () => renderResourcesPage(),
     home: () => `
         ${renderHomeHero()}
         ${renderHomeGradeTabs()}
@@ -2170,8 +2824,25 @@ function handleRoute() {
     else if (hash === 'linkedin') routeKey = 'linkedin-optimizer';
     else if (hash === 'gd-prep') routeKey = 'gd-interview';
     else if (hash === 'startup-accelerator') routeKey = 'startup-accelerator';
+    else if (hash === 'resource-hub' || hash === 'resource') routeKey = 'resources';
 
     closeMobileMenu();
+
+    // SEO Title & Description Management
+    if (routeKey === 'resources') {
+        document.title = "TORQUE Resource Hub | CBSE, Entrance Exams & Career Resources";
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (!metaDesc) {
+            metaDesc = document.createElement('meta');
+            metaDesc.name = "description";
+            document.head.appendChild(metaDesc);
+        }
+        metaDesc.content = "Explore curated CBSE resources, entrance exam information, career pathways and student tools from TORQUE — Career Intelligence for the Next Generation.";
+    } else {
+        document.title = "TORQUE - Career Intelligence for the Next Generation";
+    }
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     // Fade effect out/in
     container.classList.remove('fade-in');
@@ -2194,7 +2865,9 @@ function handleRoute() {
     updateActiveNav(routeKey);
 
     // Context-dependent page bindings
-    if (routeKey === 'home') {
+    if (routeKey === 'resources') {
+        setResourceCategory(state.resources.activeCategory || 'ALL');
+    } else if (routeKey === 'home') {
         startHeroSlider();
         switchGradeTab('8-9');
     } else if (routeKey === 'resume-builder') {
