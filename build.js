@@ -223,8 +223,8 @@ function generatePageHtml(baseTemplate, routeKey, isSubdir = false) {
 
     // 3. Update asset paths if generating in a subdirectory
     if (isSubdir) {
-        pageHtml = pageHtml.replace(/href="style\.css\?v=2\.8"/g, `href="${assetPrefix}style.css?v=2.8"`);
-        pageHtml = pageHtml.replace(/src="app\.js\?v=2\.8"/g, `src="${assetPrefix}app.js?v=2.8"`);
+        pageHtml = pageHtml.replace(/href="style\.css\?v=3\.0"/g, `href="${assetPrefix}style.css?v=3.0"`);
+        pageHtml = pageHtml.replace(/src="app\.js\?v=3\.0"/g, `src="${assetPrefix}app.js?v=3.0"`);
     }
 
     // 4. Update Navigation active links

@@ -407,133 +407,54 @@ const state = {
 };
 
 // Home Page Modular Rendering Components (Mindler-inspired)
-// Full-Width Edge-to-Edge Panoramic Hero Carousel (Mindler & Indian EdTech High-Yield Design)
+// Full-Width Edge-to-Edge Panoramic Horizontal Sliding Image Carousel
 function renderHomeHero() {
     return `
-        <section class="hero-carousel-container" aria-label="TORQUE Featured Programs Carousel">
-            <div class="hero-slides-wrapper" id="hero-carousel-track">
+        <section class="hero-carousel-container" aria-label="TORQUE Panoramic Programs Showcase">
+            <div class="hero-carousel-track" id="hero-carousel-track">
                 <!-- Slide 1: Career Assessment & Guidance -->
-                <div class="hero-slide-item active" style="background-image: url('images/hero_slide_1.png');" data-index="0">
-                    <div class="hero-slide-content-wrap">
-                        <div class="hero-slide-inner">
-                            <span class="hero-cat-badge">
-                                <i class="fa-solid fa-compass"></i> Career Assessment & Guidance
-                            </span>
-                            <h1 class="hero-title">
-                                Discover Your <span class="text-accent-red">True Path</span>
-                            </h1>
-                            <p class="hero-desc">
-                                Map Your Future with India’s 5-Dimensional Scientific Guidance.
-                            </p>
-                            <ul class="hero-checklist">
-                                <li>
-                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span>Identify Natural Strengths & Aptitude</span>
-                                </li>
-                                <li>
-                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span>5-D Personality & Interests Profiling</span>
-                                </li>
-                                <li>
-                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span>Structured Mentorship & Career Blueprints</span>
-                                </li>
-                            </ul>
-                            <div class="hero-cta-group">
-                                <a href="#career-guidance" class="hero-btn-red">
-                                    Explore Guidance Pathways <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                                <button onclick="openLeadModal('Career Assessment Consultation')" class="hero-btn-outline">
-                                    Book 1-on-1 Session
-                                </button>
-                            </div>
-                        </div>
+                <a href="#career-guidance" class="hero-slide-link" aria-label="Career Assessment & Guidance - Discover Your True Path">
+                    <img src="images/hero_slide_1.png" alt="Discover Your True Path - Career Assessment & Guidance" class="hero-slide-img" loading="eager">
+                    <div class="sr-only">
+                        <h1>Discover Your True Path</h1>
+                        <p>Map Your Future with India’s 5-Dimensional Scientific Guidance.</p>
+                        <ul>
+                            <li>Identify Natural Strengths & Aptitude</li>
+                            <li>5-D Personality & Interests Profiling</li>
+                            <li>Structured Mentorship & Career Blueprints</li>
+                        </ul>
                     </div>
-                </div>
+                </a>
 
                 <!-- Slide 2: UG & Integrated Entrance Exam Preparation -->
-                <div class="hero-slide-item" style="background-image: url('images/hero_slide_2.png');" data-index="1">
-                    <div class="hero-slide-content-wrap">
-                        <div class="hero-slide-inner">
-                            <span class="hero-cat-badge">
-                                <i class="fa-solid fa-graduation-cap"></i> Entrance Exam Preparation
-                            </span>
-                            <h1 class="hero-title">
-                                Ace UG & <span class="text-accent-red">Integrated Entrances</span>
-                            </h1>
-                            <div class="hero-exam-pill">
-                                <i class="fa-solid fa-award"></i> IPMAT &bull; CUCET UG &bull; NIFT &bull; NID &bull; CUET
-                            </div>
-                            <p class="hero-desc">
-                                Comprehensive Masterclasses, High-Yield Test Prep & Dedicated Mock Interventions.
-                            </p>
-                            <ul class="hero-checklist">
-                                <li>
-                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span>Comprehensive IPMAT Indore & Rohtak Bootcamps</span>
-                                </li>
-                                <li>
-                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span>CUCET & UG Test Series & Strategy Workshops</span>
-                                </li>
-                                <li>
-                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span>Design (NIFT, NID) Exam Mentorship</span>
-                                </li>
-                            </ul>
-                            <div class="hero-cta-group">
-                                <a href="#ug-bba" class="hero-btn-red">
-                                    Explore UG Masterclasses <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                                <button onclick="openLeadModal('UG Entrance Prep Inquiry')" class="hero-btn-outline">
-                                    Request Syllabus & Mocks
-                                </button>
-                            </div>
-                        </div>
+                <a href="#ug-bba" class="hero-slide-link" aria-label="Ace UG & Integrated Entrances - Entrance Exam Preparation">
+                    <img src="images/hero_slide_2.png" alt="Ace UG & Integrated Entrances - IPMAT, CUCET, CUET, NIFT, NID" class="hero-slide-img" loading="lazy">
+                    <div class="sr-only">
+                        <h1>Ace UG & Integrated Entrances</h1>
+                        <p>IPMAT • CUCET UG • NIFT • NID • CUET</p>
+                        <p>Comprehensive Masterclasses, High-Yield Test Prep & Dedicated Mock Interventions.</p>
+                        <ul>
+                            <li>Comprehensive IPMAT Indore & Rohtak Bootcamps</li>
+                            <li>CUCET & UG Test Series & Strategy Workshops</li>
+                            <li>Design (NIFT, NID) Exam Mentorship</li>
+                        </ul>
                     </div>
-                </div>
+                </a>
 
                 <!-- Slide 3: PG & MBA Entrance Exam Preparation -->
-                <div class="hero-slide-item" style="background-image: url('images/hero_slide_3.png');" data-index="2">
-                    <div class="hero-slide-content-wrap">
-                        <div class="hero-slide-inner">
-                            <span class="hero-cat-badge">
-                                <i class="fa-solid fa-briefcase"></i> PG & MBA Entrance Preparation
-                            </span>
-                            <h1 class="hero-title">
-                                Shatter Target <span class="text-accent-red">Percentiles</span>
-                            </h1>
-                            <div class="hero-exam-pill">
-                                <i class="fa-solid fa-chart-line"></i> CMAT &bull; CUCET PG &bull; NMAT &bull; SNAP &bull; CAT
-                            </div>
-                            <p class="hero-desc">
-                                Advanced Prep modules, Adaptive Mock Testing, and GD-PI Simulator Trials.
-                            </p>
-                            <ul class="hero-checklist">
-                                <li>
-                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span>Comprehensive CAT & CMAT Prep</span>
-                                </li>
-                                <li>
-                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span>NMAT & SNAP Adaptive Mock Series</span>
-                                </li>
-                                <li>
-                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
-                                    <span>MBA Mock Interviews & GD Simulator</span>
-                                </li>
-                            </ul>
-                            <div class="hero-cta-group">
-                                <a href="#mba" class="hero-btn-red">
-                                    Launch MBA Prep Suite <i class="fa-solid fa-arrow-right"></i>
-                                </a>
-                                <button onclick="openLeadModal('MBA Prep Inquiry')" class="hero-btn-outline">
-                                    Speak with CAT/MBA Mentors
-                                </button>
-                            </div>
-                        </div>
+                <a href="#mba" class="hero-slide-link" aria-label="Shatter Target Percentiles - PG & MBA Entrance Preparation">
+                    <img src="images/hero_slide_3.png" alt="Shatter Target Percentiles - CAT, CMAT, NMAT, SNAP, CUCET PG" class="hero-slide-img" loading="lazy">
+                    <div class="sr-only">
+                        <h1>Shatter Target Percentiles</h1>
+                        <p>CMAT • CUCET PG • NMAT • SNAP • CAT</p>
+                        <p>Advanced Prep modules, Adaptive Mock Testing, and GD-PI Simulator Trials.</p>
+                        <ul>
+                            <li>Comprehensive CAT & CMAT Prep</li>
+                            <li>NMAT & SNAP Adaptive Mock Series</li>
+                            <li>MBA Mock Interviews & GD Simulator</li>
+                        </ul>
                     </div>
-                </div>
+                </a>
             </div>
 
             <!-- Navigation Arrows -->
@@ -5452,36 +5373,38 @@ function initTheme() {
         toggleBtn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     });
 }
-// Full-Width Edge-to-Edge Hero Carousel Slider Logic
+// Full-Width Edge-to-Edge Hero Carousel Slider Logic (Horizontal Sliding Track)
 function initHeroCarousel() {
-    const slides = document.querySelectorAll('.hero-slide-item');
+    const track = document.getElementById('hero-carousel-track');
+    const slides = document.querySelectorAll('.hero-slide-link');
     const dots = document.querySelectorAll('.hero-dot');
     const prevBtn = document.getElementById('hero-prev-btn');
     const nextBtn = document.getElementById('hero-next-btn');
     const container = document.querySelector('.hero-carousel-container');
 
-    if (!slides || slides.length === 0) return;
+    if (!track || !slides || slides.length === 0) return;
 
-    let current = 0;
+    let currentIndex = 0;
     const total = slides.length;
     const INTERVAL_MS = 5500; // 5.5 seconds per user specification (5 to 6 seconds)
 
-    function goToSlide(targetIndex) {
-        slides[current].classList.remove('active');
-        if (dots[current]) dots[current].classList.remove('active');
+    function updateCarousel(index) {
+        currentIndex = (index + total) % total;
+        // Slide images horizontally one by one
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
 
-        current = (targetIndex + total) % total;
-
-        slides[current].classList.add('active');
-        if (dots[current]) dots[current].classList.add('active');
+        // Update indicator dots
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentIndex);
+        });
     }
 
     function nextSlide() {
-        goToSlide(current + 1);
+        updateCarousel(currentIndex + 1);
     }
 
     function prevSlide() {
-        goToSlide(current - 1);
+        updateCarousel(currentIndex - 1);
     }
 
     // Reset and start auto-rotation timer
@@ -5502,12 +5425,15 @@ function initHeroCarousel() {
         }
     }
 
+    // Set initial position
+    updateCarousel(0);
     startTimer();
 
     // Arrow navigation bindings
     if (nextBtn) {
         nextBtn.onclick = (e) => {
             e.preventDefault();
+            e.stopPropagation();
             nextSlide();
             startTimer();
         };
@@ -5516,6 +5442,7 @@ function initHeroCarousel() {
     if (prevBtn) {
         prevBtn.onclick = (e) => {
             e.preventDefault();
+            e.stopPropagation();
             prevSlide();
             startTimer();
         };
@@ -5525,7 +5452,8 @@ function initHeroCarousel() {
     dots.forEach((dot, idx) => {
         dot.onclick = (e) => {
             e.preventDefault();
-            goToSlide(idx);
+            e.stopPropagation();
+            updateCarousel(idx);
             startTimer();
         };
     });
@@ -5548,10 +5476,10 @@ function initHeroCarousel() {
         container.ontouchend = (e) => {
             if (e.changedTouches && e.changedTouches[0]) {
                 touchEndX = e.changedTouches[0].screenX;
-                if (touchStartX - touchEndX > 50) {
+                if (touchStartX - touchEndX > 45) {
                     nextSlide();
                     startTimer();
-                } else if (touchEndX - touchStartX > 50) {
+                } else if (touchEndX - touchStartX > 45) {
                     prevSlide();
                     startTimer();
                 }
