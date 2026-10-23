@@ -1,0 +1,6 @@
+# robots.txt for TORQUE EdTech Platform
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://torquee.netlify.app/sitemap.xml

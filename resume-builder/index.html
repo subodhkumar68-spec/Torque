@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive AI Resume Builder & PDF Print Studio | TORQUE</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="../style.css?v=2.8">
+
+    <!-- Primary SEO Meta Tags -->
+    
+    
+    <meta name="author" content="TORQUE EdTech">
+    
+    
+    
+    <!-- Open Graph / Facebook -->
+    
+    
+    
+    
+    
+
+    <!-- Twitter -->
+    
+    
+    
+    
+    
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TORQUE",
+      "url": "https://torquee.netlify.app/",
+      "logo": "https://torquee.netlify.app/images/hero_girl_joy.jpg",
+      "description": "Career Intelligence for the Next Generation. Scientific 5-D career assessment, entrance examination masterclasses, and AI student tools.",
+      "telephone": "+91 98244 13735",
+      "email": "subodh.kumar68@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+    
+
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content="Craft a recruiter-approved CV in minutes. Dynamic experience items, education history, customizable visual themes, and dedicated clean print-to-PDF formatting.">
+    <meta name="keywords" content="resume builder, CV maker, print to PDF resume, ATS resume template, student CV">
+    <meta name="author" content="TORQUE EdTech">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://torquee.netlify.app/resume-builder/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://torquee.netlify.app/resume-builder/">
+    <meta property="og:title" content="Interactive AI Resume Builder & PDF Print Studio | TORQUE">
+    <meta property="og:description" content="Craft a recruiter-approved CV in minutes. Dynamic experience items, education history, customizable visual themes, and dedicated clean print-to-PDF formatting.">
+    <meta property="og:image" content="https://torquee.netlify.app/images/hero_girl_joy.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://torquee.netlify.app/resume-builder/">
+    <meta property="twitter:title" content="Interactive AI Resume Builder & PDF Print Studio | TORQUE">
+    <meta property="twitter:description" content="Craft a recruiter-approved CV in minutes. Dynamic experience items, education history, customizable visual themes, and dedicated clean print-to-PDF formatting.">
+    <meta property="twitter:image" content="https://torquee.netlify.app/images/hero_girl_joy.jpg">
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TORQUE",
+      "url": "https://torquee.netlify.app/",
+      "logo": "https://torquee.netlify.app/images/hero_girl_joy.jpg",
+      "description": "Career Intelligence for the Next Generation. Scientific 5-D career assessment, entrance examination masterclasses, and AI student tools.",
+      "telephone": "+91 98244 13735",
+      "email": "subodh.kumar68@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+    
+</head>
+<body>
+    <!-- Glassmorphic Header -->
+    <header class="glass-header">
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <span class="logo-torque">TORQUE</span><span class="logo-dot">.</span>
+            </a>
+            
+            <!-- Mobile Burger Menu Button -->
+            <button class="burger-menu" id="burger-menu-btn" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link" data-route="home">Home</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link">Courses <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+                    <div class="dropdown-content">
+                        <a href="#ug-bba" data-route="ug-bba">UG / BBA</a>
+                        <a href="#mba" data-route="mba">MBA</a>
+                        <a href="#others" data-route="others">Others</a>
+                        <a href="#startup-accelerator" data-route="startup-accelerator">Startup Accelerator</a>
+                    </div>
+                </div>
+                <a href="#resources" class="nav-link" data-route="resources">Resources</a>
+                <a href="#exams" class="nav-link" data-route="exams">Exams</a>
+                <a href="#soft-skills" class="nav-link" data-route="soft-skills">Soft Skills</a>
+                <a href="#career-guidance" class="nav-link" data-route="career-guidance">Career Guidance</a>
+                <a href="#linkedin-optimizer" class="nav-link" data-route="linkedin-optimizer">LinkedIn Optimizer</a>
+                <a href="#vocab-builder" class="nav-link" data-route="vocab-builder">Vocab Builder</a>
+                <a href="#job-board" class="nav-link" data-route="job-board">Job Board</a>
+                <a href="#news" class="nav-link" data-route="news">News</a>
+                <a href="#" onclick="event.preventDefault(); openLeadModal('General Inquiry');" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- CTA/User Profile Header Area -->
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="#resume-builder" class="btn btn-secondary btn-sm header-cta">Build Resume</a>
+                <a href="#gd-interview" class="btn btn-primary btn-sm header-cta">Mock Interview</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <!-- Pre-rendered Static SSR Content for home -->
+    <!-- Pre-rendered Static SSR Content for resume-builder -->
+    <main id="app-container" class="fade-in" data-rendered-route="resume-builder">
+
+        <div class="resume-builder-grid">
+            <!-- Form Input Side -->
+            <div class="resume-form-container glass-card">
+                <h2 style="margin-bottom: 1rem;"><i class="fa-solid fa-pen-to-square" style="color: var(--accent-primary)"></i> CV Architect</h2>
+                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 2rem;">Construct your resume. Input updates bind to the preview canvas immediately. Choose a visual theme below.</p>
+                
+                <div class="form-group">
+                    <label>Resume Styling Theme</label>
+                    <select id="cv-theme" class="form-control" onchange="changeResumeTheme(this.value)">
+                        <option value="theme-classic-dark">Classic Dark (Serif, High Contrast Corporate)</option>
+                        <option value="theme-indigo-modern">Indigo Modern (Asymmetric Sidebar, Indigo Accents)</option>
+                        <option value="theme-emerald-creative">Emerald Creative (Emerald Accents, Creative Badges)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="cv-name" class="form-control" oninput="updateResumeState('name', this.value)">
+                </div>
+                <div class="form-group">
+                    <label>Target Title</label>
+                    <input type="text" id="cv-title" class="form-control" oninput="updateResumeState('title', this.value)">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="cv-email" class="form-control" oninput="updateResumeState('email', this.value)">
+                </div>
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" id="cv-phone" class="form-control" oninput="updateResumeState('phone', this.value)">
+                </div>
+                <div class="form-group">
+                    <label>Location</label>
+                    <input type="text" id="cv-location" class="form-control" oninput="updateResumeState('location', this.value)">
+                </div>
+                <div class="form-group">
+                    <label>Professional Summary</label>
+                    <textarea id="cv-summary" class="form-control" oninput="updateResumeState('summary', this.value)"></textarea>
+                </div>
+                
+                <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                    <h3>Professional Experience</h3>
+                    <button class="btn btn-secondary btn-sm" onclick="addExperienceField()"><i class="fa-solid fa-plus"></i> Add</button>
+                </div>
+                <div id="experience-inputs-container"></div>
+
+                <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+                    <h3>Education History</h3>
+                    <button class="btn btn-secondary btn-sm" onclick="addEducationField()"><i class="fa-solid fa-plus"></i> Add</button>
+                </div>
+                <div id="education-inputs-container"></div>
+
+                <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 2rem 0;">
+                
+                <div class="form-group">
+                    <label>Key Skills (comma separated)</label>
+                    <input type="text" id="cv-skills" class="form-control" oninput="updateResumeState('skills', this.value)">
+                </div>
+            </div>
+
+            <!-- Sticky Preview Side -->
+            <div class="resume-preview-sticky">
+                <div class="resume-actions-bar">
+                    <button class="btn btn-secondary btn-sm" onclick="triggerResumePrint()"><i class="fa-solid fa-print"></i> Print CV / PDF</button>
+                </div>
+                <!-- Interactive Sheet -->
+                <div class="resume-sheet" id="resume-sheet"></div>
+            </div>
+        </div>
+    
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-torque">TORQUE</span><span class="logo-dot">.</span>
+                </a>
+                <p class="footer-description">
+                    Empowering students and professionals to unlock their ultimate career momentum with high-end courses, AI resume building, LinkedIn optimization, and mock interviews.
+                </p>
+                <div class="footer-contact-details" style="margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                    <p style="margin-bottom: 0.25rem;"><i class="fa-solid fa-phone" style="color: var(--accent-secondary); margin-right: 0.5rem; width: 14px;"></i><strong>Phone:</strong> +91 98244 13735</p>
+                    <p style="margin-bottom: 0.25rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-secondary); margin-right: 0.5rem; width: 14px;"></i><strong>Email:</strong> subodh.kumar68@gmail.com</p>
+                    <p style="margin-bottom: 0.25rem;"><i class="fa-solid fa-location-dot" style="color: var(--accent-secondary); margin-right: 0.5rem; width: 14px;"></i><strong>Address:</strong> India</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/subodh-kumar-1a91822/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="footer-col">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="#ug-bba">UG / BBA Prep</a></li>
+                        <li><a href="#mba">MBA Preparation</a></li>
+                        <li><a href="#others">Executive Programs</a></li>
+                        <li><a href="#exams">Entrance Exams</a></li>
+                        <li><a href="#soft-skills">Soft Skills</a></li>
+                        <li><a href="#startup-accelerator">Startup Accelerator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="#resume-builder">Resume Builder</a></li>
+                        <li><a href="#linkedin-optimizer">LinkedIn Optimizer</a></li>
+                        <li><a href="#vocab-builder">Vocab Builder</a></li>
+                        <li><a href="#gd-interview">GD & Interview Prep</a></li>
+                        <li><a href="#soft-skills">Soft Skills</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#resources">TORQUE Resource Hub</a></li>
+                        <li><a href="#job-board">Job Board</a></li>
+                        <li><a href="#news">EdTech News</a></li>
+                        <li><a href="#career-guidance">Career Guidance</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); openLeadModal('General Inquiry');">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TORQUE EdTech. All rights reserved. Designed with precision and style.</p>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="../app.js?v=2.8"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+# Netlify Build and Routing Configuration for TORQUE EdTech
+
+[build]
+  command = "npm run build"
+  publish = "."
+
+# Headers for performance and SEO
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
+
+# Clean URL Routing for Static Pages
+[[redirects]]
+  from = "/resources"
+  to = "/resources/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/exams"
+  to = "/exams/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/ug-bba"
+  to = "/ug-bba/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/mba"
+  to = "/mba/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/others"
+  to = "/others/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/startup-accelerator"
+  to = "/startup-accelerator/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/soft-skills"
+  to = "/soft-skills/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/career-guidance"
+  to = "/career-guidance/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/linkedin-optimizer"
+  to = "/linkedin-optimizer/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/vocab-builder"
+  to = "/vocab-builder/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/job-board"
+  to = "/job-board/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/news"
+  to = "/news/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/resume-builder"
+  to = "/resume-builder/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/gd-interview"
+  to = "/gd-interview/index.html"
+  status = 200

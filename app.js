@@ -1,4 +1,7 @@
 // app.js - Torque Client-Side Router & Page Interactions
+if (typeof window === 'undefined') {
+    global.window = global;
+}
 
 // Mock Data
 const coursesData = {
@@ -432,48 +435,9 @@ function renderHomeHero() {
     `;
 }
 
-function renderHomeGradeTabs() {
-    return `
-        <div style="margin-top: 6rem;">
-            <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--text-header);">Grade-Specific Counselling Milestones</h2>
-            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 0.95rem;">Select your current academic stage to view custom guidance pathways.</p>
-            
-            <div class="glass-card" style="padding: 2.5rem; max-width: 900px; margin: 0 auto;">
-                <div class="modal-tabs" style="display: flex; justify-content: space-around; border-bottom: 2px solid var(--border-color); margin-bottom: 2rem; flex-wrap: wrap; gap: 0.5rem;">
-                    <button class="modal-tab-btn active" id="btn-grade-tab-8-9" onclick="switchGradeTab('8-9')" style="flex: 1; min-width: 120px; padding: 1rem; border: none; font-weight: bold; background: none; color: var(--text-secondary); cursor: pointer; transition: 0.3s;">Classes 8 - 9</button>
-                    <button class="modal-tab-btn" id="btn-grade-tab-10" onclick="switchGradeTab('10')" style="flex: 1; min-width: 120px; padding: 1rem; border: none; font-weight: bold; background: none; color: var(--text-secondary); cursor: pointer; transition: 0.3s;">Class 10 Choice</button>
-                    <button class="modal-tab-btn" id="btn-grade-tab-11-12" onclick="switchGradeTab('11-12')" style="flex: 1; min-width: 120px; padding: 1rem; border: none; font-weight: bold; background: none; color: var(--text-secondary); cursor: pointer; transition: 0.3s;">Classes 11 - 12</button>
-                    <button class="modal-tab-btn" id="btn-grade-tab-grad" onclick="switchGradeTab('grad')" style="flex: 1; min-width: 120px; padding: 1rem; border: none; font-weight: bold; background: none; color: var(--text-secondary); cursor: pointer; transition: 0.3s;">Graduates / College</button>
-                </div>
-                
-                <div id="grade-tab-content-container" style="min-height: 200px;">
-                    <!-- Content will be rendered here dynamically -->
-                </div>
-            </div>
-        </div>
-    `;
-}
-
-window.switchGradeTab = function(grade) {
-    const btns = document.querySelectorAll('.modal-tab-btn');
-    btns.forEach(btn => {
-        if (btn.id === `btn-grade-tab-${grade}`) {
-            btn.classList.add('active');
-            btn.style.borderBottom = '3px solid var(--accent-primary)';
-            btn.style.color = 'var(--accent-primary)';
-        } else if (btn.id.startsWith('btn-grade-tab-')) {
-            btn.classList.remove('active');
-            btn.style.borderBottom = 'none';
-            btn.style.color = 'var(--text-secondary)';
-        }
-    });
-
-    const container = document.getElementById('grade-tab-content-container');
-    if (!container) return;
-
-    let html = "";
+function getGradeTabHtml(grade) {
     if (grade === '8-9') {
-        html = `
+        return `
             <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center; animation: fadeIn 0.4s ease;">
                 <div>
                     <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-header);"><i class="fa-solid fa-graduation-cap" style="color: var(--accent-primary); margin-right: 0.5rem;"></i> Early Stream Mapping & Discovery</h3>
@@ -493,7 +457,7 @@ window.switchGradeTab = function(grade) {
             </div>
         `;
     } else if (grade === '10') {
-        html = `
+        return `
             <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center; animation: fadeIn 0.4s ease;">
                 <div>
                     <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-header);"><i class="fa-solid fa-shuffle" style="color: var(--accent-primary); margin-right: 0.5rem;"></i> Stream Selection & Subjects Decider</h3>
@@ -513,7 +477,7 @@ window.switchGradeTab = function(grade) {
             </div>
         `;
     } else if (grade === '11-12') {
-        html = `
+        return `
             <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center; animation: fadeIn 0.4s ease;">
                 <div>
                     <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-header);"><i class="fa-solid fa-school" style="color: var(--accent-primary); margin-right: 0.5rem;"></i> University Planning & Competitive Entrance</h3>
@@ -533,7 +497,7 @@ window.switchGradeTab = function(grade) {
             </div>
         `;
     } else {
-        html = `
+        return `
             <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: center; animation: fadeIn 0.4s ease;">
                 <div>
                     <h3 style="font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-header);"><i class="fa-solid fa-briefcase" style="color: var(--accent-primary); margin-right: 0.5rem;"></i> Placements Prep, CV Architecture & PG Lounge</h3>
@@ -554,8 +518,48 @@ window.switchGradeTab = function(grade) {
             </div>
         `;
     }
+}
 
-    container.innerHTML = html;
+function renderHomeGradeTabs() {
+    return `
+        <div style="margin-top: 6rem;">
+            <h2 style="text-align: center; font-size: 2.2rem; margin-bottom: 0.5rem; color: var(--text-header);">Grade-Specific Counselling Milestones</h2>
+            <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem; font-size: 0.95rem;">Select your current academic stage to view custom guidance pathways.</p>
+            
+            <div class="glass-card" style="padding: 2.5rem; max-width: 900px; margin: 0 auto;">
+                <div class="modal-tabs" style="display: flex; justify-content: space-around; border-bottom: 2px solid var(--border-color); margin-bottom: 2rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <button class="modal-tab-btn active" id="btn-grade-tab-8-9" onclick="switchGradeTab('8-9')" style="flex: 1; min-width: 120px; padding: 1rem; border: none; font-weight: bold; background: none; color: var(--text-secondary); cursor: pointer; transition: 0.3s;">Classes 8 - 9</button>
+                    <button class="modal-tab-btn" id="btn-grade-tab-10" onclick="switchGradeTab('10')" style="flex: 1; min-width: 120px; padding: 1rem; border: none; font-weight: bold; background: none; color: var(--text-secondary); cursor: pointer; transition: 0.3s;">Class 10 Choice</button>
+                    <button class="modal-tab-btn" id="btn-grade-tab-11-12" onclick="switchGradeTab('11-12')" style="flex: 1; min-width: 120px; padding: 1rem; border: none; font-weight: bold; background: none; color: var(--text-secondary); cursor: pointer; transition: 0.3s;">Classes 11 - 12</button>
+                    <button class="modal-tab-btn" id="btn-grade-tab-grad" onclick="switchGradeTab('grad')" style="flex: 1; min-width: 120px; padding: 1rem; border: none; font-weight: bold; background: none; color: var(--text-secondary); cursor: pointer; transition: 0.3s;">Graduates / College</button>
+                </div>
+                
+                <div id="grade-tab-content-container" style="min-height: 200px;">
+                    ${getGradeTabHtml('8-9')}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+window.switchGradeTab = function(grade) {
+    if (typeof document === 'undefined') return;
+    const btns = document.querySelectorAll('.modal-tab-btn');
+    btns.forEach(btn => {
+        if (btn.id === `btn-grade-tab-${grade}`) {
+            btn.classList.add('active');
+            btn.style.borderBottom = '3px solid var(--accent-primary)';
+            btn.style.color = 'var(--accent-primary)';
+        } else if (btn.id.startsWith('btn-grade-tab-')) {
+            btn.classList.remove('active');
+            btn.style.borderBottom = 'none';
+            btn.style.color = 'var(--text-secondary)';
+        }
+    });
+
+    const container = document.getElementById('grade-tab-content-container');
+    if (!container) return;
+    container.innerHTML = getGradeTabHtml(grade);
 };
 
 function renderHomeAdvantage() {
@@ -2812,54 +2816,85 @@ function renderCourseCatalog(title, category) {
 
 // Router main function
 function handleRoute() {
-    const hash = window.location.hash.substring(1) || 'home';
+    if (typeof window === 'undefined') return;
     const container = document.getElementById('app-container');
     if (!container) return;
+
+    // Detect route from hash or clean pathname
+    let routeKey = window.location.hash.substring(1);
+    if (!routeKey) {
+        const cleanPath = window.location.pathname.replace(/^\/|\/$/g, '').replace(/\.html$/, '');
+        if (cleanPath && (routes[cleanPath] || cleanPath === 'resource' || cleanPath === 'resource-hub')) {
+            routeKey = cleanPath;
+        } else {
+            routeKey = 'home';
+        }
+    }
     
     // Normalize hash routes
-    let routeKey = hash;
-    if (hash === 'ug') routeKey = 'ug-bba';
-    else if (hash === 'resume') routeKey = 'resume-builder';
-    else if (hash === 'vocab') routeKey = 'vocab-builder';
-    else if (hash === 'linkedin') routeKey = 'linkedin-optimizer';
-    else if (hash === 'gd-prep') routeKey = 'gd-interview';
-    else if (hash === 'startup-accelerator') routeKey = 'startup-accelerator';
-    else if (hash === 'resource-hub' || hash === 'resource') routeKey = 'resources';
+    if (routeKey === 'ug') routeKey = 'ug-bba';
+    else if (routeKey === 'resume') routeKey = 'resume-builder';
+    else if (routeKey === 'vocab') routeKey = 'vocab-builder';
+    else if (routeKey === 'linkedin') routeKey = 'linkedin-optimizer';
+    else if (routeKey === 'gd-prep') routeKey = 'gd-interview';
+    else if (routeKey === 'startup-accelerator') routeKey = 'startup-accelerator';
+    else if (routeKey === 'resource-hub' || routeKey === 'resource') routeKey = 'resources';
 
     closeMobileMenu();
 
     // SEO Title & Description Management
-    if (routeKey === 'resources') {
-        document.title = "TORQUE Resource Hub | CBSE, Entrance Exams & Career Resources";
-        let metaDesc = document.querySelector('meta[name="description"]');
-        if (!metaDesc) {
-            metaDesc = document.createElement('meta');
-            metaDesc.name = "description";
-            document.head.appendChild(metaDesc);
-        }
-        metaDesc.content = "Explore curated CBSE resources, entrance exam information, career pathways and student tools from TORQUE — Career Intelligence for the Next Generation.";
+    const seoTitles = {
+        'home': "TORQUE - Career Intelligence for the Next Generation",
+        'resources': "TORQUE Resource Hub | CBSE, Entrance Exams & Career Resources",
+        'exams': "Entrance Exams & Mock Test Arena | TORQUE EdTech",
+        'ug-bba': "Undergraduate & BBA Entrance Masterclasses | TORQUE",
+        'mba': "MBA Preparation & Strategic Case Interview Training | TORQUE",
+        'others': "Executive Programs & AI Prompt Playground | TORQUE",
+        'startup-accelerator': "Torque Launchpad: Startup Accelerator & Pitch Deck Auditor",
+        'soft-skills': "Interactive Soft Skills Playbook & IELTS Band Estimator | TORQUE",
+        'career-guidance': "5-Dimensional Scientific Career Guidance & Stream Assessment | TORQUE",
+        'linkedin-optimizer': "LinkedIn Profile Optimizer & Recruiter Score Audit | TORQUE",
+        'vocab-builder': "Daily Vocabulary Builder & Verbal Reasoning Drills | TORQUE",
+        'job-board': "Curated Career & Internship Job Board | TORQUE",
+        'news': "BBA & MBA EdTech Placement News & Hiring Trends | TORQUE",
+        'resume-builder': "Interactive AI Resume Builder & PDF Print Studio | TORQUE",
+        'gd-interview': "AI Mock Interview & Group Discussion Simulator | TORQUE"
+    };
+
+    if (seoTitles[routeKey]) {
+        document.title = seoTitles[routeKey];
     } else {
         document.title = "TORQUE - Career Intelligence for the Next Generation";
     }
 
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    // Check if the container is already pre-rendered with this route's content (Hydration)
+    const currentRenderedRoute = container.getAttribute('data-rendered-route');
+    const isAlreadyPrerendered = (currentRenderedRoute === routeKey) || 
+        (!currentRenderedRoute && routeKey === 'home' && container.children.length > 0 && container.querySelector('.hero-split'));
 
-    // Fade effect out/in
-    container.classList.remove('fade-in');
-    void container.offsetWidth; // Trigger reflow to restart animation
-    
-    if (routes[routeKey]) {
-        container.innerHTML = routes[routeKey]();
-        container.classList.add('fade-in');
+    if (isAlreadyPrerendered) {
+        container.setAttribute('data-rendered-route', routeKey);
     } else {
-        container.innerHTML = `
-            <div class="glass-card" style="text-align: center; max-width: 500px; margin: 5rem auto;">
-                <h2 style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent-magenta);">404</h2>
-                <p style="color: var(--text-secondary); margin-bottom: 2rem;">Page route not found. Return to Home Dashboard.</p>
-                <a href="#home" class="btn btn-primary">Go Home</a>
-            </div>
-        `;
-        container.classList.add('fade-in');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Fade effect out/in
+        container.classList.remove('fade-in');
+        void container.offsetWidth; // Trigger reflow to restart animation
+        
+        if (routes[routeKey]) {
+            container.innerHTML = routes[routeKey]();
+            container.setAttribute('data-rendered-route', routeKey);
+            container.classList.add('fade-in');
+        } else {
+            container.innerHTML = `
+                <div class="glass-card" style="text-align: center; max-width: 500px; margin: 5rem auto;">
+                    <h2 style="font-size: 3rem; margin-bottom: 1rem; color: var(--accent-magenta);">404</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Page route not found. Return to Home Dashboard.</p>
+                    <a href="#home" class="btn btn-primary">Go Home</a>
+                </div>
+            `;
+            container.setAttribute('data-rendered-route', '404');
+            container.classList.add('fade-in');
+        }
     }
 
     updateActiveNav(routeKey);
@@ -2932,17 +2967,23 @@ function updateActiveNav(activeRoute) {
 }
 
 // Mobile Burger Navigation Menu
-const burgerBtn = document.getElementById('burger-menu-btn');
-const navMenu = document.getElementById('nav-menu');
+function initBurgerMenu() {
+    if (typeof document === 'undefined') return;
+    const burgerBtn = document.getElementById('burger-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
 
-if (burgerBtn && navMenu) {
-    burgerBtn.addEventListener('click', () => {
-        burgerBtn.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
+    if (burgerBtn && navMenu) {
+        burgerBtn.addEventListener('click', () => {
+            burgerBtn.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
 }
 
 function closeMobileMenu() {
+    if (typeof document === 'undefined') return;
+    const burgerBtn = document.getElementById('burger-menu-btn');
+    const navMenu = document.getElementById('nav-menu');
     if (burgerBtn && burgerBtn.classList.contains('active')) {
         burgerBtn.classList.remove('active');
         navMenu.classList.remove('active');
@@ -5154,8 +5195,28 @@ function startHeroSlider() {
     }, 3000);
 }
 
-window.addEventListener('hashchange', handleRoute);
-window.addEventListener('DOMContentLoaded', () => {
-    handleRoute();
-    initTheme();
-});
+if (typeof window !== 'undefined' && typeof window.addEventListener === 'function' && typeof document !== 'undefined') {
+    window.addEventListener('hashchange', handleRoute);
+    window.addEventListener('DOMContentLoaded', () => {
+        initBurgerMenu();
+        handleRoute();
+        initTheme();
+    });
+}
+
+// CommonJS export for static site generation (SSG / SSR build script)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        routes,
+        coursesData,
+        jobsData,
+        vocabWords,
+        newsData,
+        mockExamQuestions,
+        vocabQuizQuestions,
+        interviewTree,
+        resourcesData,
+        state,
+        renderCourseCatalog
+    };
+}

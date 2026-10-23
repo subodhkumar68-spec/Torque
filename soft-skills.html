@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Soft Skills Playbook & IELTS Band Estimator | TORQUE</title>
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main Style Sheet -->
+    <link rel="stylesheet" href="style.css?v=2.8">
+
+    <!-- Primary SEO Meta Tags -->
+    
+    
+    <meta name="author" content="TORQUE EdTech">
+    
+    
+    
+    <!-- Open Graph / Facebook -->
+    
+    
+    
+    
+    
+
+    <!-- Twitter -->
+    
+    
+    
+    
+    
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TORQUE",
+      "url": "https://torquee.netlify.app/",
+      "logo": "https://torquee.netlify.app/images/hero_girl_joy.jpg",
+      "description": "Career Intelligence for the Next Generation. Scientific 5-D career assessment, entrance examination masterclasses, and AI student tools.",
+      "telephone": "+91 98244 13735",
+      "email": "subodh.kumar68@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+    
+
+    <!-- Primary SEO Meta Tags -->
+    <meta name="description" content="Master essential workplace competencies: Minto Pyramid executive communication, GD consensus building, negotiation strategies, and calculate your estimated IELTS band score.">
+    <meta name="keywords" content="soft skills training, IELTS band calculator, IELTS preparation roadmap, Minto pyramid, group discussion skills, negotiation">
+    <meta name="author" content="TORQUE EdTech">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://torquee.netlify.app/soft-skills/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://torquee.netlify.app/soft-skills/">
+    <meta property="og:title" content="Interactive Soft Skills Playbook & IELTS Band Estimator | TORQUE">
+    <meta property="og:description" content="Master essential workplace competencies: Minto Pyramid executive communication, GD consensus building, negotiation strategies, and calculate your estimated IELTS band score.">
+    <meta property="og:image" content="https://torquee.netlify.app/images/hero_girl_joy.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://torquee.netlify.app/soft-skills/">
+    <meta property="twitter:title" content="Interactive Soft Skills Playbook & IELTS Band Estimator | TORQUE">
+    <meta property="twitter:description" content="Master essential workplace competencies: Minto Pyramid executive communication, GD consensus building, negotiation strategies, and calculate your estimated IELTS band score.">
+    <meta property="twitter:image" content="https://torquee.netlify.app/images/hero_girl_joy.jpg">
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TORQUE",
+      "url": "https://torquee.netlify.app/",
+      "logo": "https://torquee.netlify.app/images/hero_girl_joy.jpg",
+      "description": "Career Intelligence for the Next Generation. Scientific 5-D career assessment, entrance examination masterclasses, and AI student tools.",
+      "telephone": "+91 98244 13735",
+      "email": "subodh.kumar68@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+    
+</head>
+<body>
+    <!-- Glassmorphic Header -->
+    <header class="glass-header">
+        <div class="header-container">
+            <a href="#home" class="logo">
+                <span class="logo-torque">TORQUE</span><span class="logo-dot">.</span>
+            </a>
+            
+            <!-- Mobile Burger Menu Button -->
+            <button class="burger-menu" id="burger-menu-btn" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#home" class="nav-link" data-route="home">Home</a>
+                <div class="nav-dropdown">
+                    <span class="nav-link">Courses <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+                    <div class="dropdown-content">
+                        <a href="#ug-bba" data-route="ug-bba">UG / BBA</a>
+                        <a href="#mba" data-route="mba">MBA</a>
+                        <a href="#others" data-route="others">Others</a>
+                        <a href="#startup-accelerator" data-route="startup-accelerator">Startup Accelerator</a>
+                    </div>
+                </div>
+                <a href="#resources" class="nav-link" data-route="resources">Resources</a>
+                <a href="#exams" class="nav-link" data-route="exams">Exams</a>
+                <a href="#soft-skills" class="nav-link active" data-route="soft-skills">Soft Skills</a>
+                <a href="#career-guidance" class="nav-link" data-route="career-guidance">Career Guidance</a>
+                <a href="#linkedin-optimizer" class="nav-link" data-route="linkedin-optimizer">LinkedIn Optimizer</a>
+                <a href="#vocab-builder" class="nav-link" data-route="vocab-builder">Vocab Builder</a>
+                <a href="#job-board" class="nav-link" data-route="job-board">Job Board</a>
+                <a href="#news" class="nav-link" data-route="news">News</a>
+                <a href="#" onclick="event.preventDefault(); openLeadModal('General Inquiry');" class="nav-link">Contact</a>
+            </nav>
+
+            <!-- CTA/User Profile Header Area -->
+            <div class="header-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="#resume-builder" class="btn btn-secondary btn-sm header-cta">Build Resume</a>
+                <a href="#gd-interview" class="btn btn-primary btn-sm header-cta">Mock Interview</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <!-- Pre-rendered Static SSR Content for home -->
+    <!-- Pre-rendered Static SSR Content for soft-skills -->
+    <main id="app-container" class="fade-in" data-rendered-route="soft-skills">
+
+        <div>
+            <!-- Header Banner -->
+            <div class="glass-card" style="margin-bottom: 3rem; text-align: center; padding: 3rem 2rem;">
+                <span class="badge badge-primary" style="margin-bottom: 1.5rem; padding: 0.4rem 1.2rem; font-size: 0.85rem;"><i class="fa-solid fa-comment-dots"></i> Communication & Leadership</span>
+                <h1 style="font-size: 2.75rem; margin-bottom: 1rem; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Soft Skills & Language Hub</h1>
+                <p style="color: var(--text-secondary); max-width: 750px; margin: 0 auto; font-size: 1.1rem; line-height: 1.6;">
+                    Elevate your professional impact. Master international language standards, executive presence, and business negotiations.
+                </p>
+            </div>
+
+            <!-- Language Certifications Grid -->
+            <div style="margin-top: 4rem;">
+                <h2 style="text-align: center; margin-bottom: 0.5rem;">Language Certifications</h2>
+                <p style="text-align: center; color: var(--text-secondary); margin-bottom: 3rem;">Premium global certification programs with live expert evaluations.</p>
+                
+                <div class="grid-courses">
+                    <div class="glass-card course-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-primary);"><i class="fa-solid fa-microphone-lines"></i></div>
+                            <h3>Spoken English & Corporate Communication</h3>
+                            <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                                Develop confidence in high-stakes corporate conversations. Focus areas:
+                            </p>
+                            <ul style="margin-top: 0.75rem; padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; list-style-type: disc;">
+                                <li>Public speaking confidence & voice modulation</li>
+                                <li>Pronunciation drills & phonetics basics</li>
+                                <li>Active workspace vocabulary & expressions</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="openLeadModal('Spoken English & Corporate Communication')">Request Syllabus & Info</button>
+                    </div>
+
+                    <div class="glass-card course-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-secondary);"><i class="fa-solid fa-language"></i></div>
+                            <h3>IELTS Training (Academic & General)</h3>
+                            <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                                Comprehensive preparation targeting a high Band score. Features:
+                            </p>
+                            <ul style="margin-top: 0.75rem; padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; list-style-type: disc;">
+                                <li>Detailed structure of Band 1-9 scoring criteria</li>
+                                <li>Intensive Speaking, Reading, Writing, Listening drills</li>
+                                <li>Custom prep schedules & mock evaluation feedback</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="openLeadModal('IELTS Training')">Request Syllabus & Info</button>
+                    </div>
+
+                    <div class="glass-card course-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                        <div>
+                            <div style="font-size: 2.5rem; margin-bottom: 1rem; color: var(--accent-magenta);"><i class="fa-solid fa-chalkboard-user"></i></div>
+                            <h3>TESOL Certification</h3>
+                            <p style="margin-top: 0.5rem; color: var(--text-secondary); font-size: 0.9rem; line-height: 1.5;">
+                                International teaching credential for aspiring ESL educators.
+                            </p>
+                            <ul style="margin-top: 0.75rem; padding-left: 1.2rem; color: var(--text-secondary); font-size: 0.85rem; line-height: 1.6; list-style-type: disc;">
+                                <li>120-Hour globally recognized TEFL/TESOL curriculum</li>
+                                <li>Practical teaching methods & classroom management</li>
+                                <li>Global job board access & ESL career pathways</li>
+                            </ul>
+                        </div>
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;" onclick="openLeadModal('TESOL Certification')">Request Syllabus & Info</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soft Skills Segments -->
+            <div style="margin-top: 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start;">
+                <!-- BBA Soft Skills Section -->
+                <div class="glass-card">
+                    <h2 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-graduation-cap" style="color: var(--accent-primary);"></i> BBA Soft Skills</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 2rem;">Essential foundation modules for career readiness.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div class="accordion-item" id="accordion-ss-email">
+                            <div class="accordion-header" onclick="toggleAccordion('accordion-ss-email')">
+                                <span><i class="fa-solid fa-envelope-open-text" style="color: var(--accent-primary); margin-right: 0.5rem;"></i> Professional Email Etiquette</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p style="margin-bottom: 1rem; font-size: 0.9rem;">Select a business email scenario to copy its template:</p>
+                                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                                    <button class="btn btn-secondary btn-sm" onclick="loadSSEmailTemplate('update')">Project Status Update</button>
+                                    <button class="btn btn-secondary btn-sm" onclick="loadSSEmailTemplate('meeting')">Schedule Brief Alignment</button>
+                                    <button class="btn btn-secondary btn-sm" onclick="loadSSEmailTemplate('apology')">Deadline Postponement</button>
+                                </div>
+                                <div id="ss-email-template-box" style="display: none; padding: 1.2rem; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 4px; position: relative;">
+                                    <h5 id="ss-email-template-subject" style="margin-bottom: 0.5rem; color: var(--accent-primary);"></h5>
+                                    <pre id="ss-email-template-body" style="white-space: pre-wrap; font-family: inherit; font-size: 0.85rem; color: var(--text-primary); margin-bottom: 1rem;"></pre>
+                                    <button class="btn btn-primary btn-sm" onclick="copySSEmailTemplate()"><i class="fa-solid fa-copy"></i> Copy Template</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="accordion-ss-peer">
+                            <div class="accordion-header" onclick="toggleAccordion('accordion-ss-peer')">
+                                <span><i class="fa-solid fa-people-arrows" style="color: var(--accent-secondary); margin-right: 0.5rem;"></i> Peer Group Work & Listening</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary);">
+                                    Effective collaboration thrives on active listening. Master the <strong>3-Second Pause rule</strong>: before responding to a peer in group work, pause for 3 seconds to ensure they have finished explaining their point. It reduces interruptions by 40% and builds respect.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="accordion-ss-delivery">
+                            <div class="accordion-header" onclick="toggleAccordion('accordion-ss-delivery')">
+                                <span><i class="fa-solid fa-display" style="color: var(--accent-magenta); margin-right: 0.5rem;"></i> Executive Presentation Delivery</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary);">
+                                    Deliver high-impact presentations using the <strong>10-20-30 Rule</strong>: 
+                                    <br>&bull; Maximum of <strong>10 slides</strong>
+                                    <br>&bull; Delivery in under <strong>20 minutes</strong>
+                                    <br>&bull; Font size no smaller than <strong>30 points</strong> for high readability.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- MBA Soft Skills Section -->
+                <div class="glass-card">
+                    <h2 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-briefcase" style="color: var(--accent-secondary);"></i> MBA Soft Skills</h2>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 2rem;">Advanced corporate leadership and communication modules.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div class="accordion-item" id="accordion-ss-minto">
+                            <div class="accordion-header" onclick="toggleAccordion('accordion-ss-minto')">
+                                <span><i class="fa-solid fa-sitemap" style="color: var(--accent-primary); margin-right: 0.5rem;"></i> Minto Pyramid Principle</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p style="font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; color: var(--text-secondary);">
+                                    Structured executive communication: state your conclusion first, then group your supporting arguments logically, and finally present the underlying data.
+                                </p>
+                                <div style="background: rgba(0,0,0,0.25); padding: 1rem; border-radius: 4px; font-family: monospace; font-size: 0.8rem; border: 1px solid var(--border-color); color: var(--text-secondary);">
+  [Conclusion / Recommendation]
+         ▲
+         │ (Why? / How?)
+  [Argument A] ── [Argument B] ── [Argument C]
+         ▲
+         │ (Supported by)
+  [Data Pillar] ── [Data Pillar] ── [Data Pillar]
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="accordion-ss-gd">
+                            <div class="accordion-header" onclick="toggleAccordion('accordion-ss-gd')">
+                                <span><i class="fa-solid fa-comments" style="color: var(--accent-secondary); margin-right: 0.5rem;"></i> B-School GD Consensus Building</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary);">
+                                    Group Discussions (GD) are crucial for business school admissions. Stand out by playing the <strong>Synthesizer role</strong>: instead of repeating your arguments, summarize conflicting views and suggest a consensus framework (e.g., "Since we disagree on marketing channels, let's allocate 60% to digital and test offline in v2.0").
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item" id="accordion-ss-negotiation">
+                            <div class="accordion-header" onclick="toggleAccordion('accordion-ss-negotiation')">
+                                <span><i class="fa-solid fa-handshake" style="color: var(--accent-magenta); margin-right: 0.5rem;"></i> Advanced Business Negotiation</span>
+                                <i class="fa-solid fa-chevron-down"></i>
+                            </div>
+                            <div class="accordion-content">
+                                <p style="font-size: 0.9rem; line-height: 1.6; color: var(--text-secondary);">
+                                    Always establish your <strong>BATNA</strong> (Best Alternative to a Negotiated Agreement) and <strong>Reservation Price</strong> before entering a meeting. Leverage collaborative variable packaging: trade terms of lower value to you but higher value to them (e.g. payment terms vs unit price) to achieve win-win deals.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive IELTS Band Estimator Widget -->
+            <div style="margin-top: 5rem;" class="glass-card" id="ielts-estimator-container">
+                <h2 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-chart-line" style="color: var(--accent-secondary);"></i> Interactive IELTS Band Estimator</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Select your self-assessed proficiency levels to estimate your IELTS Band score and view a custom roadmap.</p>
+                
+                <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2.5rem; align-items: start;">
+                    <!-- Questionnaire Form -->
+                    <div>
+                        <div class="form-group">
+                            <label for="ielts-fluency">Fluency & Coherence</label>
+                            <select id="ielts-fluency" class="form-control">
+                                <option value="9">Band 9: Speaks fluently with rare repetition or self-correction</option>
+                                <option value="8">Band 8: Speaks fluently; occasional repetition or self-correction</option>
+                                <option value="7">Band 7: Speaks at length without effort; occasional hesitation</option>
+                                <option value="6">Band 6: Speaks at length; some hesitation or slow pacing</option>
+                                <option value="5">Band 5: Speaks slowly; frequent repetition or hesitation</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="ielts-grammar">Lexical Resource & Grammar</label>
+                            <select id="ielts-grammar" class="form-control">
+                                <option value="9">Band 9: Uses wide vocabulary and advanced structures naturally</option>
+                                <option value="8">Band 8: Wide vocabulary; very few grammatical errors</option>
+                                <option value="7">Band 7: Good range of words; minor grammatical errors</option>
+                                <option value="6">Band 6: Adequate vocabulary; mixed simple and complex structures</option>
+                                <option value="5">Band 5: Limited vocabulary; frequent grammatical errors</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ielts-pronunciation">Pronunciation & Accent Clarity</label>
+                            <select id="ielts-pronunciation" class="form-control">
+                                <option value="9">Band 9: Effortless to understand; full range of features</option>
+                                <option value="8">Band 8: Easy to understand; minor lapses in accent</option>
+                                <option value="7">Band 7: Generally easy to understand; some mispronunciations</option>
+                                <option value="6">Band 6: Can be understood; pronunciation errors cause lapses</option>
+                                <option value="5">Band 5: Hard to follow; frequent mispronunciations</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ielts-reading">Reading & Listening Comprehension</label>
+                            <select id="ielts-reading" class="form-control">
+                                <option value="9">Band 9: Easily understands complex texts and native speaker audios</option>
+                                <option value="8">Band 8: Understands complex texts; minor lapses in abstract topics</option>
+                                <option value="7">Band 7: Understands most factual and abstract information</option>
+                                <option value="6">Band 6: Understands general meanings; lapses in complex logic</option>
+                                <option value="5">Band 5: Understands basic instructions; struggles with long arguments</option>
+                            </select>
+                        </div>
+
+                        <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;" onclick="calculateIeltsBand()"><i class="fa-solid fa-calculator"></i> Calculate Estimated Band</button>
+                    </div>
+
+                    <!-- Score Display & Roadmap -->
+                    <div class="glass-card" style="text-align: center; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 320px;">
+                        <h4>Estimated IELTS Band</h4>
+                        <div style="font-size: 4rem; font-weight: 800; color: var(--accent-secondary); margin: 1rem 0;" id="ielts-score-text">--</div>
+                        
+                        <div id="ielts-roadmap-box" style="text-align: left; width: 100%; border-top: 1px solid var(--border-color); padding-top: 1.5rem; display: none;">
+                            <h4 style="margin-bottom: 0.75rem; color: var(--accent-secondary);"><i class="fa-solid fa-route"></i> Preparation Roadmap</h4>
+                            <p id="ielts-roadmap-text" style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 1.5rem;"></p>
+                            
+                            <button class="btn btn-secondary btn-sm" style="width: 100%;" onclick="openLeadModal('IELTS Training')">Consult with IELTS Coach</button>
+                        </div>
+                        <div id="ielts-placeholder-text" style="color: var(--text-secondary); font-size: 0.9rem;">
+                            Calculate your estimated IELTS band score to generate a customized preparation roadmap.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </main>
+
+    <!-- Modern Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#home" class="logo">
+                    <span class="logo-torque">TORQUE</span><span class="logo-dot">.</span>
+                </a>
+                <p class="footer-description">
+                    Empowering students and professionals to unlock their ultimate career momentum with high-end courses, AI resume building, LinkedIn optimization, and mock interviews.
+                </p>
+                <div class="footer-contact-details" style="margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                    <p style="margin-bottom: 0.25rem;"><i class="fa-solid fa-phone" style="color: var(--accent-secondary); margin-right: 0.5rem; width: 14px;"></i><strong>Phone:</strong> +91 98244 13735</p>
+                    <p style="margin-bottom: 0.25rem;"><i class="fa-solid fa-envelope" style="color: var(--accent-secondary); margin-right: 0.5rem; width: 14px;"></i><strong>Email:</strong> subodh.kumar68@gmail.com</p>
+                    <p style="margin-bottom: 0.25rem;"><i class="fa-solid fa-location-dot" style="color: var(--accent-secondary); margin-right: 0.5rem; width: 14px;"></i><strong>Address:</strong> India</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/subodh-kumar-1a91822/" target="_blank" rel="noopener noreferrer" class="social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links-grid">
+                <div class="footer-col">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="#ug-bba">UG / BBA Prep</a></li>
+                        <li><a href="#mba">MBA Preparation</a></li>
+                        <li><a href="#others">Executive Programs</a></li>
+                        <li><a href="#exams">Entrance Exams</a></li>
+                        <li><a href="#soft-skills">Soft Skills</a></li>
+                        <li><a href="#startup-accelerator">Startup Accelerator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="#resume-builder">Resume Builder</a></li>
+                        <li><a href="#linkedin-optimizer">LinkedIn Optimizer</a></li>
+                        <li><a href="#vocab-builder">Vocab Builder</a></li>
+                        <li><a href="#gd-interview">GD & Interview Prep</a></li>
+                        <li><a href="#soft-skills">Soft Skills</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#resources">TORQUE Resource Hub</a></li>
+                        <li><a href="#job-board">Job Board</a></li>
+                        <li><a href="#news">EdTech News</a></li>
+                        <li><a href="#career-guidance">Career Guidance</a></li>
+                        <li><a href="#" onclick="event.preventDefault(); openLeadModal('General Inquiry');">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 TORQUE EdTech. All rights reserved. Designed with precision and style.</p>
+        </div>
+    </footer>
+    <!-- Scripts -->
+    <script src="app.js?v=2.8"></script>
+</body>
+</html>
