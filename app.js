@@ -1736,6 +1736,49 @@ window.clearResourceSearch = function() {
 const routes = {
     'career-guidance': () => renderCareerGuidancePage(),
     'resources': () => renderResourcesPage(),
+    about: () => `
+        <div style="max-width: 1100px; margin: 0 auto; padding: 1rem 0 3rem;">
+            <div style="text-align: center; margin-bottom: 3.5rem;">
+                <span class="badge badge-primary" style="margin-bottom: 1rem;"><i class="fa-solid fa-compass"></i> About TORQUE</span>
+                <h1 style="font-size: 2.8rem; font-weight: 800; color: var(--text-header); margin-bottom: 0.75rem;">Career Intelligence for the Next Generation</h1>
+                <p style="max-width: 760px; margin: 0 auto; color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">
+                    TORQUE is an elite career intelligence ecosystem bridging secondary education, competitive entrance preparation, university admissions, and corporate placement.
+                </p>
+            </div>
+            
+            <div class="glass-card" style="padding: 2.5rem; margin-bottom: 4rem;">
+                <h2 style="font-size: 1.8rem; margin-bottom: 1rem; color: var(--text-header);"><i class="fa-solid fa-bullseye" style="color: var(--accent-primary); margin-right: 0.5rem;"></i> Our Mission & Vision</h2>
+                <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin-bottom: 1.5rem;">
+                    We believe career paths should not be determined by guesswork, parental pressure, or outdated advice. By blending psychometric 5-dimensional assessments, curated CBSE academic archives, national entrance portals, hands-on simulation environments, and advisory from Wharton, McKinsey, and IIM alumni, TORQUE equips students and professionals with decisive clarity.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                    <div style="background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--border-radius-sm); border: 1px solid var(--border-color);">
+                        <div style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-microscope"></i></div>
+                        <h4 style="color: var(--text-header); margin-bottom: 0.35rem;">Scientific 5-D Profiling</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Orientation style, interests, personality, aptitude, and work values mapping.</p>
+                    </div>
+                    <div style="background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--border-radius-sm); border: 1px solid var(--border-color);">
+                        <div style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-laptop-code"></i></div>
+                        <h4 style="color: var(--text-header); margin-bottom: 0.35rem;">AI Career Tools</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Interactive Resume Builder, LinkedIn Optimizer, Vocab Drills, and Interview Simulator.</p>
+                    </div>
+                    <div style="background: var(--bg-tertiary); padding: 1.5rem; border-radius: var(--border-radius-sm); border: 1px solid var(--border-color);">
+                        <div style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 0.5rem;"><i class="fa-solid fa-award"></i></div>
+                        <h4 style="color: var(--text-header); margin-bottom: 0.35rem;">Elite Mentorship</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5;">Personalized career counselling and corporate case coaching from industry veterans.</p>
+                    </div>
+                </div>
+            </div>
+
+            ${renderHomeMentors()}
+            ${renderHomeTestimonials()}
+
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="#career-guidance" class="btn btn-primary" style="margin-right: 1rem;">Take 5-D Assessment <i class="fa-solid fa-arrow-right"></i></a>
+                <button class="btn btn-secondary" onclick="openLeadModal('General Inquiry')">Contact Advisory Board</button>
+            </div>
+        </div>
+    `,
     home: () => `
         ${renderHomeHero()}
         ${renderHomeGradeTabs()}
@@ -2845,6 +2888,7 @@ function handleRoute() {
     // SEO Title & Description Management
     const seoTitles = {
         'home': "TORQUE - Career Intelligence for the Next Generation",
+        'about': "About TORQUE | Career Intelligence for the Next Generation",
         'resources': "TORQUE Resource Hub | CBSE, Entrance Exams & Career Resources",
         'exams': "Entrance Exams & Mock Test Arena | TORQUE EdTech",
         'ug-bba': "Undergraduate & BBA Entrance Masterclasses | TORQUE",
@@ -2974,10 +3018,47 @@ function initBurgerMenu() {
 
     if (burgerBtn && navMenu) {
         burgerBtn.addEventListener('click', () => {
-            burgerBtn.classList.toggle('active');
+            const isActive = burgerBtn.classList.toggle('active');
             navMenu.classList.toggle('active');
+            if (!isActive) {
+                document.querySelectorAll('.nav-dropdown.open').forEach(dd => dd.classList.remove('open'));
+            }
         });
     }
+
+    // Toggle dropdowns on touch/mobile viewports
+    const dropdownTriggers = document.querySelectorAll('.nav-dropdown > .dropdown-trigger, .nav-dropdown > .nav-link');
+    dropdownTriggers.forEach(trigger => {
+        trigger.addEventListener('click', (e) => {
+            if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+                e.preventDefault();
+                e.stopPropagation();
+                const parent = trigger.closest('.nav-dropdown');
+                if (parent) {
+                    const isAlreadyOpen = parent.classList.contains('open');
+                    document.querySelectorAll('.nav-dropdown.open').forEach(dd => {
+                        if (dd !== parent) dd.classList.remove('open');
+                    });
+                    parent.classList.toggle('open', !isAlreadyOpen);
+                }
+            }
+        });
+    });
+
+    // Close menu when clicking destination links or CTAs
+    const actionLinks = document.querySelectorAll('.nav-menu a[data-route], .dropdown-content a, .mobile-menu-ctas a');
+    actionLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+
+    // Close open dropdowns if user clicks outside
+    document.addEventListener('click', (e) => {
+        if (!e.target.closest('.nav-dropdown')) {
+            document.querySelectorAll('.nav-dropdown.open').forEach(dd => dd.classList.remove('open'));
+        }
+    });
 }
 
 function closeMobileMenu() {
@@ -2988,6 +3069,7 @@ function closeMobileMenu() {
         burgerBtn.classList.remove('active');
         navMenu.classList.remove('active');
     }
+    document.querySelectorAll('.nav-dropdown.open').forEach(dd => dd.classList.remove('open'));
 }
 
 /* ==========================================

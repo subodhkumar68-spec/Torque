@@ -54,6 +54,46 @@
     
 
     <!-- Primary SEO Meta Tags -->
+    
+    
+    <meta name="author" content="TORQUE EdTech">
+    
+    
+    
+    <!-- Open Graph / Facebook -->
+    
+    
+    
+    
+    
+
+    <!-- Twitter -->
+    
+    
+    
+    
+    
+
+    <!-- Structured Data JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "TORQUE",
+      "url": "https://torquee.netlify.app/",
+      "logo": "https://torquee.netlify.app/images/hero_girl_joy.jpg",
+      "description": "Career Intelligence for the Next Generation. Scientific 5-D career assessment, entrance examination masterclasses, and AI student tools.",
+      "telephone": "+91 98244 13735",
+      "email": "subodh.kumar68@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "IN"
+      }
+    }
+    </script>
+    
+
+    <!-- Primary SEO Meta Tags -->
     <meta name="description" content="Explore curated full-time and internship openings for undergraduates, MBA candidates, and early professionals across top consulting, tech, and finance firms.">
     <meta name="keywords" content="job board, internships India, BBA internships, MBA jobs, tech roles, entry level corporate openings">
     <meta name="author" content="TORQUE EdTech">
@@ -111,24 +151,51 @@
             <!-- Navigation Links -->
             <nav class="nav-menu" id="nav-menu">
                 <a href="#home" class="nav-link" data-route="home">Home</a>
+                
+                <!-- 1. Courses Dropdown -->
                 <div class="nav-dropdown">
-                    <span class="nav-link">Courses <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+                    <span class="nav-link dropdown-trigger">Courses <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
                     <div class="dropdown-content">
-                        <a href="#ug-bba" data-route="ug-bba">UG / BBA</a>
-                        <a href="#mba" data-route="mba">MBA</a>
-                        <a href="#others" data-route="others">Others</a>
-                        <a href="#startup-accelerator" data-route="startup-accelerator">Startup Accelerator</a>
+                        <a href="#ug-bba" data-route="ug-bba"><i class="fa-solid fa-graduation-cap"></i> UG / BBA</a>
+                        <a href="#mba" data-route="mba"><i class="fa-solid fa-briefcase"></i> MBA</a>
+                        <a href="#others" data-route="others"><i class="fa-solid fa-user-tie"></i> Executive Programs</a>
+                        <a href="#startup-accelerator" data-route="startup-accelerator"><i class="fa-solid fa-rocket"></i> Startup Accelerator</a>
+                        <a href="#exams" data-route="exams"><i class="fa-solid fa-stopwatch"></i> Exams</a>
                     </div>
                 </div>
-                <a href="#resources" class="nav-link" data-route="resources">Resources</a>
-                <a href="#exams" class="nav-link" data-route="exams">Exams</a>
-                <a href="#soft-skills" class="nav-link" data-route="soft-skills">Soft Skills</a>
-                <a href="#career-guidance" class="nav-link" data-route="career-guidance">Career Guidance</a>
-                <a href="#linkedin-optimizer" class="nav-link" data-route="linkedin-optimizer">LinkedIn Optimizer</a>
-                <a href="#vocab-builder" class="nav-link" data-route="vocab-builder">Vocab Builder</a>
-                <a href="#job-board" class="nav-link active" data-route="job-board">Job Board</a>
-                <a href="#news" class="nav-link" data-route="news">News</a>
+
+                <!-- 2. AI Career Tools Dropdown -->
+                <div class="nav-dropdown">
+                    <span class="nav-link dropdown-trigger">AI Career Tools <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+                    <div class="dropdown-content">
+                        <a href="#resume-builder" data-route="resume-builder"><i class="fa-solid fa-file-invoice"></i> Resume Builder</a>
+                        <a href="#linkedin-optimizer" data-route="linkedin-optimizer"><i class="fa-brands fa-linkedin"></i> LinkedIn Optimizer</a>
+                        <a href="#vocab-builder" data-route="vocab-builder"><i class="fa-solid fa-spell-check"></i> Vocab Builder</a>
+                        <a href="#gd-interview" data-route="gd-interview"><i class="fa-solid fa-comments"></i> Mock Interview</a>
+                    </div>
+                </div>
+
+                <!-- 3. Resources Dropdown -->
+                <div class="nav-dropdown">
+                    <span class="nav-link dropdown-trigger active">Resources <i class="fa-solid fa-chevron-down dropdown-icon"></i></span>
+                    <div class="dropdown-content">
+                        <a href="#resources" data-route="resources"><i class="fa-solid fa-folder-open"></i> Resource Hub</a>
+                        <a href="#career-guidance" data-route="career-guidance"><i class="fa-solid fa-compass"></i> Career Guidance</a>
+                        <a href="#soft-skills" data-route="soft-skills"><i class="fa-solid fa-microphone"></i> Soft Skills</a>
+                        <a href="#news" data-route="news"><i class="fa-solid fa-newspaper"></i> News</a>
+                        <a href="#job-board" data-route="job-board" class="active"><i class="fa-solid fa-briefcase"></i> Job Board</a>
+                    </div>
+                </div>
+
+                <!-- Top-Level Text Links -->
+                <a href="#about" class="nav-link" data-route="about">About</a>
                 <a href="#" onclick="event.preventDefault(); openLeadModal('General Inquiry');" class="nav-link">Contact</a>
+
+                <!-- Mobile Drawer CTAs -->
+                <div class="mobile-menu-ctas">
+                    <a href="#resume-builder" class="btn btn-secondary btn-sm" style="width: 100%; text-align: center; justify-content: center;">Build Resume</a>
+                    <a href="#gd-interview" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; justify-content: center;">Mock Interview</a>
+                </div>
             </nav>
 
             <!-- CTA/User Profile Header Area -->
@@ -143,6 +210,7 @@
     </header>
 
     <!-- Main Content Container -->
+    <!-- Pre-rendered Static SSR Content for home -->
     <!-- Pre-rendered Static SSR Content for home -->
     <!-- Pre-rendered Static SSR Content for job-board -->
     <main id="app-container" class="fade-in" data-rendered-route="job-board">

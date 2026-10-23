@@ -141,6 +141,14 @@ const routesMeta = {
         canonical: `${SITE_URL}/gd-interview/`,
         navRoute: 'gd-interview',
         priority: '0.8'
+    },
+    about: {
+        title: "About TORQUE | Career Intelligence for the Next Generation",
+        description: "Learn about TORQUE's mission, scientific 5-D career assessment methodology, certified advisory panel from Wharton, McKinsey & IIM, and student success stories.",
+        keywords: "about TORQUE, career intelligence, career mentors, Dr Anjali Mehta, Vikram Malhotra, education consulting",
+        canonical: `${SITE_URL}/about/`,
+        navRoute: 'about',
+        priority: '0.8'
     }
 };
 
@@ -217,12 +225,29 @@ function generatePageHtml(baseTemplate, routeKey, isSubdir = false) {
     // 4. Update Navigation active links
     // First remove 'active' from all nav-links
     pageHtml = pageHtml.replace(/class="nav-link active"/g, 'class="nav-link"');
+    pageHtml = pageHtml.replace(/class="nav-link dropdown-trigger active"/g, 'class="nav-link dropdown-trigger"');
     pageHtml = pageHtml.replace(/class="active"/g, '');
 
     // Now add active to the matching route
     if (meta.navRoute) {
-        const regex1 = new RegExp(`(<a\\s+href="[^"]*"\\s+class="nav-link)("\\s+data-route="${meta.navRoute}")`, 'i');
-        pageHtml = pageHtml.replace(regex1, `$1 active$2`);
+        const regexTop = new RegExp(`(<a\\s+href="[^"]*"\\s+class="nav-link)("\\s+data-route="${meta.navRoute}")`, 'i');
+        pageHtml = pageHtml.replace(regexTop, `$1 active$2`);
+
+        const regexSub = new RegExp(`(<a\\s+href="[^"]*"\\s+data-route="${meta.navRoute}")`, 'i');
+        pageHtml = pageHtml.replace(regexSub, `$1 class="active"`);
+
+        // Highlight parent dropdown trigger
+        const coursesRoutes = ['ug-bba', 'mba', 'others', 'startup-accelerator', 'exams'];
+        const toolsRoutes = ['resume-builder', 'linkedin-optimizer', 'vocab-builder', 'gd-interview'];
+        const resourcesRoutes = ['resources', 'career-guidance', 'soft-skills', 'news', 'job-board'];
+
+        if (coursesRoutes.includes(meta.navRoute)) {
+            pageHtml = pageHtml.replace(/(<span\s+class="nav-link dropdown-trigger">Courses)/i, '<span class="nav-link dropdown-trigger active">Courses');
+        } else if (toolsRoutes.includes(meta.navRoute)) {
+            pageHtml = pageHtml.replace(/(<span\s+class="nav-link dropdown-trigger">AI Career Tools)/i, '<span class="nav-link dropdown-trigger active">AI Career Tools');
+        } else if (resourcesRoutes.includes(meta.navRoute)) {
+            pageHtml = pageHtml.replace(/(<span\s+class="nav-link dropdown-trigger">Resources)/i, '<span class="nav-link dropdown-trigger active">Resources');
+        }
     }
 
     // 5. Injected pre-rendered route content directly inside <main id="app-container">
