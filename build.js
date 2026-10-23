@@ -197,7 +197,11 @@ function generatePageHtml(baseTemplate, routeKey, isSubdir = false) {
       "logo": "${SITE_URL}/images/hero_girl_joy.jpg",
       "description": "Career Intelligence for the Next Generation. Scientific 5-D career assessment, entrance examination masterclasses, and AI student tools.",
       "telephone": "+91 98244 13735",
-      "email": "subodh.kumar68@gmail.com",
+      "email": "torque.edtech@gmail.com",
+      "sameAs": [
+        "https://www.instagram.com/torque.edtech/",
+        "https://www.linkedin.com/in/subodh-kumar-1a91822/"
+      ],
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "IN"
@@ -207,6 +211,7 @@ function generatePageHtml(baseTemplate, routeKey, isSubdir = false) {
     `;
 
     // Remove any pre-existing meta tags that might conflict
+    pageHtml = pageHtml.replace(/<script\s+type=["']application\/ld\+json["'][\s\S]*?<\/script>/gi, '');
     pageHtml = pageHtml.replace(/<meta\s+name=["']description["'][\s\S]*?>/gi, '');
     pageHtml = pageHtml.replace(/<meta\s+name=["']keywords["'][\s\S]*?>/gi, '');
     pageHtml = pageHtml.replace(/<meta\s+name=["']robots["'][\s\S]*?>/gi, '');

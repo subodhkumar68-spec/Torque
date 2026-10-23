@@ -1078,7 +1078,7 @@ function renderHomeContactEmbed() {
                                 <i class="fa-solid fa-envelope" style="color: var(--accent-primary); width: 20px; font-size: 1.1rem;"></i>
                                 <div>
                                     <strong style="display: block; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Email Us</strong>
-                                    <a href="mailto:subodh.kumar68@gmail.com" style="color: var(--accent-primary); text-decoration: underline; font-weight: 600;">subodh.kumar68@gmail.com</a>
+                                    <a href="mailto:torque.edtech@gmail.com" style="color: var(--accent-primary); text-decoration: underline; font-weight: 600;">torque.edtech@gmail.com</a>
                                 </div>
                             </div>
                             <div style="display: flex; align-items: center; gap: 0.75rem; color: var(--text-primary);">
@@ -1100,6 +1100,13 @@ function renderHomeContactEmbed() {
                                 <div>
                                     <strong style="display: block; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">LinkedIn</strong>
                                     <a href="https://www.linkedin.com/in/subodh-kumar-1a91822/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: underline; font-weight: 600;">Subodh Kumar Profile</a>
+                                </div>
+                            </div>
+                            <div style="display: flex; align-items: center; gap: 0.75rem; color: var(--text-primary);">
+                                <i class="fa-brands fa-instagram" style="color: var(--accent-primary); width: 20px; font-size: 1.1rem;"></i>
+                                <div>
+                                    <strong style="display: block; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Instagram</strong>
+                                    <a href="https://www.instagram.com/torque.edtech/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: underline; font-weight: 600;">@torque.edtech</a>
                                 </div>
                             </div>
                         </div>
@@ -4431,7 +4438,7 @@ function ensureLeadModalExists() {
                     <div class="modal-contact-grid" style="margin-bottom: 1.25rem; font-size: 0.9rem; border: 1px solid var(--border-color); padding: 1rem; border-radius: var(--border-radius-sm); background: var(--bg-tertiary);">
                         <div class="modal-contact-item" style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary);">
                             <i class="fa-solid fa-envelope" style="color: var(--accent-primary); width: 16px;"></i>
-                            <strong>Email:</strong> <a href="mailto:subodh.kumar68@gmail.com" style="color: var(--accent-primary); text-decoration: underline;">subodh.kumar68@gmail.com</a>
+                            <strong>Email:</strong> <a href="mailto:torque.edtech@gmail.com" style="color: var(--accent-primary); text-decoration: underline;">torque.edtech@gmail.com</a>
                         </div>
                         <div class="modal-contact-item" style="margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary);">
                             <i class="fa-solid fa-phone" style="color: var(--accent-primary); width: 16px;"></i>
@@ -4444,6 +4451,10 @@ function ensureLeadModalExists() {
                         <div class="modal-contact-item" style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary);">
                             <i class="fa-brands fa-linkedin" style="color: var(--accent-primary); width: 16px;"></i>
                             <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/subodh-kumar-1a91822/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: underline;">Subodh Kumar Profile</a>
+                        </div>
+                        <div class="modal-contact-item" style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-primary); margin-top: 0.5rem;">
+                            <i class="fa-brands fa-instagram" style="color: var(--accent-primary); width: 16px;"></i>
+                            <strong>Instagram:</strong> <a href="https://www.instagram.com/torque.edtech/" target="_blank" rel="noopener noreferrer" style="color: var(--accent-primary); text-decoration: underline;">@torque.edtech</a>
                         </div>
                     </div>
                     
