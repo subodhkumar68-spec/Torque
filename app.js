@@ -407,71 +407,205 @@ const state = {
 };
 
 // Home Page Modular Rendering Components (Mindler-inspired)
+// Full-Width Edge-to-Edge Panoramic Hero Carousel (Mindler & Indian EdTech High-Yield Design)
 function renderHomeHero() {
     return `
-        <div class="hero-split">
-            <div class="hero-content">
-                <span class="badge badge-primary" style="margin-bottom: 1rem;"><i class="fa-solid fa-compass"></i> India's Premier Career Intelligence Cockpit</span>
-                <h1>Propel Your Career <br>Into <span class="typewriter">Overdrive</span></h1>
-                <p class="hero-subtitle">Discover your true path with scientific 5-dimensional career assessments, structured counselling programs, Virtual Internships (VIP), and elite mentor networks.</p>
-                
-                <!-- Audience Self-Segmentation Cards -->
-                <div class="hero-segmentation-grid">
-                    <!-- Student Card -->
-                    <div class="segment-card student-card">
-                        <div class="segment-card-header">
-                            <div class="segment-icon student-icon">
-                                <i class="fa-solid fa-graduation-cap"></i>
-                            </div>
-                            <div>
-                                <span class="segment-badge">Aspirants</span>
-                                <h3 class="segment-title">I am a Student</h3>
+        <section class="hero-carousel-container" aria-label="TORQUE Featured Programs Carousel">
+            <div class="hero-slides-wrapper" id="hero-carousel-track">
+                <!-- Slide 1: Career Assessment & Guidance -->
+                <div class="hero-slide-item active" style="background-image: url('images/hero_slide_1.png');" data-index="0">
+                    <div class="hero-slide-content-wrap">
+                        <div class="hero-slide-inner">
+                            <span class="hero-cat-badge">
+                                <i class="fa-solid fa-compass"></i> Career Assessment & Guidance
+                            </span>
+                            <h1 class="hero-title">
+                                Discover Your <span class="text-accent-red">True Path</span>
+                            </h1>
+                            <p class="hero-desc">
+                                Map Your Future with India’s 5-Dimensional Scientific Guidance.
+                            </p>
+                            <ul class="hero-checklist">
+                                <li>
+                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
+                                    <span>Identify Natural Strengths & Aptitude</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
+                                    <span>5-D Personality & Interests Profiling</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
+                                    <span>Structured Mentorship & Career Blueprints</span>
+                                </li>
+                            </ul>
+                            <div class="hero-cta-group">
+                                <a href="#career-guidance" class="hero-btn-red">
+                                    Explore Guidance Pathways <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <button onclick="openLeadModal('Career Assessment Consultation')" class="hero-btn-outline">
+                                    Book 1-on-1 Session
+                                </button>
                             </div>
                         </div>
-                        <p class="segment-desc">School, undergrad & MBA prep with entrance test masterclasses.</p>
-                        <div class="segment-chips">
-                            <a href="#ug-bba" class="segment-chip"><i class="fa-solid fa-graduation-cap"></i> UG / BBA</a>
-                            <a href="#mba" class="segment-chip"><i class="fa-solid fa-briefcase"></i> MBA</a>
-                            <a href="#exams" class="segment-chip"><i class="fa-solid fa-stopwatch"></i> Exams</a>
-                        </div>
-                        <a href="#ug-bba" class="btn btn-primary btn-sm segment-action-btn">
-                            Explore Student Prep <i class="fa-solid fa-arrow-right"></i>
-                        </a>
                     </div>
+                </div>
 
-                    <!-- Professional Card -->
-                    <div class="segment-card pro-card">
-                        <div class="segment-card-header">
-                            <div class="segment-icon pro-icon">
-                                <i class="fa-solid fa-user-tie"></i>
+                <!-- Slide 2: UG & Integrated Entrance Exam Preparation -->
+                <div class="hero-slide-item" style="background-image: url('images/hero_slide_2.png');" data-index="1">
+                    <div class="hero-slide-content-wrap">
+                        <div class="hero-slide-inner">
+                            <span class="hero-cat-badge">
+                                <i class="fa-solid fa-graduation-cap"></i> Entrance Exam Preparation
+                            </span>
+                            <h1 class="hero-title">
+                                Ace UG & <span class="text-accent-red">Integrated Entrances</span>
+                            </h1>
+                            <div class="hero-exam-pill">
+                                <i class="fa-solid fa-award"></i> IPMAT &bull; CUCET UG &bull; NIFT &bull; NID &bull; CUET
                             </div>
-                            <div>
-                                <span class="segment-badge pro-badge">Executives & Founders</span>
-                                <h3 class="segment-title">I am a Professional</h3>
+                            <p class="hero-desc">
+                                Comprehensive Masterclasses, High-Yield Test Prep & Dedicated Mock Interventions.
+                            </p>
+                            <ul class="hero-checklist">
+                                <li>
+                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
+                                    <span>Comprehensive IPMAT Indore & Rohtak Bootcamps</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
+                                    <span>CUCET & UG Test Series & Strategy Workshops</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
+                                    <span>Design (NIFT, NID) Exam Mentorship</span>
+                                </li>
+                            </ul>
+                            <div class="hero-cta-group">
+                                <a href="#ug-bba" class="hero-btn-red">
+                                    Explore UG Masterclasses <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <button onclick="openLeadModal('UG Entrance Prep Inquiry')" class="hero-btn-outline">
+                                    Request Syllabus & Mocks
+                                </button>
                             </div>
                         </div>
-                        <p class="segment-desc">Executive upskilling, startup incubator & profile optimization.</p>
-                        <div class="segment-chips">
-                            <a href="#others" class="segment-chip"><i class="fa-solid fa-user-tie"></i> Exec Programs</a>
-                            <a href="#startup-accelerator" class="segment-chip"><i class="fa-solid fa-rocket"></i> Accelerator</a>
-                            <a href="#linkedin-optimizer" class="segment-chip"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3: PG & MBA Entrance Exam Preparation -->
+                <div class="hero-slide-item" style="background-image: url('images/hero_slide_3.png');" data-index="2">
+                    <div class="hero-slide-content-wrap">
+                        <div class="hero-slide-inner">
+                            <span class="hero-cat-badge">
+                                <i class="fa-solid fa-briefcase"></i> PG & MBA Entrance Preparation
+                            </span>
+                            <h1 class="hero-title">
+                                Shatter Target <span class="text-accent-red">Percentiles</span>
+                            </h1>
+                            <div class="hero-exam-pill">
+                                <i class="fa-solid fa-chart-line"></i> CMAT &bull; CUCET PG &bull; NMAT &bull; SNAP &bull; CAT
+                            </div>
+                            <p class="hero-desc">
+                                Advanced Prep modules, Adaptive Mock Testing, and GD-PI Simulator Trials.
+                            </p>
+                            <ul class="hero-checklist">
+                                <li>
+                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
+                                    <span>Comprehensive CAT & CMAT Prep</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
+                                    <span>NMAT & SNAP Adaptive Mock Series</span>
+                                </li>
+                                <li>
+                                    <span class="check-icon"><i class="fa-solid fa-check"></i></span>
+                                    <span>MBA Mock Interviews & GD Simulator</span>
+                                </li>
+                            </ul>
+                            <div class="hero-cta-group">
+                                <a href="#mba" class="hero-btn-red">
+                                    Launch MBA Prep Suite <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <button onclick="openLeadModal('MBA Prep Inquiry')" class="hero-btn-outline">
+                                    Speak with CAT/MBA Mentors
+                                </button>
+                            </div>
                         </div>
-                        <a href="#others" class="btn btn-secondary btn-sm segment-action-btn">
-                            Explore Executive Hub <i class="fa-solid fa-arrow-right"></i>
-                        </a>
                     </div>
                 </div>
             </div>
+
+            <!-- Navigation Arrows -->
+            <button class="hero-arrow-btn hero-arrow-prev" id="hero-prev-btn" aria-label="Previous Slide">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button class="hero-arrow-btn hero-arrow-next" id="hero-next-btn" aria-label="Next Slide">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+
+            <!-- Indicator Dots -->
+            <div class="hero-dots-container" id="hero-dots-wrap">
+                <button class="hero-dot active" data-slide="0" aria-label="Slide 1"></button>
+                <button class="hero-dot" data-slide="1" aria-label="Slide 2"></button>
+                <button class="hero-dot" data-slide="2" aria-label="Slide 3"></button>
+            </div>
+        </section>
+    `;
+}
+
+function renderHomeSegmentation() {
+    return `
+        <div style="margin-bottom: 5rem;">
+            <div style="text-align: center; margin-bottom: 2.25rem;">
+                <span class="badge badge-primary" style="margin-bottom: 0.6rem;"><i class="fa-solid fa-compass"></i> Tailored Funnels</span>
+                <h2 style="font-size: 2.1rem; color: var(--text-header); margin-bottom: 0.5rem;">Select Your Learning Track</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Choose your academic stage to explore curated curriculum and career acceleration tools.</p>
+            </div>
             
-            <div class="hero-slider-container" style="position: relative;">
-                <div class="hero-slider">
-                    <div class="hero-slide active" style="background-image: url('images/hero_girl_joy.jpg')"></div>
-                    <div class="hero-slide" style="background-image: url('images/hero_group.jpg')"></div>
-                    <div class="hero-slide" style="background-image: url('images/hero_presentation.jpg')"></div>
+            <div class="hero-segmentation-grid">
+                <!-- Student Card -->
+                <div class="segment-card student-card">
+                    <div class="segment-card-header">
+                        <div class="segment-icon student-icon">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                            <span class="segment-badge">Aspirants</span>
+                            <h3 class="segment-title">I am a Student</h3>
+                        </div>
+                    </div>
+                    <p class="segment-desc">School, undergrad & MBA prep with entrance test masterclasses.</p>
+                    <div class="segment-chips">
+                        <a href="#ug-bba" class="segment-chip"><i class="fa-solid fa-graduation-cap"></i> UG / BBA</a>
+                        <a href="#mba" class="segment-chip"><i class="fa-solid fa-briefcase"></i> MBA</a>
+                        <a href="#exams" class="segment-chip"><i class="fa-solid fa-stopwatch"></i> Exams</a>
+                    </div>
+                    <a href="#ug-bba" class="btn btn-primary btn-sm segment-action-btn">
+                        Explore Student Prep <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
-                <div class="hero-carousel-overlay">
-                    <p>Ready to apply? Speak with our academic counselor.</p>
-                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSey3lHZfMU2pysNcv0YFBhKs718XK_xbuV3BwNBUzgC-LsL5Q/viewform?usp=dialog" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" style="width: 100%;"><i class="fa-brands fa-google"></i> Fill Admission & Inquiry Form</a>
+
+                <!-- Professional Card -->
+                <div class="segment-card pro-card">
+                    <div class="segment-card-header">
+                        <div class="segment-icon pro-icon">
+                            <i class="fa-solid fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <span class="segment-badge pro-badge">Executives & Founders</span>
+                            <h3 class="segment-title">I am a Professional</h3>
+                        </div>
+                    </div>
+                    <p class="segment-desc">Executive upskilling, startup incubator & profile optimization.</p>
+                    <div class="segment-chips">
+                        <a href="#others" class="segment-chip"><i class="fa-solid fa-user-tie"></i> Exec Programs</a>
+                        <a href="#startup-accelerator" class="segment-chip"><i class="fa-solid fa-rocket"></i> Accelerator</a>
+                        <a href="#linkedin-optimizer" class="segment-chip"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                    <a href="#others" class="btn btn-secondary btn-sm segment-action-btn">
+                        Explore Executive Hub <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -1831,17 +1965,20 @@ const routes = {
     `,
     home: () => `
         ${renderHomeHero()}
-        ${renderHomeGradeTabs()}
-        ${renderHomeAdvantage()}
-        ${renderHomeDimensions()}
-        ${renderHomeVIP()}
-        ${renderHomeCareerLibrary()}
-        ${renderHomeMentors()}
-        ${renderHomeTestimonials()}
-        ${renderHomeAcademicHubs()}
-        ${renderHomeMockTeaser()}
-        ${renderHomePlacementNews()}
-        ${renderHomeContactEmbed()}
+        <div class="home-main-content">
+            ${renderHomeSegmentation()}
+            ${renderHomeGradeTabs()}
+            ${renderHomeAdvantage()}
+            ${renderHomeDimensions()}
+            ${renderHomeVIP()}
+            ${renderHomeCareerLibrary()}
+            ${renderHomeMentors()}
+            ${renderHomeTestimonials()}
+            ${renderHomeAcademicHubs()}
+            ${renderHomeMockTeaser()}
+            ${renderHomePlacementNews()}
+            ${renderHomeContactEmbed()}
+        </div>
     `,
     'ug-bba': () => `
         <div>
@@ -2961,10 +3098,13 @@ function handleRoute() {
         document.title = "TORQUE - Career Intelligence for the Next Generation";
     }
 
+    // Toggle full-bleed hero container class for home route
+    container.classList.toggle('has-hero-carousel', routeKey === 'home');
+
     // Check if the container is already pre-rendered with this route's content (Hydration)
     const currentRenderedRoute = container.getAttribute('data-rendered-route');
     const isAlreadyPrerendered = (currentRenderedRoute === routeKey) || 
-        (!currentRenderedRoute && routeKey === 'home' && container.children.length > 0 && container.querySelector('.hero-split'));
+        (!currentRenderedRoute && routeKey === 'home' && container.children.length > 0 && container.querySelector('.hero-carousel-container'));
 
     if (isAlreadyPrerendered) {
         container.setAttribute('data-rendered-route', routeKey);
@@ -2997,7 +3137,7 @@ function handleRoute() {
     if (routeKey === 'resources') {
         setResourceCategory(state.resources.activeCategory || 'ALL');
     } else if (routeKey === 'home') {
-        startHeroSlider();
+        initHeroCarousel();
         switchGradeTab('8-9');
     } else if (routeKey === 'resume-builder') {
         bindResumeInputs();
@@ -5312,23 +5452,112 @@ function initTheme() {
         toggleBtn.innerHTML = isDark ? '<i class="fa-solid fa-sun"></i>' : '<i class="fa-solid fa-moon"></i>';
     });
 }
-// Hero Carousel Slider Logic
-function startHeroSlider() {
-    const slides = document.querySelectorAll('.hero-slide');
-    if (slides.length === 0) return;
-    
-    let currentSlide = 0;
-    
-    // Clear any existing intervals to prevent acceleration
-    if (window.heroSliderInterval) {
-        clearInterval(window.heroSliderInterval);
+// Full-Width Edge-to-Edge Hero Carousel Slider Logic
+function initHeroCarousel() {
+    const slides = document.querySelectorAll('.hero-slide-item');
+    const dots = document.querySelectorAll('.hero-dot');
+    const prevBtn = document.getElementById('hero-prev-btn');
+    const nextBtn = document.getElementById('hero-next-btn');
+    const container = document.querySelector('.hero-carousel-container');
+
+    if (!slides || slides.length === 0) return;
+
+    let current = 0;
+    const total = slides.length;
+    const INTERVAL_MS = 5500; // 5.5 seconds per user specification (5 to 6 seconds)
+
+    function goToSlide(targetIndex) {
+        slides[current].classList.remove('active');
+        if (dots[current]) dots[current].classList.remove('active');
+
+        current = (targetIndex + total) % total;
+
+        slides[current].classList.add('active');
+        if (dots[current]) dots[current].classList.add('active');
     }
-    
-    window.heroSliderInterval = setInterval(() => {
-        slides[currentSlide].classList.remove('active');
-        currentSlide = (currentSlide + 1) % slides.length;
-        slides[currentSlide].classList.add('active');
-    }, 3000);
+
+    function nextSlide() {
+        goToSlide(current + 1);
+    }
+
+    function prevSlide() {
+        goToSlide(current - 1);
+    }
+
+    // Reset and start auto-rotation timer
+    if (window.heroCarouselInterval) {
+        clearInterval(window.heroCarouselInterval);
+        window.heroCarouselInterval = null;
+    }
+
+    function startTimer() {
+        if (window.heroCarouselInterval) clearInterval(window.heroCarouselInterval);
+        window.heroCarouselInterval = setInterval(nextSlide, INTERVAL_MS);
+    }
+
+    function pauseTimer() {
+        if (window.heroCarouselInterval) {
+            clearInterval(window.heroCarouselInterval);
+            window.heroCarouselInterval = null;
+        }
+    }
+
+    startTimer();
+
+    // Arrow navigation bindings
+    if (nextBtn) {
+        nextBtn.onclick = (e) => {
+            e.preventDefault();
+            nextSlide();
+            startTimer();
+        };
+    }
+
+    if (prevBtn) {
+        prevBtn.onclick = (e) => {
+            e.preventDefault();
+            prevSlide();
+            startTimer();
+        };
+    }
+
+    // Indicator dots bindings
+    dots.forEach((dot, idx) => {
+        dot.onclick = (e) => {
+            e.preventDefault();
+            goToSlide(idx);
+            startTimer();
+        };
+    });
+
+    // Pause on hover, resume on mouse leave
+    if (container) {
+        container.onmouseenter = pauseTimer;
+        container.onmouseleave = startTimer;
+
+        // Mobile touch swipe gestures
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        container.ontouchstart = (e) => {
+            if (e.changedTouches && e.changedTouches[0]) {
+                touchStartX = e.changedTouches[0].screenX;
+            }
+        };
+
+        container.ontouchend = (e) => {
+            if (e.changedTouches && e.changedTouches[0]) {
+                touchEndX = e.changedTouches[0].screenX;
+                if (touchStartX - touchEndX > 50) {
+                    nextSlide();
+                    startTimer();
+                } else if (touchEndX - touchStartX > 50) {
+                    prevSlide();
+                    startTimer();
+                }
+            }
+        };
+    }
 }
 
 if (typeof window !== 'undefined' && typeof window.addEventListener === 'function' && typeof document !== 'undefined') {

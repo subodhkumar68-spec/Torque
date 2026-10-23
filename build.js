@@ -256,8 +256,9 @@ function generatePageHtml(baseTemplate, routeKey, isSubdir = false) {
     }
 
     // 5. Injected pre-rendered route content directly inside <main id="app-container">
+    const heroClass = routeKey === 'home' ? ' has-hero-carousel' : '';
     const prerenderedMain = `<!-- Pre-rendered Static SSR Content for ${routeKey} -->
-    <main id="app-container" class="fade-in" data-rendered-route="${routeKey}">
+    <main id="app-container" class="fade-in${heroClass}" data-rendered-route="${routeKey}">
 ${routeHtml}
     </main>`;
 
