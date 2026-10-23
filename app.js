@@ -411,12 +411,55 @@ function renderHomeHero() {
     return `
         <div class="hero-split">
             <div class="hero-content">
-                <span class="badge badge-primary" style="margin-bottom: 1rem;"><i class="fa-solid fa-compass"></i> India's Premier Career Guidance Cockpit</span>
+                <span class="badge badge-primary" style="margin-bottom: 1rem;"><i class="fa-solid fa-compass"></i> India's Premier Career Intelligence Cockpit</span>
                 <h1>Propel Your Career <br>Into <span class="typewriter">Overdrive</span></h1>
                 <p class="hero-subtitle">Discover your true path with scientific 5-dimensional career assessments, structured counselling programs, Virtual Internships (VIP), and elite mentor networks.</p>
-                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                    <a href="#career-guidance" class="btn btn-primary">Take Free 5-D Assessment <i class="fa-solid fa-arrow-right"></i></a>
-                    <a href="#resume-builder" class="btn btn-secondary">Build Recruiter-Ready Resume</a>
+                
+                <!-- Audience Self-Segmentation Cards -->
+                <div class="hero-segmentation-grid">
+                    <!-- Student Card -->
+                    <div class="segment-card student-card">
+                        <div class="segment-card-header">
+                            <div class="segment-icon student-icon">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                            </div>
+                            <div>
+                                <span class="segment-badge">Aspirants</span>
+                                <h3 class="segment-title">I am a Student</h3>
+                            </div>
+                        </div>
+                        <p class="segment-desc">School, undergrad & MBA prep with entrance test masterclasses.</p>
+                        <div class="segment-chips">
+                            <a href="#ug-bba" class="segment-chip"><i class="fa-solid fa-graduation-cap"></i> UG / BBA</a>
+                            <a href="#mba" class="segment-chip"><i class="fa-solid fa-briefcase"></i> MBA</a>
+                            <a href="#exams" class="segment-chip"><i class="fa-solid fa-stopwatch"></i> Exams</a>
+                        </div>
+                        <a href="#ug-bba" class="btn btn-primary btn-sm segment-action-btn">
+                            Explore Student Prep <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
+
+                    <!-- Professional Card -->
+                    <div class="segment-card pro-card">
+                        <div class="segment-card-header">
+                            <div class="segment-icon pro-icon">
+                                <i class="fa-solid fa-user-tie"></i>
+                            </div>
+                            <div>
+                                <span class="segment-badge pro-badge">Executives & Founders</span>
+                                <h3 class="segment-title">I am a Professional</h3>
+                            </div>
+                        </div>
+                        <p class="segment-desc">Executive upskilling, startup incubator & profile optimization.</p>
+                        <div class="segment-chips">
+                            <a href="#others" class="segment-chip"><i class="fa-solid fa-user-tie"></i> Exec Programs</a>
+                            <a href="#startup-accelerator" class="segment-chip"><i class="fa-solid fa-rocket"></i> Accelerator</a>
+                            <a href="#linkedin-optimizer" class="segment-chip"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                        </div>
+                        <a href="#others" class="btn btn-secondary btn-sm segment-action-btn">
+                            Explore Executive Hub <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
             
