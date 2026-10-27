@@ -56,6 +56,8 @@ const server = http.createServer((req, res) => {
     const extname = String(path.extname(targetFile)).toLowerCase();
     const contentType = MIME_TYPES[extname] || 'application/octet-stream';
 
+    console.log(`[REQ ${new Date().toLocaleTimeString()}] ${req.method} ${req.url} -> ${path.basename(targetFile)} (${contentType})`);
+
     fs.readFile(targetFile, (error, content) => {
         if (error) {
             res.writeHead(500, { 'Content-Type': 'text/plain' });
@@ -64,7 +66,9 @@ const server = http.createServer((req, res) => {
             res.writeHead(200, {
                 'Content-Type': contentType,
                 'Access-Control-Allow-Origin': '*',
-                'Cache-Control': extname === '.html' ? 'no-cache' : 'public, max-age=86400'
+                'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+                'Pragma': 'no-cache',
+                'Expires': '0'
             });
             res.end(content, 'utf-8');
         }

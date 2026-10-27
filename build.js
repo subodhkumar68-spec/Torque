@@ -221,10 +221,12 @@ function generatePageHtml(baseTemplate, routeKey, isSubdir = false) {
 
     pageHtml = pageHtml.replace('</head>', `${seoBlock}\n</head>`);
 
-    // 3. Update asset paths if generating in a subdirectory
+    // 3. Update asset paths with cache-busting v=5.0
+    pageHtml = pageHtml.replace(/href="((\.\.\/)*)style\.css(\?v=[^"]*)?"/g, `href="$1style.css?v=5.0"`);
+    pageHtml = pageHtml.replace(/src="((\.\.\/)*)app\.js(\?v=[^"]*)?"/g, `src="$1app.js?v=5.0"`);
     if (isSubdir) {
-        pageHtml = pageHtml.replace(/href="style\.css\?v=3\.0"/g, `href="${assetPrefix}style.css?v=3.0"`);
-        pageHtml = pageHtml.replace(/src="app\.js\?v=3\.0"/g, `src="${assetPrefix}app.js?v=3.0"`);
+        pageHtml = pageHtml.replace(/href="style\.css\?v=[^"]*"/g, `href="${assetPrefix}style.css?v=5.0"`);
+        pageHtml = pageHtml.replace(/src="app\.js\?v=[^"]*"/g, `src="${assetPrefix}app.js?v=5.0"`);
     }
 
     // 4. Update Navigation active links
