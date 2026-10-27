@@ -2522,17 +2522,22 @@ body.dark-theme .quiz-option-item.selected {
     cursor: pointer;
     box-shadow: 0 4px 14px rgba(112, 19, 19, 0.35);
     transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
-.btn-infographic-cta:hover {
+.btn-infographic-cta:hover,
+.btn-infographic-cta:focus {
     background: linear-gradient(135deg, #a81c1c 0%, #8b1818 100%);
     box-shadow: 0 6px 20px rgba(185, 28, 28, 0.5);
     transform: translateY(-2px);
     color: #ffffff !important;
+    text-decoration: none !important;
 }
 
+.btn-infographic-cta:visited,
 .btn-infographic-cta:active {
+    color: #ffffff !important;
+    text-decoration: none !important;
     transform: translateY(0);
 }
 

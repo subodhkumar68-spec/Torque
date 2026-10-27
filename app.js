@@ -85,6 +85,88 @@ const ugInfographicCards = [
     }
 ];
 
+// 6 Targeted MBA / PG Infographic Exam Cards Data
+const mbaInfographicCards = [
+    {
+        id: "cat",
+        category: "POST-GRADUATE MANAGEMENT",
+        title: "CAT",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "IIMs, FMS, SPJIMR",
+        examDate: "November 2026 (Last Sunday of Nov)",
+        pattern: "66 Questions (VARC: 24, DILR: 20, QA: 22) | 120 Mins | CBT",
+        schools: "21 IIMs (Ahmedabad, Bangalore, Calcutta, Lucknow, Kozhikode, Indore), FMS Delhi, SPJIMR Mumbai",
+        image: "images/cat_gmat.jpg",
+        imagePosition: "center",
+        formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSey3lHZfMU2pysNcv0YFBhKs718XK_xbuV3BwNBUzgC-LsL5Q/viewform?usp=dialog"
+    },
+    {
+        id: "nmat",
+        category: "MANAGEMENT APTITUDE",
+        title: "NMAT",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "NMIMS Mumbai, K J Somaiya",
+        examDate: "October – December 2026 (75-Day Adaptive Window)",
+        pattern: "108 Qs (Language: 36, Quant: 36, Logic: 36) | 120 Mins | Adaptive CBT (No -ve Marking)",
+        schools: "NMIMS School of Business Management (Mumbai, Bengaluru, Hyderabad), K J Somaiya, XIMB",
+        image: "images/exec_mba.png",
+        imagePosition: "center top",
+        formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSey3lHZfMU2pysNcv0YFBhKs718XK_xbuV3BwNBUzgC-LsL5Q/viewform?usp=dialog"
+    },
+    {
+        id: "cmat",
+        category: "NATIONAL MBA ENTRANCE",
+        title: "CMAT",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "JBIMS, Great Lakes, GIM",
+        examDate: "May 2026 (Annual Shift)",
+        pattern: "100 Questions (QA & DI, LR, Language, GK, Innovation & Entrepreneurship) | 180 Mins CBT",
+        schools: "JBIMS Mumbai, SIMSREE, Great Lakes Institute of Management, Goa Institute of Management (GIM)",
+        image: "images/case_interview.jpg",
+        imagePosition: "center 20%",
+        formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSey3lHZfMU2pysNcv0YFBhKs718XK_xbuV3BwNBUzgC-LsL5Q/viewform?usp=dialog"
+    },
+    {
+        id: "cuet-pg",
+        category: "CENTRAL UNIVERSITIES & TISS",
+        title: "CUET PG",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "TISS, Central Universities",
+        examDate: "March 2026 (Multi-shift Window)",
+        pattern: "75 Domain MCQs (COQP12 General MBA / COQP11 HRM) | 105 Mins | CBT",
+        schools: "TISS Mumbai (HRM & LR, ODCL), Delhi University (Faculty of Commerce), BHU (FMS), 190+ Central Universities",
+        image: "images/business_foundations.jpg",
+        imagePosition: "center",
+        formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSey3lHZfMU2pysNcv0YFBhKs718XK_xbuV3BwNBUzgC-LsL5Q/viewform?usp=dialog"
+    },
+    {
+        id: "snap",
+        category: "SYMBIOSIS PG ENTRANCE",
+        title: "SNAP",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "SIBM Pune, SCMHRD",
+        examDate: "December 2026 (3 Test Attempts)",
+        pattern: "60 Questions (English: 15, Analytical & Logical: 25, Quant & DI: 20) | 60 Mins Speed Test",
+        schools: "SIBM Pune, SCMHRD Pune (MBA, MBA BA, MBA IDM), SIIB Pune, SIBM Bengaluru, SIMS Pune",
+        image: "images/mba_girl.jpg",
+        imagePosition: "center top",
+        formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSey3lHZfMU2pysNcv0YFBhKs718XK_xbuV3BwNBUzgC-LsL5Q/viewform?usp=dialog"
+    },
+    {
+        id: "gmat",
+        category: "GLOBAL EXECUTIVE & MBA",
+        title: "GMAT",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "ISB, SPJIMR, Global Top B-Schools",
+        examDate: "Year-Round (On-Demand Appointments)",
+        pattern: "GMAT Focus Edition: 64 Questions (Quant: 21, Verbal: 23, Data Insights: 20) | 135 Mins",
+        schools: "ISB (Hyderabad & Mohali), SPJIMR (PGPM), IIM PGPX (IIM A/B/C), INSEAD, LBS, Top Global B-Schools",
+        image: "images/hero_presentation.jpg",
+        imagePosition: "center top",
+        formUrl: "https://docs.google.com/forms/d/e/1FAIpQLSey3lHZfMU2pysNcv0YFBhKs718XK_xbuV3BwNBUzgC-LsL5Q/viewform?usp=dialog"
+    }
+];
+
 // Mock Data
 const coursesData = {
     'ug-bba': [
@@ -96,9 +178,12 @@ const coursesData = {
         { title: "Christ University", duration: "2 Months", image: "images/product_mgmt.jpg", focus: "CUET/Christ Entrances" }
     ],
     'mba': [
-        { title: "CAT / GMAT Elite Prep", duration: "6 Months", image: "images/cat_gmat.jpg" },
-        { title: "Executive MBA Primer", duration: "2 Months", image: "images/mba_girl.jpg" },
-        { title: "Case Interview Training", duration: "6 Weeks", image: "images/case_interview.jpg" }
+        { title: "CAT (Focus: IIMs, FMS, SPJIMR)", duration: "6 Months", image: "images/cat_gmat.jpg" },
+        { title: "NMAT (Focus: NMIMS Mumbai, K J Somaiya)", duration: "4 Months", image: "images/exec_mba.png" },
+        { title: "CMAT (Focus: JBIMS, Great Lakes, GIM)", duration: "4 Months", image: "images/case_interview.jpg" },
+        { title: "CUET PG (Focus: TISS, Central Universities)", duration: "3 Months", image: "images/business_foundations.jpg" },
+        { title: "SNAP (Focus: SIBM Pune, SCMHRD)", duration: "3 Months", image: "images/mba_girl.jpg" },
+        { title: "GMAT (Focus: ISB, SPJIMR, Global Top B-Schools)", duration: "6 Months", image: "images/hero_presentation.jpg" }
     ],
     'others': [
         { title: "Product Management Bootcamp", duration: "10 Weeks", image: "images/product_mgmt.jpg" },
@@ -3095,10 +3180,85 @@ function renderUGInfographicGrid() {
     `;
 }
 
+// Helper to render the 6 targeted MBA / PG Infographic Exam Cards
+function renderMBAInfographicGrid() {
+    return `
+        <div class="ug-infographic-section">
+            <div class="infographic-section-header" style="text-align: center; margin-bottom: 2.25rem;">
+                <div class="badge badge-primary" style="margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;">
+                    <i class="fa-solid fa-graduation-cap"></i> PG & MBA Entrance Preparation
+                </div>
+                <h2 style="font-size: 2.35rem; font-weight: 800; margin-bottom: 0.65rem;">Shatter Target Percentiles</h2>
+                <p style="color: var(--text-secondary); max-width: 720px; margin: 0 auto; font-size: 1.05rem;">
+                    Advanced prep modules, adaptive mock testing frameworks, and verified institutional breakdowns for India and the world's premier business schools.
+                </p>
+            </div>
+
+            <div class="infographic-course-grid">
+                ${mbaInfographicCards.map(card => `
+                    <div class="infographic-card" id="card-${card.id}">
+                        <div class="infographic-header">
+                            <div class="infographic-kicker">
+                                <i class="fa-solid fa-graduation-cap"></i> ${card.category}
+                            </div>
+                            <h3 class="infographic-exam-title">${card.title}</h3>
+                            <div>
+                                <span class="infographic-subbadge">
+                                    <i class="fa-solid fa-bolt"></i> ${card.subBadge}
+                                </span>
+                            </div>
+                            <div class="infographic-student-cutout" style="background-image: url('${card.image}'); background-position: ${card.imagePosition || 'center'};" role="img" aria-label="Focused MBA aspirant preparing for ${card.title}"></div>
+                        </div>
+                        <div class="infographic-body">
+                            <div class="infographic-focus-tag">
+                                <i class="fa-solid fa-bullseye"></i> Focus: <strong>${card.focus}</strong>
+                            </div>
+                            <div class="infographic-data-list">
+                                <div class="infographic-data-item">
+                                    <div class="infographic-data-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                                    <div class="infographic-data-content">
+                                        <span class="infographic-data-label">Exam Date</span>
+                                        <span class="infographic-data-val">${card.examDate}</span>
+                                    </div>
+                                </div>
+                                <div class="infographic-data-item">
+                                    <div class="infographic-data-icon"><i class="fa-solid fa-file-lines"></i></div>
+                                    <div class="infographic-data-content">
+                                        <span class="infographic-data-label">Exam Pattern</span>
+                                        <span class="infographic-data-val">${card.pattern}</span>
+                                    </div>
+                                </div>
+                                <div class="infographic-data-item">
+                                    <div class="infographic-data-icon"><i class="fa-solid fa-building-columns"></i></div>
+                                    <div class="infographic-data-content">
+                                        <span class="infographic-data-label">Top Target B-Schools</span>
+                                        <span class="infographic-data-val">${card.schools}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infographic-footer">
+                            <a href="${card.formUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; display: block; width: 100%;">
+                                <button type="button" class="btn-infographic-cta" onclick="window.open('${card.formUrl}', '_blank')" style="cursor: pointer;">
+                                    <span>Request Syllabus & Info</span>
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
 // Course rendering helper
 function renderCourseCatalog(title, category) {
     if (category === 'ug-bba') {
         return renderUGInfographicGrid();
+    }
+    if (category === 'mba') {
+        return renderMBAInfographicGrid();
     }
     const courses = coursesData[category];
     return `
@@ -5667,6 +5827,7 @@ if (typeof module !== 'undefined' && module.exports) {
         routes,
         coursesData,
         ugInfographicCards,
+        mbaInfographicCards,
         jobsData,
         vocabWords,
         newsData,
@@ -5676,6 +5837,7 @@ if (typeof module !== 'undefined' && module.exports) {
         resourcesData,
         state,
         renderCourseCatalog,
-        renderUGInfographicGrid
+        renderUGInfographicGrid,
+        renderMBAInfographicGrid
     };
 }
