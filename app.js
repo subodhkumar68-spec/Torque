@@ -3,12 +3,97 @@ if (typeof window === 'undefined') {
     global.window = global;
 }
 
+// 6 Targeted UG Infographic Exam Cards Data
+const ugInfographicCards = [
+    {
+        id: "ipmat",
+        category: "MANAGEMENT / AFTER-12TH",
+        title: "IPMAT",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "IIM Indore / Rohtak",
+        examDate: "May 2026 (Annual Shift)",
+        pattern: "100 Qs | QA (SA & MCQ) + VA | 120 Mins | CBT",
+        institutes: "IIM Indore, IIM Rohtak, IIM Ranchi, IIM Bodh Gaya, IIM Jammu, TAPMI",
+        image: "images/ipmat_prep.jpg",
+        imagePosition: "center",
+        leadName: "Management / IPMAT (Focus: IIM Indore/Rohtak)"
+    },
+    {
+        id: "clat",
+        category: "LAW / AFTER-12TH",
+        title: "CLAT 2027",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "NLUs",
+        examDate: "December 2026 (Offline OMR)",
+        pattern: "120 MCQs | English, Current Affairs, Legal & Logical Reasoning, Quant | 120 Mins",
+        institutes: "24 NLUs (NLSIU Bengaluru, NALSAR Hyderabad, WBNUJS Kolkata, NLU Jodhpur)",
+        image: "images/case_interview.jpg",
+        imagePosition: "center 20%",
+        leadName: "Law / CLAT (Focus: NLUs)"
+    },
+    {
+        id: "uceed-nift",
+        category: "DESIGN & INNOVATION",
+        title: "UCEED & NIFT",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "IITs, NID, NIFT",
+        examDate: "January – February 2026",
+        pattern: "Part A (CBT Visualization & Aptitude) + Part B (Creative Sketching) | 180 Mins",
+        institutes: "IIT Bombay, IIT Delhi, IIT Guwahati, NID Ahmedabad, 18 NIFT Campuses",
+        image: "images/hero_girl_joy.jpg",
+        imagePosition: "center 15%",
+        leadName: "Design / UCEED & NIFT (Focus: IITs, NID, NIFT)"
+    },
+    {
+        id: "cuet-ug",
+        category: "CENTRAL UNIVERSITIES",
+        title: "CUET UG",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "Central Universities",
+        examDate: "May – June 2026 (Hybrid Mode)",
+        pattern: "Section I (Languages) + Section II (Domain Subjects) + Section III (General Test) | CBT/OMR",
+        institutes: "Delhi University (SRCC, Hindu, St. Stephen's), BHU, JNU, Jamia & 250+ Univs",
+        image: "images/bba_masterclass.jpg",
+        imagePosition: "center",
+        leadName: "CUET UG (Focus: Central Universities)"
+    },
+    {
+        id: "symbiosis-set",
+        category: "SYMBIOSIS INTERNATIONAL",
+        title: "Symbiosis SET",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "Symbiosis International",
+        examDate: "May 2026 (Test 1 & 2 Shifts)",
+        pattern: "60 MCQs | General English, Quantitative, General Awareness, Analytical Reasoning | 60 Mins",
+        institutes: "SCMS Pune, SCMS Noida, SCMS Bengaluru, SLS Pune, SICSR Pune",
+        image: "images/mba_girl.jpg",
+        imagePosition: "center top",
+        leadName: "Symbiosis / SET (Focus: Symbiosis International)"
+    },
+    {
+        id: "christ-cuet",
+        category: "CHRIST ENTRANCES",
+        title: "CHRIST (CUET)",
+        subBadge: "KEY DETAILS & PREPARATION",
+        focus: "CUET / Christ Entrances",
+        examDate: "March – April 2026 (Multiple Session Rounds)",
+        pattern: "120 MCQs (Verbal, Quant, Data Analysis, Reasoning, GK) + Micro Presentation & PI",
+        institutes: "Christ (Deemed to be University) Bengaluru Central, BGR, Kengeri, Delhi NCR, Pune",
+        image: "images/product_mgmt.jpg",
+        imagePosition: "center top",
+        leadName: "Christ University (Focus: CUET/Christ Entrances)"
+    }
+];
+
 // Mock Data
 const coursesData = {
     'ug-bba': [
-        { title: "BBA Entrance Masterclass", duration: "3 Months", image: "images/bba_masterclass.jpg" },
-        { title: "IPMAT Strategy & Prep", duration: "4 Months", image: "images/ipmat_prep.jpg" },
-        { title: "Business Foundations 101", duration: "1 Month", image: "images/business_foundations.jpg" }
+        { title: "Management / IPMAT", duration: "4 Months", image: "images/ipmat_prep.jpg", focus: "IIM Indore/Rohtak" },
+        { title: "Law / CLAT", duration: "6 Months", image: "images/case_interview.jpg", focus: "NLUs" },
+        { title: "Design / UCEED & NIFT", duration: "4 Months", image: "images/hero_girl_joy.jpg", focus: "IITs, NID, NIFT" },
+        { title: "CUET UG", duration: "3 Months", image: "images/bba_masterclass.jpg", focus: "Central Universities" },
+        { title: "Symbiosis / SET", duration: "3 Months", image: "images/mba_girl.jpg", focus: "Symbiosis International" },
+        { title: "Christ University", duration: "2 Months", image: "images/product_mgmt.jpg", focus: "CUET/Christ Entrances" }
     ],
     'mba': [
         { title: "CAT / GMAT Elite Prep", duration: "6 Months", image: "images/cat_gmat.jpg" },
@@ -2940,8 +3025,81 @@ const routes = {
     `
 };
 
+// Helper to render the 6 targeted UG Infographic Exam Cards
+function renderUGInfographicGrid() {
+    return `
+        <div class="ug-infographic-section">
+            <div class="infographic-section-header" style="text-align: center; margin-bottom: 2.25rem;">
+                <div class="badge badge-primary" style="margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; font-weight: 700;">
+                    <i class="fa-solid fa-graduation-cap"></i> Undergraduate & Integrated Entrances
+                </div>
+                <h2 style="font-size: 2.35rem; font-weight: 800; margin-bottom: 0.65rem;">Ace Premier UG Entrances</h2>
+                <p style="color: var(--text-secondary); max-width: 720px; margin: 0 auto; font-size: 1.05rem;">
+                    Infographic blueprints, high-yield masterclasses, and verified pattern analytics for India’s top universities and institutions.
+                </p>
+            </div>
+
+            <div class="infographic-course-grid">
+                ${ugInfographicCards.map(card => `
+                    <div class="infographic-card" id="card-${card.id}">
+                        <div class="infographic-header">
+                            <div class="infographic-kicker">
+                                <i class="fa-solid fa-graduation-cap"></i> ${card.category}
+                            </div>
+                            <h3 class="infographic-exam-title">${card.title}</h3>
+                            <div>
+                                <span class="infographic-subbadge">
+                                    <i class="fa-solid fa-bolt"></i> ${card.subBadge}
+                                </span>
+                            </div>
+                            <div class="infographic-student-cutout" style="background-image: url('${card.image}'); background-position: ${card.imagePosition || 'center'};" role="img" aria-label="Focused student preparing for ${card.title}"></div>
+                        </div>
+                        <div class="infographic-body">
+                            <div class="infographic-focus-tag">
+                                <i class="fa-solid fa-bullseye"></i> Focus: <strong>${card.focus}</strong>
+                            </div>
+                            <div class="infographic-data-list">
+                                <div class="infographic-data-item">
+                                    <div class="infographic-data-icon"><i class="fa-regular fa-calendar-check"></i></div>
+                                    <div class="infographic-data-content">
+                                        <span class="infographic-data-label">Exam Date</span>
+                                        <span class="infographic-data-val">${card.examDate}</span>
+                                    </div>
+                                </div>
+                                <div class="infographic-data-item">
+                                    <div class="infographic-data-icon"><i class="fa-solid fa-file-lines"></i></div>
+                                    <div class="infographic-data-content">
+                                        <span class="infographic-data-label">Pattern</span>
+                                        <span class="infographic-data-val">${card.pattern}</span>
+                                    </div>
+                                </div>
+                                <div class="infographic-data-item">
+                                    <div class="infographic-data-icon"><i class="fa-solid fa-building-columns"></i></div>
+                                    <div class="infographic-data-content">
+                                        <span class="infographic-data-label">Primary Participating Institutes</span>
+                                        <span class="infographic-data-val">${card.institutes}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infographic-footer">
+                            <button class="btn-infographic-cta" onclick="openLeadModal('${card.leadName.replace(/'/g, "\\'")}')">
+                                <span>Request Syllabus & Info</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+}
+
 // Course rendering helper
 function renderCourseCatalog(title, category) {
+    if (category === 'ug-bba') {
+        return renderUGInfographicGrid();
+    }
     const courses = coursesData[category];
     return `
         <div>
@@ -4467,6 +4625,12 @@ function ensureLeadModalExists() {
                         <div class="form-group">
                             <label for="lead-interest">Course / Interest Selection</label>
                             <select id="lead-interest" class="form-control">
+                                <option value="Management / IPMAT (Focus: IIM Indore/Rohtak)">Management / IPMAT (Focus: IIM Indore/Rohtak)</option>
+                                <option value="Law / CLAT (Focus: NLUs)">Law / CLAT (Focus: NLUs)</option>
+                                <option value="Design / UCEED & NIFT (Focus: IITs, NID, NIFT)">Design / UCEED & NIFT (Focus: IITs, NID, NIFT)</option>
+                                <option value="CUET UG (Focus: Central Universities)">CUET UG (Focus: Central Universities)</option>
+                                <option value="Symbiosis / SET (Focus: Symbiosis International)">Symbiosis / SET (Focus: Symbiosis International)</option>
+                                <option value="Christ University (Focus: CUET/Christ Entrances)">Christ University (Focus: CUET/Christ Entrances)</option>
                                 <option value="BBA Entrance Masterclass">BBA Entrance Masterclass</option>
                                 <option value="IPMAT Strategy & Prep">IPMAT Strategy & Prep</option>
                                 <option value="Business Foundations 101">Business Foundations 101</option>
@@ -5502,6 +5666,7 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         routes,
         coursesData,
+        ugInfographicCards,
         jobsData,
         vocabWords,
         newsData,
@@ -5510,6 +5675,7 @@ if (typeof module !== 'undefined' && module.exports) {
         interviewTree,
         resourcesData,
         state,
-        renderCourseCatalog
+        renderCourseCatalog,
+        renderUGInfographicGrid
     };
 }
