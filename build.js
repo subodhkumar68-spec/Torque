@@ -149,6 +149,22 @@ const routesMeta = {
         canonical: `${SITE_URL}/about/`,
         navRoute: 'about',
         priority: '0.8'
+    },
+    'tourque-times': {
+        title: "TOURQUE Times | The Business & Management Student Chronicle",
+        description: "TOURQUE Times: The Business & Management Student Chronicle. Weekly business briefing decoding national finance, marketing, startups, international markets, and AI tools for tomorrow's managers.",
+        keywords: "TOURQUE Times, business student chronicle, weekly business briefing, BBA MBA newsletter, national finance, marketing brand equity, startup funding, AI tools",
+        canonical: `${SITE_URL}/tourque-times/`,
+        navRoute: 'tourque-times',
+        priority: '0.9'
+    },
+    'torque-times': {
+        title: "TOURQUE Times | The Business & Management Student Chronicle",
+        description: "TOURQUE Times: The Business & Management Student Chronicle. Weekly business briefing decoding national finance, marketing, startups, international markets, and AI tools for tomorrow's managers.",
+        keywords: "TOURQUE Times, business student chronicle, weekly business briefing, BBA MBA newsletter, national finance, marketing brand equity, startup funding, AI tools",
+        canonical: `${SITE_URL}/tourque-times/`,
+        navRoute: 'tourque-times',
+        priority: '0.7'
     }
 };
 
@@ -246,7 +262,7 @@ function generatePageHtml(baseTemplate, routeKey, isSubdir = false) {
         // Highlight parent dropdown trigger
         const coursesRoutes = ['ug-bba', 'mba', 'others', 'startup-accelerator', 'exams'];
         const toolsRoutes = ['resume-builder', 'linkedin-optimizer', 'vocab-builder', 'gd-interview'];
-        const resourcesRoutes = ['resources', 'career-guidance', 'soft-skills', 'news', 'job-board'];
+        const resourcesRoutes = ['resources', 'career-guidance', 'soft-skills', 'news', 'job-board', 'tourque-times', 'torque-times'];
 
         if (coursesRoutes.includes(meta.navRoute)) {
             pageHtml = pageHtml.replace(/(<span\s+class="nav-link dropdown-trigger">Courses)/i, '<span class="nav-link dropdown-trigger active">Courses');

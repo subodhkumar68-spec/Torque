@@ -2007,8 +2007,651 @@ window.clearResourceSearch = function() {
     }
 };
 
+
+function renderTourqueTimesPage() {
+    return `
+        <div class="tt-container">
+            
+            <!-- 1. MASTHEAD & BRAND IDENTITY -->
+            <header class="tt-masthead-wrapper">
+                <div class="tt-top-bar">
+                    <span class="tt-top-bar-badge"><i class="fa-solid fa-newspaper"></i> WEEKLY BUSINESS & EXECUTIVE DISPATCH</span>
+                    <span>Vol. 01 • Issue 02 • Saturday, 21 November 2026 • Circulation: 14,200+ Students & Aspirants</span>
+                    <button onclick="window.print()" class="btn-tt-sm secondary" style="color: #cbd5e1 !important; border-color: rgba(255,255,255,0.25);" aria-label="Print or save page as PDF">
+                        <i class="fa-solid fa-print"></i> Print
+                    </button>
+                </div>
+
+                <div class="tt-masthead-main">
+                    <div class="tt-subtitle">THE BUSINESS & MANAGEMENT STUDENT CHRONICLE</div>
+                    <h1 class="tt-title">TOURQUE <span>Times</span></h1>
+                    <div class="tt-meta-divider"></div>
+                    <div class="tt-tagline-pill">BUSINESS. BRANDS. BEYOND.</div>
+                    <p class="tt-supporting-headline">The week, decoded for tomorrow's managers.</p>
+                </div>
+            </header>
+
+            <!-- 2. HERO / LATEST EDITION SPOTLIGHT (VOL 01 / ISSUE 02) -->
+            <section class="tt-spotlight-grid" aria-labelledby="latest-edition-heading">
+                <!-- Left: Editorial Summary & Direct CTAs -->
+                <div class="tt-spotlight-content">
+                    <span class="tt-issue-badge">
+                        <i class="fa-solid fa-bolt"></i> LATEST WEEKLY EDITION • VOL 01 / ISSUE 02
+                    </span>
+                    <h2 id="latest-edition-heading" class="tt-spotlight-h2">
+                        India's Market Moment: Sensex 85k, Rupee Resilience & The Consumption Curve
+                    </h2>
+                    <div class="tt-spotlight-sub">
+                        An unvarnished strategic briefing on domestic capex expansion, tech venture resets, and consumer shifts reshaping Indian boardrooms this week.
+                    </div>
+                    <div class="tt-spotlight-desc">
+                        <p style="margin-bottom: 0.85rem; line-height: 1.65;">
+                            As benchmark indices hover around historic peaks, the underlying dynamics of the Indian economy are witnessing a seismic transition. From retail investors commanding domestic liquidity to rapid quick-commerce consolidation and AI agent deployments across corporate finance desks, Issue 02 dissects the week's critical stories with actionable takeaways for BBA, MBA, and finance aspirants.
+                        </p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 1.25rem 0; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.92rem;">
+                            <li style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                                <i class="fa-solid fa-arrow-trend-up" style="color: #00d2ff; margin-top: 0.25rem;"></i>
+                                <span><strong>Capital Inflows:</strong> Net institutional buying crosses $12.4 Billion as global asset managers reallocate from East Asian manufacturing hubs.</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                                <i class="fa-solid fa-boxes-packing" style="color: #00d2ff; margin-top: 0.25rem;"></i>
+                                <span><strong>Startup Unit Economics:</strong> How Tier-1 quick-commerce players trimmed CAC by 28% through hyper-local dark store density.</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                                <i class="fa-solid fa-microchip" style="color: #00d2ff; margin-top: 0.25rem;"></i>
+                                <span><strong>Executive AI Playbook:</strong> Structured prompting architectures for automated 3-statement financial modeling tested by top B-school cohorts.</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 0.6rem;">
+                                <i class="fa-solid fa-graduation-cap" style="color: #00d2ff; margin-top: 0.25rem;"></i>
+                                <span><strong>Campus Recruitment Pulse:</strong> IIM & XLRI summer placement trends reveal a 34% surge in GCC and operations advisory mandates.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tt-hero-ctas">
+                        <button onclick="openTimesPdf('newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)')" class="btn-tt-primary" aria-label="Read latest newsletter edition online">
+                            <i class="fa-solid fa-book-open-reader"></i> READ LATEST EDITION
+                        </button>
+                        <a href="#tt-subscribe" class="btn-tt-secondary" aria-label="Subscribe free to the weekly newsletter">
+                            <i class="fa-solid fa-bell"></i> SUBSCRIBE FREE
+                        </a>
+                        <a href="newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-secondary" style="border-style: dashed;" aria-label="Download latest newsletter PDF">
+                            <i class="fa-solid fa-file-arrow-down"></i> Download PDF (2.0 MB)
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: Modern Digital Magazine Cover Preview Card -->
+                <div class="tt-cover-preview-card" onclick="openTimesPdf('newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)')" style="cursor: pointer;" title="Click to Read Full PDF Online">
+                    <div class="tt-cover-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="tt-cover-brand">TOURQUE <span>TIMES</span></div>
+                            <span style="background: rgba(0, 210, 255, 0.2); color: #38bdf8; font-size: 0.65rem; font-weight: 800; padding: 0.25rem 0.6rem; border-radius: 4px; border: 1px solid rgba(0, 210, 255, 0.4);">
+                                23 PAGES
+                            </span>
+                        </div>
+                        <div class="tt-cover-sub">STUDENT CHRONICLE • 21 NOVEMBER 2026 • ISSUE 02</div>
+                    </div>
+
+                    <div style="position: relative; border-radius: 8px; overflow: hidden; margin-bottom: 1rem;">
+                        <img src="images/hero_slide_3.png" alt="Editorial financial illustration" style="width: 100%; height: 180px; object-fit: cover; display: block; filter: brightness(0.85);" onerror="this.src='images/cat_gmat.jpg'" />
+                        <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(5, 11, 26, 0.85); backdrop-filter: blur(4px); padding: 0.35rem 0.75rem; border-radius: 4px; border-left: 3px solid #00d2ff; font-size: 0.75rem; font-weight: 700; color: #ffffff;">
+                            COVER STORY • NATIONAL FINANCE
+                        </div>
+                    </div>
+
+                    <div class="tt-cover-headline-box">
+                        <h3 class="tt-cover-headline">INDIA'S MARKET MOMENT</h3>
+                        <p class="tt-cover-deck">Capex expansion, AI financial stacks, and the strategic dilemmas facing tomorrow's corporate leaders.</p>
+                    </div>
+
+                    <div class="tt-cover-grid-chips">
+                        <div class="tt-cover-chip">
+                            <span class="tt-cover-chip-label">MACRO INDEX</span>
+                            <strong>Sensex 85k Peak</strong>
+                        </div>
+                        <div class="tt-cover-chip">
+                            <span class="tt-cover-chip-label">CAPITAL</span>
+                            <strong>$12.4B Inflows</strong>
+                        </div>
+                        <div class="tt-cover-chip">
+                            <span class="tt-cover-chip-label">STRATEGY</span>
+                            <strong>AI Analyst Stacks</strong>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 1.25rem; text-align: center; padding: 0.65rem; background: rgba(0, 102, 255, 0.2); border-radius: 6px; font-size: 0.8rem; font-weight: 700; color: #38bdf8; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+                        <i class="fa-solid fa-book-open"></i> Click Anywhere to Read Full 23-Page PDF Online
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. EDITORIAL CATEGORIES (9 VISUAL WIDE-LANDSCAPE CARDS) -->
+            <section style="margin-top: 5rem;" aria-labelledby="editorial-categories-heading">
+                <div class="tt-section-header">
+                    <span class="tt-kicker">EDITORIAL VERTICALS</span>
+                    <h2 id="editorial-categories-heading" class="tt-section-title">Curated Intelligence Across 9 Business Disciplines</h2>
+                    <p class="tt-section-desc">
+                        Every Saturday, our editorial board distills macro economic trends, brand battlegrounds, and organizational frameworks into actionable, syllabus-aligned briefings.
+                    </p>
+                </div>
+
+                <div class="tt-category-grid">
+                    
+                    <!-- Card 1: National Business: Finance & Economy -->
+                    <article class="tt-category-card">
+                        <div class="tt-card-media">
+                            <img src="images/cat_gmat.jpg" alt="Finance and Economy" class="tt-card-img" loading="lazy" />
+                            <span class="tt-card-badge"><i class="fa-solid fa-chart-line"></i> FINANCE & ECONOMY</span>
+                        </div>
+                        <div class="tt-card-body">
+                            <div class="tt-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 4 min read</span>
+                                <span>• Vol 01 / Issue 02</span>
+                            </div>
+                            <h3 class="tt-card-title">RBI Liquidity Stance, Sovereign Bond Yields & The Private Capex Conundrum</h3>
+                            <p class="tt-card-deck">
+                                Why Indian conglomerates are issuing local currency corporate debt to bypass dollar volatility, and what financial modeling candidates need to evaluate when projecting debt service coverage.
+                            </p>
+                            <div class="tt-takeaway-box">
+                                <strong>Management Takeaway:</strong> High interest-coverage ratios protect corporate balance sheets, but rising domestic bond spreads demand stricter DCF hurdle rates for capital projects.
+                            </div>
+                            <div class="tt-card-stats">
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">7.2%</div>
+                                    <div class="tt-stat-lbl">FY27 GDP Forecast</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">6.50%</div>
+                                    <div class="tt-stat-lbl">RBI Repo Rate</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">₹11.1L Cr</div>
+                                    <div class="tt-stat-lbl">Central Capex</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2: National Business: Marketing & Branding -->
+                    <article class="tt-category-card">
+                        <div class="tt-card-media">
+                            <img src="images/bba_masterclass.jpg" alt="Marketing and Branding" class="tt-card-img" loading="lazy" />
+                            <span class="tt-card-badge"><i class="fa-solid fa-bullhorn"></i> MARKETING & BRANDING</span>
+                        </div>
+                        <div class="tt-card-body">
+                            <div class="tt-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 5 min read</span>
+                                <span>• Vol 01 / Issue 02</span>
+                            </div>
+                            <h3 class="tt-card-title">The Quick-Commerce Wars: Zepto, Blinkit & Swiggy Fight for Unit Economics</h3>
+                            <p class="tt-card-deck">
+                                Deconstructing customer acquisition cost (CAC), hyper-local dark store catchment radius, and the transition from discount-fueled customer growth to high-margin retail media advertising.
+                            </p>
+                            <div class="tt-takeaway-box">
+                                <strong>Management Takeaway:</strong> Retail media networks and brand placement fees now contribute over 30% of gross margin in high-density urban clusters, turning delivery into a high-margin ad portal.
+                            </div>
+                            <div class="tt-card-stats">
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">10 Mins</div>
+                                    <div class="tt-stat-lbl">Avg Delivery SLA</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">₹460</div>
+                                    <div class="tt-stat-lbl">Target Basket</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">2.4x</div>
+                                    <div class="tt-stat-lbl">Repeat Frequency</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: National Business: HR & Workplace -->
+                    <article class="tt-category-card">
+                        <div class="tt-card-media">
+                            <img src="images/tech_recruiting.jpg" alt="HR and Workplace" class="tt-card-img" loading="lazy" />
+                            <span class="tt-card-badge"><i class="fa-solid fa-users-gear"></i> HR & WORKPLACE</span>
+                        </div>
+                        <div class="tt-card-body">
+                            <div class="tt-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 4 min read</span>
+                                <span>• Vol 01 / Issue 02</span>
+                            </div>
+                            <h3 class="tt-card-title">RTO Mandates vs. Hybrid Realities: Top 5 Retention Strategies for 2027</h3>
+                            <p class="tt-card-deck">
+                                How leading consultancies, Global Capability Centers (GCCs), and tech giants are restructuring compensation structures, appraisal cycles, and culture to curb talent attrition.
+                            </p>
+                            <div class="tt-takeaway-box">
+                                <strong>Management Takeaway:</strong> Flexibility is no longer an employee perk; it has evolved into a strategic bargaining chip directly reflected in lateral offer acceptance ratios.
+                            </div>
+                            <div class="tt-card-stats">
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">3 Days</div>
+                                    <div class="tt-stat-lbl">Median Office Policy</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">18.5%</div>
+                                    <div class="tt-stat-lbl">GCC Attrition Benchmark</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">+22%</div>
+                                    <div class="tt-stat-lbl">Retention via ESOPs</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 4: National Business: Startups & Innovation -->
+                    <article class="tt-category-card">
+                        <div class="tt-card-media">
+                            <img src="images/product_mgmt.jpg" alt="Startups and Innovation" class="tt-card-img" loading="lazy" />
+                            <span class="tt-card-badge"><i class="fa-solid fa-rocket"></i> STARTUPS & INNOVATION</span>
+                        </div>
+                        <div class="tt-card-body">
+                            <div class="tt-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 5 min read</span>
+                                <span>• Vol 01 / Issue 02</span>
+                            </div>
+                            <h3 class="tt-card-title">Venture Debt & DeepTech: The Pragmatic Pivot from SaaS to Core Infra</h3>
+                            <p class="tt-card-deck">
+                                Examining cap-table dilution, non-dilutive bridge financing, and why venture capital is flooding semiconductor design, battery chemistry, and space-tech ventures across India.
+                            </p>
+                            <div class="tt-takeaway-box">
+                                <strong>Management Takeaway:</strong> Investors are evaluating hard IP moats and gross margin defensibility over vanity GMV multiples, lengthening early-stage diligence cycles.
+                            </div>
+                            <div class="tt-card-stats">
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">$4.2B</div>
+                                    <div class="tt-stat-lbl">DeepTech Venture Flow</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">118</div>
+                                    <div class="tt-stat-lbl">Active Incubators</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">3.8 Yrs</div>
+                                    <div class="tt-stat-lbl">Break-Even Horizon</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 5: International Business -->
+                    <article class="tt-category-card">
+                        <div class="tt-card-media">
+                            <img src="images/hero_presentation.jpg" alt="International Business" class="tt-card-img" loading="lazy" />
+                            <span class="tt-card-badge"><i class="fa-solid fa-globe"></i> INTERNATIONAL BUSINESS</span>
+                        </div>
+                        <div class="tt-card-body">
+                            <div class="tt-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 6 min read</span>
+                                <span>• Vol 01 / Issue 02</span>
+                            </div>
+                            <h3 class="tt-card-title">Supply Chain Nearshoring & The US-China Tariff Realignment: Where India Wins</h3>
+                            <p class="tt-card-deck">
+                                Assessing India's manufacturing production-linked incentives (PLI), bilateral free trade corridors with the EU and ASEAN, and the strategic execution of mega semiconductor fabs.
+                            </p>
+                            <div class="tt-takeaway-box">
+                                <strong>Management Takeaway:</strong> Cross-border supply chain resilience relies heavily on port turnaround times and green power grid parity, surpassing basic labor arbitrage.
+                            </div>
+                            <div class="tt-card-stats">
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">$140B</div>
+                                    <div class="tt-stat-lbl">Target Electronics Exports</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">14 PLI</div>
+                                    <div class="tt-stat-lbl">Active Sectors</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">48 Hrs</div>
+                                    <div class="tt-stat-lbl">Port Clearance Target</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 6: Know Your AI Tools -->
+                    <article class="tt-category-card">
+                        <div class="tt-card-media">
+                            <img src="images/hero_girl_joy.jpg" alt="Know Your AI Tools" class="tt-card-img" loading="lazy" />
+                            <span class="tt-card-badge"><i class="fa-solid fa-microchip"></i> KNOW YOUR AI TOOLS</span>
+                        </div>
+                        <div class="tt-card-body">
+                            <div class="tt-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 4 min read</span>
+                                <span>• Vol 01 / Issue 02</span>
+                            </div>
+                            <h3 class="tt-card-title">The Modern Manager's AI Stack: Claude, Perplexity & Copilot Workflows</h3>
+                            <p class="tt-card-deck">
+                                A tactical walk-through of structured prompting for DCF sensitivity analyses, 10-K earnings call transcript synthesis, and competitive benchmarking for management presentations.
+                            </p>
+                            <div class="tt-takeaway-box">
+                                <strong>Management Takeaway:</strong> Prompt architectures and domain-grounded retrieval augment business analysts from passive calculators to strategic partners.
+                            </div>
+                            <div class="tt-card-stats">
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">65%</div>
+                                    <div class="tt-stat-lbl">Time Saved on Synthesis</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">0 Error</div>
+                                    <div class="tt-stat-lbl">Grounding Benchmark</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">12 Tools</div>
+                                    <div class="tt-stat-lbl">Tested & Ranked</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 7: Data & Infographics -->
+                    <article class="tt-category-card">
+                        <div class="tt-card-media">
+                            <img src="images/data_analytics.jpg" alt="Data and Infographics" class="tt-card-img" loading="lazy" />
+                            <span class="tt-card-badge"><i class="fa-solid fa-chart-pie"></i> DATA & INFOGRAPHICS</span>
+                        </div>
+                        <div class="tt-card-body">
+                            <div class="tt-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 3 min read</span>
+                                <span>• Vol 01 / Issue 02</span>
+                            </div>
+                            <h3 class="tt-card-title">Decoded: India's Capital Expenditure vs. Private Consumption (2020–2026)</h3>
+                            <p class="tt-card-deck">
+                                A data-backed visualization tracking the multiplier effect of state infrastructure investment on cement, steel, banking credit growth, and rural purchasing power.
+                            </p>
+                            <div class="tt-takeaway-box">
+                                <strong>Management Takeaway:</strong> Public capex crowd-in has initiated a multi-year private expansion cycle in logistics, green hydrogen, and industrial automation.
+                            </div>
+                            <div class="tt-card-stats">
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">3.3x</div>
+                                    <div class="tt-stat-lbl">Capex Multiplier</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">₹18.4L Cr</div>
+                                    <div class="tt-stat-lbl">Order Book Inflows</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">58.2</div>
+                                    <div class="tt-stat-lbl">Manufacturing PMI</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 8: Management Case Studies -->
+                    <article class="tt-category-card">
+                        <div class="tt-card-media">
+                            <img src="images/case_interview.jpg" alt="Management Case Studies" class="tt-card-img" loading="lazy" />
+                            <span class="tt-card-badge"><i class="fa-solid fa-briefcase"></i> MANAGEMENT CASE STUDIES</span>
+                        </div>
+                        <div class="tt-card-body">
+                            <div class="tt-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 7 min read</span>
+                                <span>• Vol 01 / Issue 02</span>
+                            </div>
+                            <h3 class="tt-card-title">Strategic Case: Titan Company's Unshakeable Moat in Fine Jewellery & Retail</h3>
+                            <p class="tt-card-deck">
+                                Porter's Five Forces breakdown of Tanishq's consumer trust moat, hallmark purity guarantees, franchise store ROI, and agile inventory replenishment networks across Tier-2/3 cities.
+                            </p>
+                            <div class="tt-takeaway-box">
+                                <strong>Management Takeaway:</strong> Institutionalizing consumer trust in high-ticket purchase categories converts emotional hesitation into a durable 25%+ ROCE franchise.
+                            </div>
+                            <div class="tt-card-stats">
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">28.4%</div>
+                                    <div class="tt-stat-lbl">5-Yr Avg ROCE</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">850+</div>
+                                    <div class="tt-stat-lbl">Exclusive Stores</div>
+                                </div>
+                                <div class="tt-stat-item">
+                                    <div class="tt-stat-num">36%</div>
+                                    <div class="tt-stat-lbl">Organized Market Share</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 9: Business IQ and Campus Updates -->
+                    <article class="tt-category-card">
+                        <div class="tt-card-media">
+                            <img src="images/business_foundations.jpg" alt="Business IQ and Campus Updates" class="tt-card-img" loading="lazy" />
+                            <span class="tt-card-badge"><i class="fa-solid fa-brain"></i> BUSINESS IQ & CAMPUS</span>
+                        </div>
+                        <div class="tt-card-body">
+                            <div class="tt-card-meta">
+                                <span><i class="fa-solid fa-clock"></i> 4 min read</span>
+                                <span>• Vol 01 / Issue 02</span>
+                            </div>
+                            <h3 class="tt-card-title">Weekly Business IQ Quiz & Top B-School Placement Season Insights</h3>
+                            <p class="tt-card-deck">
+                                Test your strategic market recall on this week's mega-mergers and policy shifts. Plus, summer internship stipend trends across IIM Ahmedabad, Bangalore, and Calcutta.
+                            </p>
+                            
+                            <!-- Interactive Reading Quiz Box -->
+                            <div style="background: rgba(0, 102, 255, 0.08); border: 1px solid rgba(0, 102, 255, 0.2); border-radius: 8px; padding: 1rem; margin-top: 1rem;">
+                                <div style="font-size: 0.8rem; font-weight: 800; color: #0284c7; margin-bottom: 0.5rem; text-transform: uppercase;">
+                                    <i class="fa-solid fa-circle-question"></i> Edition 02 IQ Check:
+                                </div>
+                                <p style="font-size: 0.85rem; font-weight: 600; margin-bottom: 0.75rem; color: var(--text-header);">
+                                    Which factor contributed over 30% of gross margin in high-density quick commerce dark stores this quarter?
+                                </p>
+                                <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+                                    <button onclick="checkTimesQuiz('A', 'B', 1)" class="btn-tt-sm secondary tt-quiz-btn-1" style="justify-content: flex-start; text-align: left; font-size: 0.78rem;">
+                                        A) Flat discount coupons on FMCG products
+                                    </button>
+                                    <button onclick="checkTimesQuiz('B', 'B', 1)" class="btn-tt-sm secondary tt-quiz-btn-1" style="justify-content: flex-start; text-align: left; font-size: 0.78rem;">
+                                        B) Retail media networks & brand placement fees
+                                    </button>
+                                    <button onclick="checkTimesQuiz('C', 'B', 1)" class="btn-tt-sm secondary tt-quiz-btn-1" style="justify-content: flex-start; text-align: left; font-size: 0.78rem;">
+                                        C) Reducing rider payout incentives
+                                    </button>
+                                </div>
+                                <div id="tt-quiz-result-1" style="display: none; margin-top: 0.75rem; padding: 0.6rem; border-radius: 6px; font-size: 0.8rem; line-height: 1.4;"></div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- 4. PREVIOUS EDITIONS CHRONOLOGICAL ARCHIVE -->
+            <section class="tt-archive-section" aria-labelledby="archive-heading">
+                <div class="tt-section-header">
+                    <span class="tt-kicker">CHRONOLOGICAL VAULT</span>
+                    <h2 id="archive-heading" class="tt-section-title">Previous Newsletter Editions</h2>
+                    <p class="tt-section-desc">
+                        Every issue of TOURQUE Times is preserved in our digital archive for entrance interview preparation, corporate case analyses, and syllabus reference.
+                    </p>
+                </div>
+
+                <div class="tt-archive-grid">
+                    <!-- Archive Card 1: Issue 02 (Current) -->
+                    <div class="tt-archive-card">
+                        <div class="tt-archive-thumb">
+                            <span>VOL 01</span>
+                            <h5>ISSUE 02</h5>
+                        </div>
+                        <div class="tt-archive-info">
+                            <div class="tt-archive-date">
+                                <span><i class="fa-solid fa-calendar-day"></i> 21 Nov 2026</span>
+                                <span class="badge badge-primary" style="font-size: 0.7rem; padding: 0.15rem 0.5rem;">Current Edition</span>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">23 Pages</span>
+                            </div>
+                            <h4 class="tt-archive-title">Issue 02: India's Market Moment: Sensex 85k, Rupee Resilience & The Consumption Curve</h4>
+                            <p class="tt-archive-summary">
+                                Lead briefing on capex expansion, quick-commerce dark store economics, AI prompt workflows for analysts, and campus placement benchmarks from top IIM cohorts.
+                            </p>
+                            <div class="tt-archive-actions">
+                                <button onclick="openTimesPdf('newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)')" class="btn-tt-sm primary">
+                                    <i class="fa-solid fa-book-open"></i> Read Online
+                                </button>
+                                <a href="newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary">
+                                    <i class="fa-solid fa-download"></i> Download PDF (2.0 MB)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Archive Card 2: Issue 01 (Inaugural) -->
+                    <div class="tt-archive-card">
+                        <div class="tt-archive-thumb" style="border-color: rgba(255, 255, 255, 0.2);">
+                            <span>VOL 01</span>
+                            <h5>ISSUE 01</h5>
+                        </div>
+                        <div class="tt-archive-info">
+                            <div class="tt-archive-date">
+                                <span><i class="fa-solid fa-calendar-day"></i> 14 Nov 2026</span>
+                                <span class="badge badge-secondary" style="font-size: 0.7rem; padding: 0.15rem 0.5rem;">Inaugural Edition</span>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">18 Pages</span>
+                            </div>
+                            <h4 class="tt-archive-title">Issue 01: The New Industrial Blueprint: Semiconductor Fabs & Green Hydrogen</h4>
+                            <p class="tt-archive-summary">
+                                Inaugural edition covering national manufacturing corridors, the $10B semiconductor mission, ESG reporting standards for B-schools, and consulting frameworks.
+                            </p>
+                            <div class="tt-archive-actions">
+                                <button onclick="openTimesPdf('newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 01 (14 Nov 2026)')" class="btn-tt-sm primary">
+                                    <i class="fa-solid fa-book-open"></i> Read Online
+                                </button>
+                                <a href="newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue01.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary">
+                                    <i class="fa-solid fa-download"></i> Download PDF
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Archive Card 3: Issue 03 (Upcoming) -->
+                    <div class="tt-archive-card" style="opacity: 0.85;">
+                        <div class="tt-archive-thumb" style="border-color: rgba(0, 210, 255, 0.2); background: rgba(0, 102, 255, 0.1);">
+                            <span style="color: #38bdf8;">VOL 01</span>
+                            <h5 style="color: #38bdf8;">ISSUE 03</h5>
+                        </div>
+                        <div class="tt-archive-info">
+                            <div class="tt-archive-date">
+                                <span><i class="fa-solid fa-calendar-plus"></i> Releasing Saturday, 28 Nov 2026 (8:00 AM)</span>
+                                <span class="badge" style="background: rgba(0, 210, 255, 0.15); color: #0284c7; font-size: 0.7rem; padding: 0.15rem 0.5rem;">Upcoming</span>
+                            </div>
+                            <h4 class="tt-archive-title">Issue 03: The Sovereign Wealth Surge & Cross-Border M&A Playbook</h4>
+                            <p class="tt-archive-summary">
+                                Deep dive into Gulf and Singapore SWF capital flooding Indian renewable infrastructure, cross-border M&A due diligence, and CAT 2026 strategic reading comprehension drills.
+                            </p>
+                            <div class="tt-archive-actions">
+                                <a href="#tt-subscribe" class="btn-tt-sm secondary">
+                                    <i class="fa-solid fa-bell"></i> Subscribe to Get Issue 03
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. SUBSCRIPTION FORM SECTION -->
+            <section id="tt-subscribe" class="tt-subscribe-wrapper" style="margin-top: 5rem;" aria-labelledby="sub-section-heading">
+                <div class="tt-sub-grid">
+                    <!-- Left: Benefits & Pitch -->
+                    <div class="tt-sub-intro">
+                        <span style="background: rgba(0, 210, 255, 0.15); color: #38bdf8; font-size: 0.75rem; font-weight: 800; padding: 0.3rem 0.75rem; border-radius: 20px; display: inline-block; margin-bottom: 0.75rem; letter-spacing: 0.05em;">
+                            FREE SATURDAY DISPATCH
+                        </span>
+                        <h3 id="sub-section-heading">Join 14,000+ Tomorrow's Leaders Receiving TOURQUE Times</h3>
+                        <p>
+                            Delivered every Saturday morning. Curated, unbiased, and laser-focused on what matters for management admissions, corporate placements, and executive career trajectory.
+                        </p>
+                        <ul class="tt-sub-perks">
+                            <li><i class="fa-solid fa-circle-check"></i> Free forever — zero spam, one high-impact 10-minute briefing weekly</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Direct PDF download + clean mobile-first reading format</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Verified corporate data points and official economic indicators</li>
+                            <li><i class="fa-solid fa-circle-check"></i> Exclusive B-school placement reports and consulting case breakdowns</li>
+                        </ul>
+                    </div>
+
+                    <!-- Right: Subscription Form -->
+                    <div class="tt-form-card">
+                        <form id="tt-subscription-form" name="tourque-times-subscription" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleTimesSubscribe(event)">
+                            <input type="hidden" name="form-name" value="tourque-times-subscription" />
+                            <p style="display: none;"><label>Don't fill this out if you're human: <input name="bot-field" /></label></p>
+
+                            <div class="tt-form-row">
+                                <div class="tt-input-group">
+                                    <label for="tt-name">Full Name *</label>
+                                    <input type="text" id="tt-name" name="fullName" class="tt-input" placeholder="e.g. Priya Sharma" required />
+                                </div>
+                                <div class="tt-input-group">
+                                    <label for="tt-email">Email Address *</label>
+                                    <input type="email" id="tt-email" name="email" class="tt-input" placeholder="priya@domain.com" required />
+                                </div>
+                            </div>
+
+                            <div class="tt-form-row">
+                                <div class="tt-input-group">
+                                    <label for="tt-college">College / Institution (Optional)</label>
+                                    <input type="text" id="tt-college" name="institution" class="tt-input" placeholder="e.g. DU, IIM, NMIMS or School" />
+                                </div>
+                                <div class="tt-input-group">
+                                    <label for="tt-course">Program / Target Degree *</label>
+                                    <select id="tt-course" name="course" class="tt-input" required>
+                                        <option value="BBA / IPMAT">BBA / IPMAT / BMS</option>
+                                        <option value="MBA / PGDM">MBA / PGDM</option>
+                                        <option value="B.Com / Finance">B.Com / Finance / Eco</option>
+                                        <option value="Engineering / Tech">Engineering / Tech</option>
+                                        <option value="Other">Other / Working Professional</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <label class="tt-consent-label">
+                                <input type="checkbox" id="tt-consent" name="consent" class="tt-consent-checkbox" required />
+                                <span>I agree to receive the weekly TOURQUE Times newsletter and occasional educational insights from TORQUE. Unsubscribe anytime with 1-click.</span>
+                            </label>
+
+                            <button type="submit" id="tt-submit-btn" class="btn-tt-submit">
+                                <i class="fa-solid fa-paper-plane" style="margin-right: 0.5rem;"></i> SUBSCRIBE FREE (SATURDAY DISPATCH)
+                            </button>
+
+                            <div id="tt-subscribe-msg" style="display: none; margin-top: 1rem; padding: 1rem; border-radius: 8px; font-size: 0.92rem; text-align: center; line-height: 1.5;"></div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. INTERACTIVE PDF VIEWER MODAL -->
+            <div id="tt-pdf-modal" class="tt-pdf-modal" onclick="if(event.target===this) closeTimesPdf()" role="dialog" aria-modal="true" aria-labelledby="tt-modal-edition-title">
+                <div class="tt-pdf-container">
+                    <div class="tt-pdf-header">
+                        <div class="tt-pdf-title">
+                            <i class="fa-solid fa-newspaper" style="color: #38bdf8;"></i>
+                            <span id="tt-modal-edition-title">TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)</span>
+                        </div>
+                        <div class="tt-pdf-actions">
+                            <a id="tt-modal-download-btn" href="newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary" style="color: #ffffff !important; border-color: rgba(255,255,255,0.25);">
+                                <i class="fa-solid fa-download"></i> Download
+                            </a>
+                            <a id="tt-modal-newtab-btn" href="newsletters/torque-times-vol01-issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary" style="color: #ffffff !important; border-color: rgba(255,255,255,0.25);">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i> Fullscreen
+                            </a>
+                            <button type="button" class="tt-pdf-close" onclick="closeTimesPdf()" aria-label="Close PDF Viewer">
+                                <i class="fa-solid fa-xmark" style="font-size: 1.4rem;"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <iframe id="tt-pdf-iframe" class="tt-pdf-frame" src="" title="TOURQUE Times PDF Viewer"></iframe>
+                </div>
+            </div>
+
+        </div>
+    `;
+}
+
+
 // Router Configuration
 const routes = {
+    'tourque-times': () => renderTourqueTimesPage(),
+    'torque-times': () => renderTourqueTimesPage(),
     'career-guidance': () => renderCareerGuidancePage(),
     'resources': () => renderResourcesPage(),
     about: () => `
@@ -3308,11 +3951,14 @@ function handleRoute() {
     else if (routeKey === 'gd-prep') routeKey = 'gd-interview';
     else if (routeKey === 'startup-accelerator') routeKey = 'startup-accelerator';
     else if (routeKey === 'resource-hub' || routeKey === 'resource') routeKey = 'resources';
+    else if (routeKey === 'torque-times') routeKey = 'tourque-times';
 
     closeMobileMenu();
 
     // SEO Title & Description Management
     const seoTitles = {
+        'tourque-times': "TOURQUE Times | The Business & Management Student Chronicle",
+        'torque-times': "TOURQUE Times | The Business & Management Student Chronicle",
         'home': "TORQUE - Career Intelligence for the Next Generation",
         'about': "About TORQUE | Career Intelligence for the Next Generation",
         'resources': "TORQUE Resource Hub | CBSE, Entrance Exams & Career Resources",
@@ -5811,6 +6457,124 @@ function initHeroCarousel() {
         };
     }
 }
+
+
+// TOURQUE Times Interactive Handlers
+if (typeof window !== 'undefined') {
+    window.openTimesPdf = function(pdfUrl, editionTitle) {
+        const modal = document.getElementById('tt-pdf-modal');
+        const iframe = document.getElementById('tt-pdf-iframe');
+        const titleEl = document.getElementById('tt-modal-edition-title');
+        const downloadEl = document.getElementById('tt-modal-download-btn');
+        const newtabEl = document.getElementById('tt-modal-newtab-btn');
+        if (!modal || !iframe) return;
+        if (pdfUrl) {
+            iframe.src = pdfUrl;
+            if (downloadEl) downloadEl.href = pdfUrl;
+            if (newtabEl) newtabEl.href = pdfUrl;
+        }
+        if (editionTitle && titleEl) {
+            titleEl.textContent = editionTitle;
+        }
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    };
+
+    window.closeTimesPdf = function() {
+        const modal = document.getElementById('tt-pdf-modal');
+        const iframe = document.getElementById('tt-pdf-iframe');
+        if (modal) modal.classList.remove('active');
+        if (iframe) iframe.src = '';
+        document.body.style.overflow = '';
+    };
+
+    // Allow closing modal with Escape key
+    if (typeof document !== 'undefined') {
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const modal = document.getElementById('tt-pdf-modal');
+                if (modal && modal.classList.contains('active')) {
+                    window.closeTimesPdf();
+                }
+            }
+        });
+    }
+
+    window.handleTimesSubscribe = function(e) {
+        e.preventDefault();
+        const form = document.getElementById('tt-subscription-form');
+        const msg = document.getElementById('tt-subscribe-msg');
+        const btn = document.getElementById('tt-submit-btn');
+        if (!form || !msg) return;
+
+        const name = (document.getElementById('tt-name') || {}).value || '';
+        const email = (document.getElementById('tt-email') || {}).value || '';
+        const institution = (document.getElementById('tt-college') || {}).value || '';
+        const course = (document.getElementById('tt-course') || {}).value || '';
+        const consent = (document.getElementById('tt-consent') || {}).checked;
+
+        if (!email || !consent) {
+            msg.style.display = 'block';
+            msg.style.background = 'rgba(239, 68, 68, 0.2)';
+            msg.style.border = '1px solid #ef4444';
+            msg.style.color = '#fca5a5';
+            msg.innerHTML = '<i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email and check the subscription consent box.';
+            return;
+        }
+
+        // Save to local storage for persistence across visits
+        try {
+            const subscriber = { name, email, institution, course, subscribedAt: new Date().toISOString() };
+            localStorage.setItem('torque_times_subscriber', JSON.stringify(subscriber));
+        } catch (err) {}
+
+        // Netlify Forms submission
+        try {
+            const formData = new FormData(form);
+            fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            }).catch(() => {});
+        } catch (err) {}
+
+        // Provide immediate user feedback
+        if (btn) {
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+            btn.innerHTML = '<i class="fa-solid fa-check"></i> Subscribed Successfully!';
+        }
+        msg.style.display = 'block';
+        msg.style.background = 'rgba(16, 185, 129, 0.2)';
+        msg.style.border = '1px solid #10b981';
+        msg.style.color = '#6ee7b7';
+        msg.innerHTML = `<strong><i class="fa-solid fa-circle-check"></i> Welcome aboard, ${name || 'Future Manager'}!</strong><br><span style="font-size:0.85rem;">You are now subscribed to TOURQUE Times. Vol 01 / Issue 02 has been sent to your email (${email}).</span>`;
+        form.reset();
+    };
+
+    window.checkTimesQuiz = function(selected, correct, qNum) {
+        const resultEl = document.getElementById('tt-quiz-result-' + qNum);
+        const buttons = document.querySelectorAll('.tt-quiz-btn-' + qNum);
+        buttons.forEach(b => {
+            b.disabled = true;
+            b.style.cursor = 'default';
+        });
+        if (!resultEl) return;
+        resultEl.style.display = 'block';
+        if (selected === correct) {
+            resultEl.style.background = 'rgba(16, 185, 129, 0.15)';
+            resultEl.style.border = '1px solid #10b981';
+            resultEl.style.color = '#10b981';
+            resultEl.innerHTML = '<strong><i class="fa-solid fa-circle-check"></i> Correct!</strong> Retail media networks & brand advertising now generate high-margin revenue streams that offset dark store delivery costs.';
+        } else {
+            resultEl.style.background = 'rgba(239, 68, 68, 0.15)';
+            resultEl.style.border = '1px solid #ef4444';
+            resultEl.style.color = '#ef4444';
+            resultEl.innerHTML = '<strong><i class="fa-solid fa-circle-xmark"></i> Incorrect.</strong> The correct answer is <strong>(B) Retail media networks & brand placement fees</strong>. They contribute 30%+ of gross margins in urban clusters.';
+        }
+    };
+}
+
 
 if (typeof window !== 'undefined' && typeof window.addEventListener === 'function' && typeof document !== 'undefined') {
     window.addEventListener('hashchange', handleRoute);

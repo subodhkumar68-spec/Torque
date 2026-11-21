@@ -98,3 +98,13 @@
   from = "/gd-interview"
   to = "/gd-interview/index.html"
   status = 200
+
+[[redirects]]
+  from = "/tourque-times"
+  to = "/tourque-times/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/torque-times"
+  to = "/tourque-times/index.html"
+  status = 301
