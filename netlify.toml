@@ -101,10 +101,20 @@
 
 [[redirects]]
   from = "/tourque-times"
-  to = "/tourque-times/index.html"
+  to = "/tourque-times.html"
+  status = 200
+
+[[redirects]]
+  from = "/tourque-times/"
+  to = "/tourque-times.html"
   status = 200
 
 [[redirects]]
   from = "/torque-times"
-  to = "/tourque-times/index.html"
-  status = 301
+  to = "/tourque-times.html"
+  status = 200
+
+[[redirects]]
+  from = "/torque-times/"
+  to = "/tourque-times.html"
+  status = 200

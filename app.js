@@ -2068,20 +2068,20 @@ function renderTourqueTimesPage() {
                         </ul>
                     </div>
                     <div class="tt-hero-ctas">
-                        <button onclick="openTimesPdf('newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)')" class="btn-tt-primary" aria-label="Read latest newsletter edition online">
+                        <button onclick="openTimesPdf('/newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)')" class="btn-tt-primary" aria-label="Read latest newsletter edition online">
                             <i class="fa-solid fa-book-open-reader"></i> READ LATEST EDITION
                         </button>
                         <a href="#tt-subscribe" class="btn-tt-secondary" aria-label="Subscribe free to the weekly newsletter">
                             <i class="fa-solid fa-bell"></i> SUBSCRIBE FREE
                         </a>
-                        <a href="newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-secondary" style="border-style: dashed;" aria-label="Download latest newsletter PDF">
+                        <a href="/newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-secondary" style="border-style: dashed;" aria-label="Download latest newsletter PDF">
                             <i class="fa-solid fa-file-arrow-down"></i> Download PDF (2.0 MB)
                         </a>
                     </div>
                 </div>
 
                 <!-- Right: Modern Digital Magazine Cover Preview Card -->
-                <div class="tt-cover-preview-card" onclick="openTimesPdf('newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)')" style="cursor: pointer;" title="Click to Read Full PDF Online">
+                <div class="tt-cover-preview-card" onclick="openTimesPdf('/newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)')" style="cursor: pointer;" title="Click to Read Full PDF Online">
                     <div class="tt-cover-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div class="tt-cover-brand">TOURQUE <span>TIMES</span></div>
@@ -2093,7 +2093,7 @@ function renderTourqueTimesPage() {
                     </div>
 
                     <div style="position: relative; border-radius: 8px; overflow: hidden; margin-bottom: 1rem;">
-                        <img src="images/hero_slide_3.png" alt="Editorial financial illustration" style="width: 100%; height: 180px; object-fit: cover; display: block; filter: brightness(0.85);" onerror="this.src='images/cat_gmat.jpg'" />
+                        <img src="/images/hero_slide_3.png" alt="Editorial financial illustration" style="width: 100%; height: 180px; object-fit: cover; display: block; filter: brightness(0.85);" onerror="this.src='/images/cat_gmat.jpg'" />
                         <div style="position: absolute; bottom: 8px; left: 8px; background: rgba(5, 11, 26, 0.85); backdrop-filter: blur(4px); padding: 0.35rem 0.75rem; border-radius: 4px; border-left: 3px solid #00d2ff; font-size: 0.75rem; font-weight: 700; color: #ffffff;">
                             COVER STORY • NATIONAL FINANCE
                         </div>
@@ -2140,7 +2140,7 @@ function renderTourqueTimesPage() {
                     <!-- Card 1: National Business: Finance & Economy -->
                     <article class="tt-category-card">
                         <div class="tt-card-media">
-                            <img src="images/cat_gmat.jpg" alt="Finance and Economy" class="tt-card-img" loading="lazy" />
+                            <img src="/images/cat_gmat.jpg" alt="Finance and Economy" class="tt-card-img" loading="lazy" />
                             <span class="tt-card-badge"><i class="fa-solid fa-chart-line"></i> FINANCE & ECONOMY</span>
                         </div>
                         <div class="tt-card-body">
@@ -2175,7 +2175,7 @@ function renderTourqueTimesPage() {
                     <!-- Card 2: National Business: Marketing & Branding -->
                     <article class="tt-category-card">
                         <div class="tt-card-media">
-                            <img src="images/bba_masterclass.jpg" alt="Marketing and Branding" class="tt-card-img" loading="lazy" />
+                            <img src="/images/bba_masterclass.jpg" alt="Marketing and Branding" class="tt-card-img" loading="lazy" />
                             <span class="tt-card-badge"><i class="fa-solid fa-bullhorn"></i> MARKETING & BRANDING</span>
                         </div>
                         <div class="tt-card-body">
@@ -2210,7 +2210,7 @@ function renderTourqueTimesPage() {
                     <!-- Card 3: National Business: HR & Workplace -->
                     <article class="tt-category-card">
                         <div class="tt-card-media">
-                            <img src="images/tech_recruiting.jpg" alt="HR and Workplace" class="tt-card-img" loading="lazy" />
+                            <img src="/images/tech_recruiting.jpg" alt="HR and Workplace" class="tt-card-img" loading="lazy" />
                             <span class="tt-card-badge"><i class="fa-solid fa-users-gear"></i> HR & WORKPLACE</span>
                         </div>
                         <div class="tt-card-body">
@@ -2245,7 +2245,7 @@ function renderTourqueTimesPage() {
                     <!-- Card 4: National Business: Startups & Innovation -->
                     <article class="tt-category-card">
                         <div class="tt-card-media">
-                            <img src="images/product_mgmt.jpg" alt="Startups and Innovation" class="tt-card-img" loading="lazy" />
+                            <img src="/images/product_mgmt.jpg" alt="Startups and Innovation" class="tt-card-img" loading="lazy" />
                             <span class="tt-card-badge"><i class="fa-solid fa-rocket"></i> STARTUPS & INNOVATION</span>
                         </div>
                         <div class="tt-card-body">
@@ -2280,7 +2280,7 @@ function renderTourqueTimesPage() {
                     <!-- Card 5: International Business -->
                     <article class="tt-category-card">
                         <div class="tt-card-media">
-                            <img src="images/hero_presentation.jpg" alt="International Business" class="tt-card-img" loading="lazy" />
+                            <img src="/images/hero_presentation.jpg" alt="International Business" class="tt-card-img" loading="lazy" />
                             <span class="tt-card-badge"><i class="fa-solid fa-globe"></i> INTERNATIONAL BUSINESS</span>
                         </div>
                         <div class="tt-card-body">
@@ -2315,7 +2315,7 @@ function renderTourqueTimesPage() {
                     <!-- Card 6: Know Your AI Tools -->
                     <article class="tt-category-card">
                         <div class="tt-card-media">
-                            <img src="images/hero_girl_joy.jpg" alt="Know Your AI Tools" class="tt-card-img" loading="lazy" />
+                            <img src="/images/hero_girl_joy.jpg" alt="Know Your AI Tools" class="tt-card-img" loading="lazy" />
                             <span class="tt-card-badge"><i class="fa-solid fa-microchip"></i> KNOW YOUR AI TOOLS</span>
                         </div>
                         <div class="tt-card-body">
@@ -2350,7 +2350,7 @@ function renderTourqueTimesPage() {
                     <!-- Card 7: Data & Infographics -->
                     <article class="tt-category-card">
                         <div class="tt-card-media">
-                            <img src="images/data_analytics.jpg" alt="Data and Infographics" class="tt-card-img" loading="lazy" />
+                            <img src="/images/data_analytics.jpg" alt="Data and Infographics" class="tt-card-img" loading="lazy" />
                             <span class="tt-card-badge"><i class="fa-solid fa-chart-pie"></i> DATA & INFOGRAPHICS</span>
                         </div>
                         <div class="tt-card-body">
@@ -2385,7 +2385,7 @@ function renderTourqueTimesPage() {
                     <!-- Card 8: Management Case Studies -->
                     <article class="tt-category-card">
                         <div class="tt-card-media">
-                            <img src="images/case_interview.jpg" alt="Management Case Studies" class="tt-card-img" loading="lazy" />
+                            <img src="/images/case_interview.jpg" alt="Management Case Studies" class="tt-card-img" loading="lazy" />
                             <span class="tt-card-badge"><i class="fa-solid fa-briefcase"></i> MANAGEMENT CASE STUDIES</span>
                         </div>
                         <div class="tt-card-body">
@@ -2420,7 +2420,7 @@ function renderTourqueTimesPage() {
                     <!-- Card 9: Business IQ and Campus Updates -->
                     <article class="tt-category-card">
                         <div class="tt-card-media">
-                            <img src="images/business_foundations.jpg" alt="Business IQ and Campus Updates" class="tt-card-img" loading="lazy" />
+                            <img src="/images/business_foundations.jpg" alt="Business IQ and Campus Updates" class="tt-card-img" loading="lazy" />
                             <span class="tt-card-badge"><i class="fa-solid fa-brain"></i> BUSINESS IQ & CAMPUS</span>
                         </div>
                         <div class="tt-card-body">
@@ -2488,10 +2488,10 @@ function renderTourqueTimesPage() {
                                 Lead briefing on capex expansion, quick-commerce dark store economics, AI prompt workflows for analysts, and campus placement benchmarks from top IIM cohorts.
                             </p>
                             <div class="tt-archive-actions">
-                                <button onclick="openTimesPdf('newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)')" class="btn-tt-sm primary">
+                                <button onclick="openTimesPdf('/newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)')" class="btn-tt-sm primary">
                                     <i class="fa-solid fa-book-open"></i> Read Online
                                 </button>
-                                <a href="newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary">
+                                <a href="/newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary">
                                     <i class="fa-solid fa-download"></i> Download PDF (2.0 MB)
                                 </a>
                             </div>
@@ -2515,10 +2515,10 @@ function renderTourqueTimesPage() {
                                 Inaugural edition covering national manufacturing corridors, the $10B semiconductor mission, ESG reporting standards for B-schools, and consulting frameworks.
                             </p>
                             <div class="tt-archive-actions">
-                                <button onclick="openTimesPdf('newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 01 (14 Nov 2026)')" class="btn-tt-sm primary">
+                                <button onclick="openTimesPdf('/newsletters/torque-times-vol01-issue02.pdf', 'TOURQUE Times • Vol. 01 / Issue 01 (14 Nov 2026)')" class="btn-tt-sm primary">
                                     <i class="fa-solid fa-book-open"></i> Read Online
                                 </button>
-                                <a href="newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue01.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary">
+                                <a href="/newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue01.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary">
                                     <i class="fa-solid fa-download"></i> Download PDF
                                 </a>
                             </div>
@@ -2628,10 +2628,10 @@ function renderTourqueTimesPage() {
                             <span id="tt-modal-edition-title">TOURQUE Times • Vol. 01 / Issue 02 (21 Nov 2026)</span>
                         </div>
                         <div class="tt-pdf-actions">
-                            <a id="tt-modal-download-btn" href="newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary" style="color: #ffffff !important; border-color: rgba(255,255,255,0.25);">
+                            <a id="tt-modal-download-btn" href="/newsletters/torque-times-vol01-issue02.pdf" download="TORQUE_Times_Vol01_Issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary" style="color: #ffffff !important; border-color: rgba(255,255,255,0.25);">
                                 <i class="fa-solid fa-download"></i> Download
                             </a>
-                            <a id="tt-modal-newtab-btn" href="newsletters/torque-times-vol01-issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary" style="color: #ffffff !important; border-color: rgba(255,255,255,0.25);">
+                            <a id="tt-modal-newtab-btn" href="/newsletters/torque-times-vol01-issue02.pdf" target="_blank" rel="noopener noreferrer" class="btn-tt-sm secondary" style="color: #ffffff !important; border-color: rgba(255,255,255,0.25);">
                                 <i class="fa-solid fa-arrow-up-right-from-square"></i> Fullscreen
                             </a>
                             <button type="button" class="tt-pdf-close" onclick="closeTimesPdf()" aria-label="Close PDF Viewer">
@@ -3932,26 +3932,47 @@ function handleRoute() {
     const container = document.getElementById('app-container');
     if (!container) return;
 
-    // Detect route from hash or clean pathname
-    let routeKey = window.location.hash.substring(1);
-    if (!routeKey) {
-        const cleanPath = window.location.pathname.replace(/^\/|\/$/g, '').replace(/\.html$/, '');
-        if (cleanPath && (routes[cleanPath] || cleanPath === 'resource' || cleanPath === 'resource-hub')) {
-            routeKey = cleanPath;
+    // Detect route from clean pathname and hash
+    const cleanPath = window.location.pathname.replace(/^\/|\/$/g, '').replace(/\.html$/, '');
+    let hashRoute = window.location.hash.substring(1);
+
+    // Normalize known hash aliases
+    if (hashRoute === 'torque-times') hashRoute = 'tourque-times';
+    else if (hashRoute === 'ug') hashRoute = 'ug-bba';
+    else if (hashRoute === 'resume') hashRoute = 'resume-builder';
+    else if (hashRoute === 'vocab') hashRoute = 'vocab-builder';
+    else if (hashRoute === 'linkedin') hashRoute = 'linkedin-optimizer';
+    else if (hashRoute === 'gd-prep') hashRoute = 'gd-interview';
+    else if (hashRoute === 'resource-hub' || hashRoute === 'resource') hashRoute = 'resources';
+
+    // Normalize pathname aliases
+    let normalizedPath = cleanPath;
+    if (normalizedPath === 'torque-times') normalizedPath = 'tourque-times';
+    else if (normalizedPath === 'resource-hub' || normalizedPath === 'resource') normalizedPath = 'resources';
+
+    let routeKey = 'home';
+
+    // 1. If pathname represents an explicit route (e.g. tourque-times, resources, ug-bba)
+    if (normalizedPath && routes[normalizedPath] && normalizedPath !== 'index') {
+        // If hash is also present and explicitly requests a different known route (not home), allow hash navigation
+        if (hashRoute && hashRoute !== 'home' && hashRoute !== normalizedPath && routes[hashRoute]) {
+            routeKey = hashRoute;
         } else {
-            routeKey = 'home';
+            routeKey = normalizedPath;
         }
     }
-    
-    // Normalize hash routes
-    if (routeKey === 'ug') routeKey = 'ug-bba';
-    else if (routeKey === 'resume') routeKey = 'resume-builder';
-    else if (routeKey === 'vocab') routeKey = 'vocab-builder';
-    else if (routeKey === 'linkedin') routeKey = 'linkedin-optimizer';
-    else if (routeKey === 'gd-prep') routeKey = 'gd-interview';
-    else if (routeKey === 'startup-accelerator') routeKey = 'startup-accelerator';
-    else if (routeKey === 'resource-hub' || routeKey === 'resource') routeKey = 'resources';
-    else if (routeKey === 'torque-times') routeKey = 'tourque-times';
+    // 2. Otherwise use hash route if valid
+    else if (hashRoute && routes[hashRoute]) {
+        routeKey = hashRoute;
+    }
+    // 3. Fallback to clean pathname if valid
+    else if (normalizedPath && routes[normalizedPath]) {
+        routeKey = normalizedPath;
+    }
+    // 4. Default to home
+    else {
+        routeKey = 'home';
+    }
 
     closeMobileMenu();
 
@@ -4124,6 +4145,19 @@ function initBurgerMenu() {
     const actionLinks = document.querySelectorAll('.nav-menu a[data-route], .dropdown-content a, .mobile-menu-ctas a');
     actionLinks.forEach(link => {
         link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+
+    // Seamless in-app routing for TOURQUE Times links
+    document.querySelectorAll('a[href="/tourque-times"], a[href="/torque-times"], a[href="#tourque-times"], a[href="#torque-times"]').forEach(a => {
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (window.location.hash !== '#tourque-times') {
+                window.location.hash = 'tourque-times';
+            } else {
+                handleRoute();
+            }
             closeMobileMenu();
         });
     });
