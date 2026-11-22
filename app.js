@@ -3952,24 +3952,19 @@ function handleRoute() {
 
     let routeKey = 'home';
 
-    // 1. If pathname represents an explicit route (e.g. tourque-times, resources, ug-bba)
-    if (normalizedPath && routes[normalizedPath] && normalizedPath !== 'index') {
-        // If hash is also present and explicitly requests a different known route (not home), allow hash navigation
-        if (hashRoute && hashRoute !== 'home' && hashRoute !== normalizedPath && routes[hashRoute]) {
-            routeKey = hashRoute;
-        } else {
-            routeKey = normalizedPath;
+    // 1. If user navigated to a hash (e.g. #home, #ug-bba, #tourque-times), honor hash
+    if (hashRoute && (routes[hashRoute] || hashRoute === 'home')) {
+        routeKey = hashRoute;
+        // If on a subpath (e.g. /tourque-times or /resources) and clicked a hash, normalize path to root
+        if (cleanPath && cleanPath !== 'index' && typeof history !== 'undefined' && history.replaceState) {
+            history.replaceState(null, '', '/#' + hashRoute);
         }
     }
-    // 2. Otherwise use hash route if valid
-    else if (hashRoute && routes[hashRoute]) {
-        routeKey = hashRoute;
-    }
-    // 3. Fallback to clean pathname if valid
-    else if (normalizedPath && routes[normalizedPath]) {
+    // 2. Otherwise use clean pathname if it matches an existing route (direct visit or static clean URL)
+    else if (normalizedPath && routes[normalizedPath] && normalizedPath !== 'index') {
         routeKey = normalizedPath;
     }
-    // 4. Default to home
+    // 3. Default to home
     else {
         routeKey = 'home';
     }
@@ -4157,6 +4152,24 @@ function initBurgerMenu() {
                 window.location.hash = 'tourque-times';
             } else {
                 handleRoute();
+            }
+            closeMobileMenu();
+        });
+    });
+
+    // Ensure clicking Home or Logo always reliably opens the home page
+    document.querySelectorAll('a[href="#home"], a[data-route="home"], a.logo').forEach(a => {
+        a.addEventListener('click', (e) => {
+            const path = window.location.pathname.replace(/^\/|\/$/g, '').replace(/\.html$/, '');
+            if (path && path !== 'index') {
+                e.preventDefault();
+                window.location.href = '/#home';
+            } else {
+                if (window.location.hash !== '#home' && window.location.hash !== '') {
+                    window.location.hash = 'home';
+                } else {
+                    handleRoute();
+                }
             }
             closeMobileMenu();
         });

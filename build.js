@@ -237,9 +237,9 @@ function generatePageHtml(baseTemplate, routeKey, isSubdir = false) {
 
     pageHtml = pageHtml.replace('</head>', `${seoBlock}\n</head>`);
 
-    // 3. Update asset paths with cache-busting v=5.1 and root-relative resolution
-    pageHtml = pageHtml.replace(/href="[^"]*style\.css[^"]*"/g, 'href="/style.css?v=5.1"');
-    pageHtml = pageHtml.replace(/src="[^"]*app\.js[^"]*"/g, 'src="/app.js?v=5.1"');
+    // 3. Update asset paths with cache-busting v=5.2 and root-relative resolution
+    pageHtml = pageHtml.replace(/href="[^"]*style\.css[^"]*"/g, 'href="/style.css?v=5.2"');
+    pageHtml = pageHtml.replace(/src="[^"]*app\.js[^"]*"/g, 'src="/app.js?v=5.2"');
 
     // 4. Update Navigation active links
     // First remove 'active' from all nav-links
